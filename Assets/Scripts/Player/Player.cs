@@ -1,48 +1,32 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerRotation))]
 [RequireComponent(typeof(AudioSource))]
-public class Player : MonoBehaviour {
-    private UserInterface _ui;
-    private AudioSource _audioSource;
-    public float lightStrength = 5;
+public class Player : MonoBehaviour 
+{
+    [SerializeField] private UserInterface ui;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float baseLightStrength = 5;
+
+    private float _lightStrength;
+    
+    public float LightLevel => _lightStrength;
+    public float FieldOfViewLevel => _lightStrength/40;
+    public float MovementSpeed => 2 + (_lightStrength - baseLightStrength)/5;
 
     private void Start()
     {
-        _ui = GetComponentInChildren<UserInterface>();
-        _audioSource = GetComponent<AudioSource>();
+        _lightStrength = baseLightStrength;
     }
 
+    //debug only
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (Time.timeScale == 0)
-                ResumeGame();
-            else
-                PauseGame();
-        }
-        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            lightStrength++;
+            _lightStrength++;
         }
-    }
-    
-    void PauseGame()
-    {
-        _ui.PauseScreen();
-    }
-
-    public void ResumeGame()
-    {
-        _ui.Resume();
     }
 }

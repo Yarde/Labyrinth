@@ -1,23 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    public float thresholdSpeed = 5f;
-    
-    private Player _player;
-    private Vector3 _movement;
-    private Animator _animator;
-    private Rigidbody _rigidBody;
-    private static readonly int Speed = Animator.StringToHash("Speed");
-
-    private void Start()
-    {
-        //_animator = GetComponent<Animator>();
-        _rigidBody = GetComponent<Rigidbody>();
-        _player = GetComponent<Player>();
-    }
+    [SerializeField] private Player _player;
+    [SerializeField] private Vector3 _movement;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Rigidbody _rigidBody;
 
     private void FixedUpdate()
     {
@@ -26,6 +13,6 @@ public class PlayerMovement : MonoBehaviour {
         
         //_animator.SetFloat(Speed, _movement.sqrMagnitude);
 
-        _rigidBody.velocity = _movement.normalized * thresholdSpeed;
+        _rigidBody.velocity = _movement.normalized * _player.MovementSpeed;
     }
 }

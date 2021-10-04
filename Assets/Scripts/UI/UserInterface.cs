@@ -1,50 +1,21 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace UI
 {
     public class UserInterface : MonoBehaviour
     {
-        public DeadScreen deadScreen;
-        public PauseScreen pauseScreen;
+        [SerializeField] private DeadScreen deadScreen;
+        [SerializeField] private PauseScreen pauseScreen;
 
-        public void PauseScreen()
+        private void Update()
         {
-            Time.timeScale = 0;
-            pauseScreen.gameObject.SetActive(true);
-            deadScreen.gameObject.SetActive(false); 
-        
-            pauseScreen.resume.onClick.AddListener(Resume);
-            pauseScreen.menu.onClick.AddListener(MainMenu);
-        }
-    
-        public void EndScreen()
-        {
-            Time.timeScale = 0;
-            pauseScreen.gameObject.SetActive(false);
-            deadScreen.gameObject.SetActive(true);
-        
-            deadScreen.again.onClick.AddListener(PlayAgain);
-            deadScreen.menu.onClick.AddListener(MainMenu);
-        }
-
-        public void Resume()
-        {
-            pauseScreen.gameObject.SetActive(false);
-            Time.timeScale = 1;
-        }
-    
-        void PlayAgain()
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("DevArcana");
-        }
-
-        void MainMenu()
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("MainMenu");
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (Time.timeScale == 0)
+                    pauseScreen.OnExit();
+                else
+                    pauseScreen.OnEnter();
+            }
         }
     }
 }

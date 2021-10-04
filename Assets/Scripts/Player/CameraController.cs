@@ -1,26 +1,16 @@
-using System;
 using UnityEngine;
+using Utils;
 
 public class CameraController : MonoBehaviour
 {
-    private Player player;
-    public float smoothSpeed = 10f;
-    public Vector3 offset;
-
-    private void Start()
-    {
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
-    }
+    [SerializeField] private Player player;
+    [SerializeField] private float smoothSpeed = 10f;
+    [SerializeField] private Vector3 offset;
 
     private void FixedUpdate()
     {
-        if (!player)
-        {
-            return;
-        }
-
         var destination = player.transform.position + offset;
         var smoothed = Vector3.Lerp(transform.position, destination, smoothSpeed * Time.deltaTime);
-        transform.position = smoothed;
+        transform.position = smoothed.WithY(smoothed.y + player.FieldOfViewLevel);
     }
 }

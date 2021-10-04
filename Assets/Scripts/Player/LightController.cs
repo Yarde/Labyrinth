@@ -1,29 +1,20 @@
-using System;
 using UnityEngine;
-using System.Collections;
+using Utils;
 
+[RequireComponent(typeof(Light))]
 public class LightController : MonoBehaviour {
-    private Player player;
-    private Light light;
-    public float smoothSpeed = 10f;
-    public Vector3 offset;
+    [SerializeField] private Player player;
+    [SerializeField] private Light lightSource;
+    [SerializeField] private float smoothSpeed = 10f;
+    [SerializeField] private Vector3 offset;
 
-    private void Start()
+    private void FixedUpdate() 
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
-        light = GetComponent<Light>();
-    }
-
-    private void FixedUpdate() {
-        if (!player) {
-            return;
-        }
-
-        light.range = player.lightStrength;
+        lightSource.range = player.LightLevel;
 
         var destination = player.transform.position + offset;
         var smoothed = Vector3.Lerp(transform.position, destination, smoothSpeed * Time.deltaTime);
-        transform.position = destination;
+        transform.position = smoothed.WithY(smoothed.y + player.FieldOfViewLevel);
     }
 
 }

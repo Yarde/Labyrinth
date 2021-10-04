@@ -7,7 +7,8 @@ namespace Labirynth
         protected Cell[,] _cells;
         protected Vector2Int _dimentions = new Vector2Int(10, 10);
 
-        protected GenerationAlgorithm(Cell[,] cells) : base() {
+        protected GenerationAlgorithm(Cell[,] cells)
+        {
             _cells = cells;
             _dimentions.x = _cells.GetLength(0);
             _dimentions.y = _cells.GetLength(1);

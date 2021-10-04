@@ -1,38 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="" />
+    <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/WindowState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/WindowState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/TransformExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/TransformExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Vector3Extensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Vector3Extensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProceduralNumberGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProceduralNumberGenerator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/GenerationAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/GenerationAlgorithm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/HuntAndKillAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/HuntAndKillAlgorithm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/DeadScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/DeadScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PauseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PauseScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/b3/c4c7179c/Random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127E81E1-CB34-41CC-97D2-6B1910DAAE77/e8/f4f2f79f/Vector2Int.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127E81E1-CB34-41CC-97D2-6B1910DAAE77/b9/cd271362/Transform.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Cell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MazeLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HuntAndKillMazeAlgorithm.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GenerationAlgorithm.cs" />
-        <option value="$PROJECT_DIR$/Assets/ProceduralNumberGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HuntAndKillAlgorithm.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Cell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/GenerationAlgorithm.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/HuntAndKillAlgorithm.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Entity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/DisplayPoints.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/GenerationAlgorithm.cs" />
+      <option value="$PROJECT_DIR$/Assets/ProceduralNumberGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/TransformExtensions.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Vector3Extensions.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/DeadScreen.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PauseScreen.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/WindowState.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />
   <component name="ProjectViewState">
@@ -45,6 +69,7 @@
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -80,6 +105,8 @@
       <updated>1610394113235</updated>
       <workItem from="1610394131773" duration="6867000" />
       <workItem from="1611998795787" duration="15981000" />
+      <workItem from="1628411204075" duration="696000" />
+      <workItem from="1633370724112" duration="4072000" />
     </task>
     <servers />
   </component>
@@ -88,89 +115,18 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="404" height="464" key="DebuggerActiveHint" timestamp="1612002381730">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="404" height="464" key="DebuggerActiveHint/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612002381730" />
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1557" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@1920.0.1600.870" timestamp="1610399007222" />
-    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1557" height="307" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@1920.0.1600.870" timestamp="1610399007221" />
-    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1557" height="307" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@1920.0.1600.870" timestamp="1610399007221" />
-    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1557" height="307" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@1920.0.1600.870" timestamp="1610399007222" />
-    <state width="1877" height="307" key="GridCell.Tab.1.bottom" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1557" height="307" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@1920.0.1600.870" timestamp="1610399018605" />
-    <state width="1877" height="307" key="GridCell.Tab.1.center" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1557" height="307" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@1920.0.1600.870" timestamp="1610399018605" />
-    <state width="1877" height="307" key="GridCell.Tab.1.left" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1557" height="307" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@1920.0.1600.870" timestamp="1610399018605" />
-    <state width="1877" height="307" key="GridCell.Tab.1.right" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1557" height="307" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@1920.0.1600.870" timestamp="1610399018605" />
-    <state width="1877" height="307" key="GridCell.Tab.2.bottom" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.2.bottom/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1877" height="307" key="GridCell.Tab.2.center" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.2.center/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1877" height="307" key="GridCell.Tab.2.left" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.2.left/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1877" height="307" key="GridCell.Tab.2.right" timestamp="1612015716106">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.2.right/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716106" />
-    <state width="1877" height="307" key="GridCell.Tab.3.bottom" timestamp="1612015716107">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.3.bottom/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716107" />
-    <state width="1877" height="307" key="GridCell.Tab.3.center" timestamp="1612015716107">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.3.center/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716107" />
-    <state width="1877" height="307" key="GridCell.Tab.3.left" timestamp="1612015716107">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.3.left/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716107" />
-    <state width="1877" height="307" key="GridCell.Tab.3.right" timestamp="1612015716107">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="307" key="GridCell.Tab.3.right/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612015716107" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1612002474770">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1600.870/3520.0.1600.994@0.0.1920.1050" timestamp="1612002474770" />
   </component>
 </project>
