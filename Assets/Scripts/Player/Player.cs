@@ -1,3 +1,4 @@
+using System;
 using UI;
 using UnityEngine;
 
@@ -16,24 +17,58 @@ public class Player : MonoBehaviour
     public int Points { get; private set; }
     public int Experience { get; private set; }
     public int Playtime { get; private set; }
-    public int Coins { get; private set; }
-    public float LightLevel { get; private set; }
-    public float FieldOfViewLevel { get; private set; }
-    public float MovementSpeed { get; private set; }
+    public int Coins { get; set; }
+    public float LightLevel { get; set; }
+    public float FieldOfViewLevel { get; set; }
+    public float MovementSpeed { get; set; }
+    
+    private Skill[] _skills;
 
     private void Start()
     {
         LightLevel = baseLightStrength;
         FieldOfViewLevel = baseViewDistance;
         MovementSpeed = baseMovementSpeed;
+        SetupSkills();
+        ui.Setup(this, _skills);
     }
 
-    //debug only
+    private void SetupSkills()
+    {
+        _skills = new Skill[]
+        {
+            new UpgradeLight(this, new Skill.SkillData
+            {
+                SkillName = "Upgrade Light",
+                BonusPerLevel = 1f,
+                Cost = 10,
+                Level = 0,
+                MaxLevel = 5
+            }),
+            new UpgradeVision(this, new Skill.SkillData
+            {
+                SkillName = "Upgrade Vision",
+                BonusPerLevel = 0.02f,
+                Cost = 10,
+                Level = 0,
+                MaxLevel = 5
+            }),
+            new UpgradeMovement(this, new Skill.SkillData
+            {
+                SkillName = "Upgrade Movement",
+                BonusPerLevel = 0.3f,
+                Cost = 10,
+                Level = 0,
+                MaxLevel = 5
+            })
+        };
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            LightLevel++;
+            Coins += 1;
         }
     }
 }
