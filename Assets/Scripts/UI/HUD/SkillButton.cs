@@ -51,7 +51,8 @@ namespace UI
 
         private void UpdateSkill()
         {
-            skillLevelText.text = string.Format(SkillTextPattern, _skill.Data.Level);
+            skillLevelText.text = string.Format(SkillTextPattern, _skill.Data.Level, _skill.Data.Cost);
+            skillCostText.text = _skill.Data.SkillName;
 
             if (_skill.Data.Level == _skill.Data.MaxLevel)
             {

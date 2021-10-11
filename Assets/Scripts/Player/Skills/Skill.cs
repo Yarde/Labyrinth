@@ -37,6 +37,7 @@ namespace UI
             }
 
             _player.Coins -= Data.Cost;
+            Data.Cost = (int) (Data.Cost + Mathf.Sqrt(Data.Cost));
             Data.Level++;
         }
     }
