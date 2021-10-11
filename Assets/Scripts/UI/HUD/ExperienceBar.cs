@@ -1,5 +1,4 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,17 +7,47 @@ namespace UI
     public class ExperienceBar : MonoBehaviour
     {
         [SerializeField] private Slider slider;
-        [SerializeField] private TextMeshPro experienceText;
+        [SerializeField] private TextMeshProUGUI experienceText;
 
+        private const float EXP_MULTIPLIER = 0.1f;
+
+        private Player _player;
+        
         private int currentExperience;
-        private void UpdateBar(int experience)
+        private int level;
+        private int experienceLeft;
+        private int experienceNeeded;
+
+        private void Update()
         {
-            if (currentExperience < experience)
+            if (currentExperience < _player.Experience)
             {
                 // todo animate experience gain
-                experienceText.text = experience.ToString();
-                currentExperience = experience;
+                UpdateExperience();
             }
+        }
+        
+        public void SetupBar(Player player)
+        {
+            _player = player;
+            UpdateExperience();
+        }
+        
+        private void UpdateExperience()
+        {
+            currentExperience = _player.Experience;
+            CalculateLevel();
+            experienceText.text = $"Level {level}, exp left {experienceLeft}/{experienceNeeded}";
+            slider.value = experienceLeft / (float) experienceNeeded;
+        }
+
+        private void CalculateLevel()
+        {
+            level = (int) (Mathf.Floor(EXP_MULTIPLIER * Mathf.Sqrt(currentExperience)) + 1);
+            var experienceToNextLevel = (int) Mathf.Pow(level / EXP_MULTIPLIER, 2) - currentExperience;
+            experienceNeeded = (int) Mathf.Pow(level / EXP_MULTIPLIER, 2) -
+                               (int) Mathf.Pow((level - 1) / EXP_MULTIPLIER, 2);
+            experienceLeft = experienceNeeded - experienceToNextLevel;
         }
     }
 }

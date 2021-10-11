@@ -13,22 +13,24 @@ namespace UI
         // it can be solved with object pool
         private Stack<GameObject> spawnedHearts;
         private int currentHearts = 0;
+        private Player _player;
 
-        private void Start()
+        public void Update()
         {
-            spawnedHearts = new Stack<GameObject>();
-        }
-
-        private void UpdateBar(int numberOfHearts)
-        {
-            while (currentHearts > numberOfHearts)
+            while (currentHearts > _player.Hearts)
             {
                 RemoveHeart();
             }
-            while (currentHearts < numberOfHearts)
+            while (currentHearts < _player.Hearts)
             {
                 AddHeart();
             }
+        }
+        
+        public void SetupBar(Player player)
+        {
+            spawnedHearts = new Stack<GameObject>();
+            _player = player;
         }
 
         private void AddHeart()

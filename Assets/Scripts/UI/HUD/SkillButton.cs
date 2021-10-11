@@ -42,6 +42,7 @@ namespace UI
            
             skillImage.sprite = skillSprite;
             skillLevelText.text = string.Format(skillTextPattern, skill.Data.Level);
+            skillCostText.text = _skill.Data.Cost.ToString();
             
             skillButton.interactable = false;
             skillButton.onClick.AddListener(_skill.Upgrade);

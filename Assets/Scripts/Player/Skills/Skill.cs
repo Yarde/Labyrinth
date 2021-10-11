@@ -37,6 +37,7 @@ namespace UI
             }
 
             _player.Coins -= Data.Cost;
+            Data.Level++;
         }
     }
 }

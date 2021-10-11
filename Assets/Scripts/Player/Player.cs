@@ -1,4 +1,3 @@
-using System;
 using UI;
 using UnityEngine;
 
@@ -29,6 +28,8 @@ public class Player : MonoBehaviour
         LightLevel = baseLightStrength;
         FieldOfViewLevel = baseViewDistance;
         MovementSpeed = baseMovementSpeed;
+        Experience = 0;
+        Hearts = 5;
         SetupSkills();
         ui.Setup(this, _skills);
     }
@@ -68,7 +69,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Coins += 1;
+            Coins += 11;
+            Experience += 12;
         }
     }
 }
