@@ -4,6 +4,7 @@ namespace UI
 {
     public class UserInterface : MonoBehaviour
     {
+        [SerializeField] private GameHud gameHud;
         [SerializeField] private DeadScreen deadScreen;
         [SerializeField] private PauseScreen pauseScreen;
 

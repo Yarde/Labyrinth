@@ -8,17 +8,24 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private UserInterface ui;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private float baseLightStrength = 5;
+    [SerializeField] private float baseLightStrength = 5f;
+    [SerializeField] private float baseViewDistance = 0.1f;
+    [SerializeField] private float baseMovementSpeed = 2f;
 
-    private float _lightStrength;
-    
-    public float LightLevel => _lightStrength;
-    public float FieldOfViewLevel => _lightStrength/40;
-    public float MovementSpeed => 2 + (_lightStrength - baseLightStrength)/5;
+    public int Hearts { get; private set; }
+    public int Points { get; private set; }
+    public int Experience { get; private set; }
+    public int Playtime { get; private set; }
+    public int Coins { get; private set; }
+    public float LightLevel { get; private set; }
+    public float FieldOfViewLevel { get; private set; }
+    public float MovementSpeed { get; private set; }
 
     private void Start()
     {
-        _lightStrength = baseLightStrength;
+        LightLevel = baseLightStrength;
+        FieldOfViewLevel = baseViewDistance;
+        MovementSpeed = baseMovementSpeed;
     }
 
     //debug only
@@ -26,7 +33,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _lightStrength++;
+            LightLevel++;
         }
     }
 }
