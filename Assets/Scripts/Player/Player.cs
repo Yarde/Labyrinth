@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         ui.Setup(this, _skills);
     }
 
+    // todo change it into serializable object
     private void SetupSkills()
     {
         _skills = new Skill[]
@@ -42,17 +43,17 @@ public class Player : MonoBehaviour
             {
                 SkillName = "Upgrade Light",
                 BonusPerLevel = 1f,
-                Cost = 10,
+                Cost = 15,
                 Level = 0,
-                MaxLevel = 5
+                MaxLevel = 8
             }),
             new UpgradeVision(this, new Skill.SkillData
             {
                 SkillName = "Upgrade Vision",
                 BonusPerLevel = 0.02f,
-                Cost = 10,
+                Cost = 20,
                 Level = 0,
-                MaxLevel = 5
+                MaxLevel = 8
             }),
             new UpgradeMovement(this, new Skill.SkillData
             {

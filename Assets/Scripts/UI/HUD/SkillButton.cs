@@ -10,7 +10,7 @@ namespace UI
         [SerializeField] private Image skillImage;
         [SerializeField] private TextMeshProUGUI skillLevelText;
         [SerializeField] private TextMeshProUGUI skillCostText;
-        [SerializeField] private string skillTextPattern = "{0} Level";
+        private const string SkillTextPattern = "Level {0}\nCost {1}";
 
         //todo pass player to button
         private Player _player;
@@ -41,8 +41,8 @@ namespace UI
             _player = player;
            
             skillImage.sprite = skillSprite;
-            skillLevelText.text = string.Format(skillTextPattern, skill.Data.Level);
-            skillCostText.text = _skill.Data.Cost.ToString();
+            skillLevelText.text = string.Format(SkillTextPattern, skill.Data.Level, _skill.Data.Cost);
+            skillCostText.text = _skill.Data.SkillName;
             
             skillButton.interactable = false;
             skillButton.onClick.AddListener(_skill.Upgrade);
@@ -51,7 +51,7 @@ namespace UI
 
         private void UpdateSkill()
         {
-            skillLevelText.text = string.Format(skillTextPattern, _skill.Data.Level);
+            skillLevelText.text = string.Format(SkillTextPattern, _skill.Data.Level);
 
             if (_skill.Data.Level == _skill.Data.MaxLevel)
             {
