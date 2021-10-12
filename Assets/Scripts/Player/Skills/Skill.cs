@@ -4,32 +4,35 @@ namespace Skills
 {
     public abstract class Skill
     {
-        protected Player _player;
-        public SkillData Data;
+        protected readonly Player Player;
+        public readonly SkillData Data;
         public int Level;
+        public int Cost;
 
         protected Skill(Player player, SkillData data)
         {
-            _player = player;
+            Player = player;
             Data = data;
+            Level = 0;
+            Cost = Data.startingCost;
         }
         
         public virtual void Upgrade()
         {
-            if (_player.Coins < Data.cost)
+            if (Player.Coins < Cost)
             {
-                Debug.Log($"Not enough coins, player has {_player.Coins} but {Data.cost} is required for skill {Data.name}");
+                Debug.Log($"Not enough coins, player has {Player.Coins} but {Cost} is required for skill {Data.skillName}");
                 return;
             }
             
             if (Level == Data.maxLevel)
             {
-                Debug.Log($"Already max level {Data.maxLevel} for skill {Data.name}");
+                Debug.Log($"Already max level {Data.maxLevel} for skill {Data.skillName}");
                 return;
             }
 
-            _player.Coins -= Data.cost;
-            Data.cost = (int) (Data.cost + Mathf.Sqrt(Data.cost));
+            Player.Coins -= Cost;
+            Cost = (int) (Cost + Mathf.Sqrt(Cost));
             Level++;
         }
     }

@@ -4,16 +4,15 @@ namespace Labirynth
 {
     public abstract class GenerationAlgorithm
     {
-        protected Cell[,] _cells;
-        protected Vector2Int _dimentions = new Vector2Int(10, 10);
+        protected readonly Cell[,] Cells;
+        protected Vector2Int Dimensions;
 
-        protected GenerationAlgorithm(Cell[,] cells)
+        protected GenerationAlgorithm(Cell[,] cells, Vector2Int dimensions)
         {
-            _cells = cells;
-            _dimentions.x = _cells.GetLength(0);
-            _dimentions.y = _cells.GetLength(1);
+            Cells = cells;
+            Dimensions = dimensions;
         }
 
-        public abstract void CreateMaze ();
+        public abstract void CreateMaze();
     }
 }

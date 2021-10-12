@@ -5,6 +5,6 @@ namespace Labirynth
     public class Cell
     {
         public bool Visited = false;
-        public GameObject North, South, East, West;
+        public GameObject North, South, East, West, Floor;
     }
 }

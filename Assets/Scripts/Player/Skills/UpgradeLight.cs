@@ -9,7 +9,7 @@ namespace Skills
         public override void Upgrade()
         {
             base.Upgrade();
-            _player.LightLevel += Data.bonusPerLevel;
+            Player.LightLevel += Data.bonusPerLevel;
         }
     }
 }

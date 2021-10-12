@@ -9,7 +9,7 @@ namespace Skills
         public override void Upgrade()
         {
             base.Upgrade();
-            _player.MovementSpeed += Data.bonusPerLevel;
+            Player.MovementSpeed += Data.bonusPerLevel;
         }
     }
 }

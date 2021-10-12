@@ -25,7 +25,7 @@ namespace UI
                 return;
             }
 
-            if (_skill.Data.cost > _player.Coins)
+            if (_skill.Cost > _player.Coins)
             {
                 //not enough coins
                 skillButton.interactable = false;
@@ -42,7 +42,7 @@ namespace UI
             _player = player;
            
             skillImage.sprite = skillSprite;
-            skillLevelText.text = string.Format(SkillTextPattern, skill.Level, _skill.Data.cost);
+            skillLevelText.text = string.Format(SkillTextPattern, skill.Level, _skill.Cost);
             skillCostText.text = _skill.Data.displayName;
             
             skillButton.interactable = false;
@@ -52,7 +52,7 @@ namespace UI
 
         private void UpdateSkill()
         {
-            skillLevelText.text = string.Format(SkillTextPattern, _skill.Level, _skill.Data.cost);
+            skillLevelText.text = string.Format(SkillTextPattern, _skill.Level, _skill.Cost);
             skillCostText.text = _skill.Data.displayName;
 
             if (_skill.Level == _skill.Data.maxLevel)

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6acb2ace94943708ab1d2cefbd470a3, type: 3}
-  m_Name: UpgradeMovement
+  m_Name: UpgradeLight
   m_EditorClassIdentifier: 
-  name: UpgradeMovement
-  displayName: Speed Up
+  skillName: UpgradeLight
+  displayName: Lights Up
   maxLevel: 15
-  bonusPerLevel: 0.2
-  cost: 10
+  bonusPerLevel: 1
+  startingCost: 15

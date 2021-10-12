@@ -9,7 +9,7 @@ namespace Skills
         public override void Upgrade()
         {
             base.Upgrade();
-            _player.FieldOfViewLevel += Data.bonusPerLevel;
+            Player.FieldOfViewLevel += Data.bonusPerLevel;
         }
     }
 }

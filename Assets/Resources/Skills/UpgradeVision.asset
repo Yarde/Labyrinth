@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6acb2ace94943708ab1d2cefbd470a3, type: 3}
   m_Name: UpgradeVision
   m_EditorClassIdentifier: 
-  name: UpgradeVision
+  skillName: UpgradeVision
   displayName: See More
   maxLevel: 15
   bonusPerLevel: 0.02
-  cost: 44
+  startingCost: 20

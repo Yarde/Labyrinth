@@ -42,9 +42,9 @@ public class Player : MonoBehaviour
     {
         _skills = new Skill[]
         {
-            new UpgradeLight(this, skills.FirstOrDefault(x => x.name == "UpgradeLight")),
-            new UpgradeVision(this, skills.FirstOrDefault(x => x.name == "UpgradeVision")),
-            new UpgradeMovement(this, skills.FirstOrDefault(x => x.name == "UpgradeMovement"))
+            new UpgradeLight(this, skills.FirstOrDefault(x => x.skillName == "UpgradeLight")),
+            new UpgradeVision(this, skills.FirstOrDefault(x => x.skillName == "UpgradeVision")),
+            new UpgradeMovement(this, skills.FirstOrDefault(x => x.skillName == "UpgradeMovement"))
         };
     }
 

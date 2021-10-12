@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Labirynth
@@ -6,67 +5,91 @@ namespace Labirynth
     public class LabirynthGenerator : MonoBehaviour
     {
         [SerializeField] private GameObject wallPrefab;
-        [SerializeField] private Vector2Int _dimentions = new Vector2Int(10, 10);
+        [SerializeField] private GameObject floorPrefab;
+        [SerializeField] private Vector2Int dimensions = new Vector2Int(10, 10);
         [SerializeField] private float size = 1;
 
         private Cell[,] _cells;
 
-        void Start()
+        private void Start()
         {
             InitializeLabirynth();
 
-            GenerationAlgorithm ma = new HuntAndKillAlgorithm(_cells);
-            ma.CreateMaze();
+            var generationAlgorithm = new HuntAndKillAlgorithm(_cells, dimensions);
+            generationAlgorithm.CreateMaze();
         }
 
         private void InitializeLabirynth()
         {
-            _cells = new Cell[_dimentions.x, _dimentions.y];
-            var radius = new Vector2Int(_dimentions.x / 2, _dimentions.y / 2);
+            _cells = new Cell[dimensions.x, dimensions.y];
+            var radius = new Vector2Int(dimensions.x / 2, dimensions.y / 2);
 
-            for (var row = 0; row < _dimentions.x; row++)
+            for (var row = 0; row < dimensions.x; row++)
             {
-                for (var col = 0; col < _dimentions.y; col++)
+                for (var col = 0; col < dimensions.y; col++)
                 {
-                    if (Math.Pow(row - _dimentions.x / 2, 2) / Math.Pow(radius.x, 2) + Math.Pow(col - _dimentions.y / 2, 2) / Math.Pow(radius.y, 2) > 1)
-                    {
-                        continue;
-                    }
-
-                    var cell = new Cell();
-
-                    if (Math.Abs(Math.Pow(row - _dimentions.x / 2, 2) / Math.Pow(radius.x, 2) + Math.Pow(col - _dimentions.y / 2, 2) / Math.Pow(radius.y, 2) - 1) < 1) //col == 0)
-                    {
-                        cell.West = Instantiate(wallPrefab, new Vector3(row * size, 0, (col * size) - (size / 2f)),
-                            Quaternion.identity, transform);
-                        cell.West.name = "West Wall " + row + "," + col;
-
-                        cell.North = Instantiate(wallPrefab, new Vector3((row * size) - (size / 2f), 0, col * size),
-                            Quaternion.identity, transform);
-                        cell.North.name = "North Wall " + row + "," + col;
-                        cell.North.transform.Rotate(Vector3.up * 90f);
-                    }
-
-                    cell.East = Instantiate(wallPrefab, new Vector3(row * size, 0, (col * size) + (size / 2f)),
-                        Quaternion.identity, transform);
-                    cell.East.name = "East Wall " + row + "," + col;
-
-                    // if (row == 0)
-                    // {
-                    //     cell.North = Instantiate(wallPrefab, new Vector3((row * size) - (size / 2f), 0, col * size),
-                    //         Quaternion.identity, transform);
-                    //     cell.North.name = "North Wall " + row + "," + col;
-                    //     cell.North.transform.Rotate(Vector3.up * 90f);
-                    // }
-
-                    cell.South = Instantiate(wallPrefab, new Vector3((row * size) + (size / 2f), 0, col * size),
-                        Quaternion.identity, transform);
-                    cell.South.name = "South Wall " + row + "," + col;
-                    cell.South.transform.Rotate(Vector3.up * 90f);
-
-                    _cells[row, col] = cell;
+                    _cells[row, col] = AddCell(row, radius, col);
                 }
             }
+        }
+
+        private Cell AddCell(int row, Vector2Int radius, int col)
+        {
+            var distanceToCenter = Mathf.Pow(row - dimensions.x / 2, 2) / Mathf.Pow(radius.x, 2) +
+                                   Mathf.Pow(col - dimensions.y / 2, 2) / Mathf.Pow(radius.y, 2);
+            if (distanceToCenter >= 1)
+            {
+                //outside of circle
+                return null;
+            }
+
+            var cell = new Cell();
+            SetFloor(row, col, cell);
+            if (distanceToCenter < 1)
+            {
+                SetWestWall(row, col, cell);
+                SetNorthWall(row, col, cell);
+            }
+            SetEastWall(row, col, cell);
+            SetSouthWall(row, col, cell);
+            return cell;
+        }
+
+        private void SetFloor(int row, int col, Cell cell)
+        {
+            var position = new Vector3(row * size, -0.5f, col * size);
+            cell.Floor = Instantiate(floorPrefab, position, Quaternion.identity, transform);
+            cell.Floor.name = $"Floor {row},{col}";
+        }
+
+        private void SetSouthWall(int row, int col, Cell cell)
+        {
+            var position = new Vector3(row * size + size / 2f, 0, col * size);
+            cell.South = Instantiate(wallPrefab, position, Quaternion.identity, transform);
+            cell.South.name = $"South Wall {row},{col}";
+            cell.South.transform.Rotate(Vector3.up * 90f);
+        }
+
+        private void SetEastWall(int row, int col, Cell cell)
+        {
+            var position = new Vector3(row * size, 0, col * size + size / 2f);
+            cell.East = Instantiate(wallPrefab, position, Quaternion.identity, transform);
+            cell.East.name = $"East Wall {row},{col}";
+        }
+
+        private void SetNorthWall(int row, int col, Cell cell)
+        {
+            var position = new Vector3(row * size - size / 2f, 0, col * size);
+            cell.North = Instantiate(wallPrefab, position, Quaternion.identity, transform);
+            cell.North.name = $"North Wall {row},{col}";
+            cell.North.transform.Rotate(Vector3.up * 90f);
+        }
+
+        private void SetWestWall(int row, int col, Cell cell)
+        {
+            var position = new Vector3(row * size, 0, col * size - size / 2f);
+            cell.West = Instantiate(wallPrefab, position, Quaternion.identity, transform);
+            cell.West.name = $"West Wall {row},{col}";
         }
     }
 }

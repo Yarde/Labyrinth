@@ -10,7 +10,7 @@ namespace Labirynth
 
         private bool _courseComplete = false;
 
-        public HuntAndKillAlgorithm(Cell[,] mazeCells) : base(mazeCells)
+        public HuntAndKillAlgorithm(Cell[,] cells, Vector2Int dimensions) : base(cells, dimensions)
         {
         }
 
@@ -21,10 +21,10 @@ namespace Labirynth
 
         private void HuntAndKill()
         {
-            _currentRow = _dimentions.x / 2;
-            _currentColumn = _dimentions.y / 2;
+            _currentRow = Dimensions.x / 2;
+            _currentColumn = Dimensions.y / 2;
 
-            _cells[_currentRow, _currentColumn].Visited = true;
+            Cells[_currentRow, _currentColumn].Visited = true;
 
             while (!_courseComplete)
             {
@@ -32,14 +32,21 @@ namespace Labirynth
                 Hunt(); // Finds the next unvisited cell with an adjacent visited cell. If it can't find any, it sets courseComplete to true.
             }
 
-            for (var i = _dimentions.x / 2 - _dimentions.x / 10; i < _dimentions.x / 2 + _dimentions.x / 10; i++)
+            // Clears the start area
+            var size = new Vector2Int(Dimensions.x/10, Dimensions.y/10);
+            GenerateStartingArea(size);
+        }
+
+        private void GenerateStartingArea(Vector2Int size)
+        {
+            for (var i = Dimensions.x / 2 - size.x; i < Dimensions.x / 2 + size.x; i++)
             {
-                for (var j = _dimentions.y / 2 - _dimentions.y / 10; j < _dimentions.y / 2 + _dimentions.y / 10; j++)
+                for (var j = Dimensions.y / 2 - size.y; j < Dimensions.y / 2 + size.y; j++)
                 {
-                    DestroyWallIfItExists(_cells[i, j].North);
-                    DestroyWallIfItExists(_cells[i, j].South);
-                    DestroyWallIfItExists(_cells[i, j].East);
-                    DestroyWallIfItExists(_cells[i, j].West);
+                    DestroyWallIfItExists(Cells[i, j].North);
+                    DestroyWallIfItExists(Cells[i, j].South);
+                    DestroyWallIfItExists(Cells[i, j].East);
+                    DestroyWallIfItExists(Cells[i, j].West);
                 }
             }
         }
@@ -55,31 +62,31 @@ namespace Labirynth
                 {
                     case 1 when CellIsAvailable(_currentRow - 1, _currentColumn):
                         // North
-                        DestroyWallIfItExists(_cells[_currentRow, _currentColumn].North);
-                        DestroyWallIfItExists(_cells[_currentRow - 1, _currentColumn].South);
+                        DestroyWallIfItExists(Cells[_currentRow, _currentColumn].North);
+                        DestroyWallIfItExists(Cells[_currentRow - 1, _currentColumn].South);
                         _currentRow--;
                         break;
                     case 2 when CellIsAvailable(_currentRow + 1, _currentColumn):
                         // South
-                        DestroyWallIfItExists(_cells[_currentRow, _currentColumn].South);
-                        DestroyWallIfItExists(_cells[_currentRow + 1, _currentColumn].North);
+                        DestroyWallIfItExists(Cells[_currentRow, _currentColumn].South);
+                        DestroyWallIfItExists(Cells[_currentRow + 1, _currentColumn].North);
                         _currentRow++;
                         break;
                     case 3 when CellIsAvailable(_currentRow, _currentColumn + 1):
                         // East
-                        DestroyWallIfItExists(_cells[_currentRow, _currentColumn].East);
-                        DestroyWallIfItExists(_cells[_currentRow, _currentColumn + 1].West);
+                        DestroyWallIfItExists(Cells[_currentRow, _currentColumn].East);
+                        DestroyWallIfItExists(Cells[_currentRow, _currentColumn + 1].West);
                         _currentColumn++;
                         break;
                     case 4 when CellIsAvailable(_currentRow, _currentColumn - 1):
                         // West
-                        DestroyWallIfItExists(_cells[_currentRow, _currentColumn].West);
-                        DestroyWallIfItExists(_cells[_currentRow, _currentColumn - 1].East);
+                        DestroyWallIfItExists(Cells[_currentRow, _currentColumn].West);
+                        DestroyWallIfItExists(Cells[_currentRow, _currentColumn - 1].East);
                         _currentColumn--;
                         break;
                 }
 
-                _cells[_currentRow, _currentColumn].Visited = true;
+                Cells[_currentRow, _currentColumn].Visited = true;
             }
         }
 
@@ -87,19 +94,19 @@ namespace Labirynth
         {
             _courseComplete = true;
 
-            for (var r = 0; r < _dimentions.x; r++)
+            for (var r = 0; r < Dimensions.x; r++)
             {
-                for (var c = 0; c < _dimentions.y; c++)
+                for (var c = 0; c < Dimensions.y; c++)
                 {
-                    if (_cells[r, c] == null) continue;
-                
-                    if (_cells[r, c].Visited || !CellHasAnAdjacentVisitedCell(r, c)) continue;
+                    if (Cells[r, c] == null) continue;
+
+                    if (Cells[r, c].Visited || !CellHasAnAdjacentVisitedCell(r, c)) continue;
 
                     _courseComplete = false;
                     _currentRow = r;
                     _currentColumn = c;
                     DestroyAdjacentWall(_currentRow, _currentColumn);
-                    _cells[_currentRow, _currentColumn].Visited = true;
+                    Cells[_currentRow, _currentColumn].Visited = true;
                     return;
                 }
             }
@@ -110,22 +117,22 @@ namespace Labirynth
         {
             var availableRoutes = 0;
 
-            if (row > 0 && _cells[row - 1, column] != null && !_cells[row - 1, column].Visited)
+            if (row > 0 && Cells[row - 1, column] != null && !Cells[row - 1, column].Visited)
             {
                 availableRoutes++;
             }
 
-            if (row < _dimentions.x - 1 && _cells[row + 1, column] != null && !_cells[row + 1, column].Visited)
+            if (row < Dimensions.x - 1 && Cells[row + 1, column] != null && !Cells[row + 1, column].Visited)
             {
                 availableRoutes++;
             }
 
-            if (column > 0 && _cells[row, column - 1] != null && !_cells[row, column - 1].Visited)
+            if (column > 0 && Cells[row, column - 1] != null && !Cells[row, column - 1].Visited)
             {
                 availableRoutes++;
             }
 
-            if (column < _dimentions.y - 1 && _cells[row, column + 1] != null && !_cells[row, column + 1].Visited)
+            if (column < Dimensions.y - 1 && Cells[row, column + 1] != null && !Cells[row, column + 1].Visited)
             {
                 availableRoutes++;
             }
@@ -135,7 +142,8 @@ namespace Labirynth
 
         private bool CellIsAvailable(int row, int column)
         {
-            return row >= 0 && row < _dimentions.x && column >= 0 && column < _dimentions.y && _cells[row, column] != null && !_cells[row, column].Visited;
+            return row >= 0 && row < Dimensions.x && column >= 0 && column < Dimensions.y &&
+                   Cells[row, column] != null && !Cells[row, column].Visited;
         }
 
         private void DestroyWallIfItExists(Object wall)
@@ -151,25 +159,25 @@ namespace Labirynth
             var visitedCells = 0;
 
             // Look 1 row up (north) if we're on row 1 or greater
-            if (row > 0 && _cells[row - 1, column] != null && _cells[row - 1, column].Visited)
+            if (row > 0 && Cells[row - 1, column] != null && Cells[row - 1, column].Visited)
             {
                 visitedCells++;
             }
 
             // Look one row down (south) if we're the second-to-last row (or less)
-            if (row < (_dimentions.x - 2) && _cells[row + 1, column] != null && _cells[row + 1, column].Visited)
+            if (row < (Dimensions.x - 2) && Cells[row + 1, column] != null && Cells[row + 1, column].Visited)
             {
                 visitedCells++;
             }
 
             // Look one row left (west) if we're column 1 or greater
-            if (column > 0 && _cells[row, column - 1] != null && _cells[row, column - 1].Visited)
+            if (column > 0 && Cells[row, column - 1] != null && Cells[row, column - 1].Visited)
             {
                 visitedCells++;
             }
 
             // Look one row right (east) if we're the second-to-last column (or less)
-            if (column < (_dimentions.y - 2) && _cells[row, column + 1] != null && _cells[row, column + 1].Visited)
+            if (column < (Dimensions.y - 2) && Cells[row, column + 1] != null && Cells[row, column + 1].Visited)
             {
                 visitedCells++;
             }
@@ -189,24 +197,26 @@ namespace Labirynth
 
                 switch (direction)
                 {
-                    case 1 when row > 0 && _cells[row - 1, column] != null && _cells[row - 1, column].Visited:
-                        DestroyWallIfItExists(_cells[row, column].North);
-                        DestroyWallIfItExists(_cells[row - 1, column].South);
+                    case 1 when row > 0 && Cells[row - 1, column] != null && Cells[row - 1, column].Visited:
+                        DestroyWallIfItExists(Cells[row, column].North);
+                        DestroyWallIfItExists(Cells[row - 1, column].South);
                         wallDestroyed = true;
                         break;
-                    case 2 when row < (_dimentions.x - 2) && _cells[row + 1, column] != null && _cells[row + 1, column].Visited:
-                        DestroyWallIfItExists(_cells[row, column].South);
-                        DestroyWallIfItExists(_cells[row + 1, column].North);
+                    case 2 when row < (Dimensions.x - 2) && Cells[row + 1, column] != null &&
+                                Cells[row + 1, column].Visited:
+                        DestroyWallIfItExists(Cells[row, column].South);
+                        DestroyWallIfItExists(Cells[row + 1, column].North);
                         wallDestroyed = true;
                         break;
-                    case 3 when column > 0 && _cells[row, column - 1] != null && _cells[row, column - 1].Visited:
-                        DestroyWallIfItExists(_cells[row, column].West);
-                        DestroyWallIfItExists(_cells[row, column - 1].East);
+                    case 3 when column > 0 && Cells[row, column - 1] != null && Cells[row, column - 1].Visited:
+                        DestroyWallIfItExists(Cells[row, column].West);
+                        DestroyWallIfItExists(Cells[row, column - 1].East);
                         wallDestroyed = true;
                         break;
-                    case 4 when column < (_dimentions.y - 2) && _cells[row, column + 1] != null && _cells[row, column + 1].Visited:
-                        DestroyWallIfItExists(_cells[row, column].East);
-                        DestroyWallIfItExists(_cells[row, column + 1].West);
+                    case 4 when column < (Dimensions.y - 2) && Cells[row, column + 1] != null &&
+                                Cells[row, column + 1].Visited:
+                        DestroyWallIfItExists(Cells[row, column].East);
+                        DestroyWallIfItExists(Cells[row, column + 1].West);
                         wallDestroyed = true;
                         break;
                 }
