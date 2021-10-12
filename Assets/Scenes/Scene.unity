@@ -503,13 +503,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1008449157}
+  - component: {fileID: 1008449158}
   - component: {fileID: 1008449156}
   - component: {fileID: 1008449155}
   - component: {fileID: 1008449154}
   - component: {fileID: 1008449161}
   - component: {fileID: 1008449160}
   - component: {fileID: 1008449159}
-  - component: {fileID: 1008449158}
   - component: {fileID: 1008449163}
   m_Layer: 0
   m_Name: Player
@@ -612,6 +612,10 @@ MonoBehaviour:
   baseLightStrength: 5
   baseViewDistance: 0.1
   baseMovementSpeed: 2
+  skills:
+  - {fileID: 11400000, guid: 94a520faf25900244958b73468233f05, type: 2}
+  - {fileID: 11400000, guid: 17202ae77ef3d5144a534b46e612f7d5, type: 2}
+  - {fileID: 11400000, guid: dcf4acd16bf0eec4e904cd4d4bafbd80, type: 2}
 --- !u!82 &1008449159
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1029,6 +1033,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 903042968}
     m_Modifications:
+    - target: {fileID: 1557091201826867239, guid: c78e8b56c6d2b07a19602963972e55a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1564476071441039204, guid: c78e8b56c6d2b07a19602963972e55a1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1116,6 +1124,10 @@ PrefabInstance:
     - target: {fileID: 1564476071441039205, guid: c78e8b56c6d2b07a19602963972e55a1, type: 3}
       propertyPath: m_Name
       value: GameHud
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253429048467119308, guid: c78e8b56c6d2b07a19602963972e55a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c78e8b56c6d2b07a19602963972e55a1, type: 3}

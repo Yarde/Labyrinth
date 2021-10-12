@@ -1,3 +1,5 @@
+using System.Linq;
+using Skills;
 using UI;
 using UnityEngine;
 
@@ -11,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float baseLightStrength = 5f;
     [SerializeField] private float baseViewDistance = 0.1f;
     [SerializeField] private float baseMovementSpeed = 2f;
+    
+    [SerializeField] private SkillData[] skills;
 
     public int Hearts { get; private set; }
     public int Points { get; private set; }
@@ -33,36 +37,14 @@ public class Player : MonoBehaviour
         SetupSkills();
         ui.Setup(this, _skills);
     }
-
-    // todo change it into serializable object
+    
     private void SetupSkills()
     {
         _skills = new Skill[]
         {
-            new UpgradeLight(this, new Skill.SkillData
-            {
-                SkillName = "Upgrade Light",
-                BonusPerLevel = 1f,
-                Cost = 15,
-                Level = 0,
-                MaxLevel = 8
-            }),
-            new UpgradeVision(this, new Skill.SkillData
-            {
-                SkillName = "Upgrade Vision",
-                BonusPerLevel = 0.02f,
-                Cost = 20,
-                Level = 0,
-                MaxLevel = 8
-            }),
-            new UpgradeMovement(this, new Skill.SkillData
-            {
-                SkillName = "Upgrade Movement",
-                BonusPerLevel = 0.3f,
-                Cost = 10,
-                Level = 0,
-                MaxLevel = 5
-            })
+            new UpgradeLight(this, skills.FirstOrDefault(x => x.name == "UpgradeLight")),
+            new UpgradeVision(this, skills.FirstOrDefault(x => x.name == "UpgradeVision")),
+            new UpgradeMovement(this, skills.FirstOrDefault(x => x.name == "UpgradeMovement"))
         };
     }
 

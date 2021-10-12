@@ -1,4 +1,4 @@
-namespace UI
+namespace Skills
 {
     public class UpgradeVision : Skill
     {
@@ -9,7 +9,7 @@ namespace UI
         public override void Upgrade()
         {
             base.Upgrade();
-            _player.FieldOfViewLevel += Data.BonusPerLevel;
+            _player.FieldOfViewLevel += Data.bonusPerLevel;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Skills;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,13 +19,13 @@ namespace UI
 
         private void Update()
         {
-            if (_skill == null || !_player || _skill.Data.Level == _skill.Data.MaxLevel)
+            if (_skill == null || !_player || _skill.Level == _skill.Data.maxLevel)
             {
                 //not initialized
                 return;
             }
 
-            if (_skill.Data.Cost > _player.Coins)
+            if (_skill.Data.cost > _player.Coins)
             {
                 //not enough coins
                 skillButton.interactable = false;
@@ -41,8 +42,8 @@ namespace UI
             _player = player;
            
             skillImage.sprite = skillSprite;
-            skillLevelText.text = string.Format(SkillTextPattern, skill.Data.Level, _skill.Data.Cost);
-            skillCostText.text = _skill.Data.SkillName;
+            skillLevelText.text = string.Format(SkillTextPattern, skill.Level, _skill.Data.cost);
+            skillCostText.text = _skill.Data.displayName;
             
             skillButton.interactable = false;
             skillButton.onClick.AddListener(_skill.Upgrade);
@@ -51,10 +52,10 @@ namespace UI
 
         private void UpdateSkill()
         {
-            skillLevelText.text = string.Format(SkillTextPattern, _skill.Data.Level, _skill.Data.Cost);
-            skillCostText.text = _skill.Data.SkillName;
+            skillLevelText.text = string.Format(SkillTextPattern, _skill.Level, _skill.Data.cost);
+            skillCostText.text = _skill.Data.displayName;
 
-            if (_skill.Data.Level == _skill.Data.MaxLevel)
+            if (_skill.Level == _skill.Data.maxLevel)
             {
                 skillButton.interactable = false;
                 // todo block button and change sprite color to gold or something like that

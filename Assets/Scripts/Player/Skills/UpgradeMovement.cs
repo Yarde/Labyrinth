@@ -1,4 +1,4 @@
-namespace UI
+namespace Skills
 {
     public class UpgradeMovement : Skill
     {
@@ -9,7 +9,7 @@ namespace UI
         public override void Upgrade()
         {
             base.Upgrade();
-            _player.MovementSpeed += Data.BonusPerLevel;
+            _player.MovementSpeed += Data.bonusPerLevel;
         }
     }
 }

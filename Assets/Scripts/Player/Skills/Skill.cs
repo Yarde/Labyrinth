@@ -1,20 +1,12 @@
 ﻿using UnityEngine;
 
-namespace UI
+namespace Skills
 {
     public abstract class Skill
     {
-        public struct SkillData
-        {
-            public string SkillName;
-            public int MaxLevel;
-            public float BonusPerLevel;
-            public int Cost;
-            public int Level;
-        }
-        
         protected Player _player;
         public SkillData Data;
+        public int Level;
 
         protected Skill(Player player, SkillData data)
         {
@@ -24,21 +16,21 @@ namespace UI
         
         public virtual void Upgrade()
         {
-            if (_player.Coins < Data.Cost)
+            if (_player.Coins < Data.cost)
             {
-                Debug.Log($"Not enough coins, player has {_player.Coins} but {Data.Cost} is required for skill {Data.SkillName}");
+                Debug.Log($"Not enough coins, player has {_player.Coins} but {Data.cost} is required for skill {Data.name}");
                 return;
             }
             
-            if (Data.Level == Data.MaxLevel)
+            if (Level == Data.maxLevel)
             {
-                Debug.Log($"Already max level {Data.MaxLevel} for skill {Data.SkillName}");
+                Debug.Log($"Already max level {Data.maxLevel} for skill {Data.name}");
                 return;
             }
 
-            _player.Coins -= Data.Cost;
-            Data.Cost = (int) (Data.Cost + Mathf.Sqrt(Data.Cost));
-            Data.Level++;
+            _player.Coins -= Data.cost;
+            Data.cost = (int) (Data.cost + Mathf.Sqrt(Data.cost));
+            Level++;
         }
     }
 }

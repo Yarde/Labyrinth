@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/SkillData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/SkillData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skills.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skills/UpgradeLight.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skills/UpgradeLight.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skills/UpgradeMovement.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skills/UpgradeMovement.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skills/UpgradeVision.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skills/UpgradeVision.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeVision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeVision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,18 +66,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameHud.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Timer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Skill.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeVision.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Timer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ExperienceBar.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeVision.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ExperienceBar.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/SkillData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />
@@ -104,10 +120,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17004">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17004" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -129,7 +145,8 @@
       <workItem from="1633370724112" duration="4072000" />
       <workItem from="1633933052208" duration="4176000" />
       <workItem from="1633940831553" duration="4687000" />
-      <workItem from="1633961768686" duration="5777000" />
+      <workItem from="1633961768686" duration="6366000" />
+      <workItem from="1634056348532" duration="968000" />
     </task>
     <servers />
   </component>
@@ -162,10 +179,10 @@
           <line>10</line>
           <properties documentPath="E:\unity\Labirynth\Assets\Scripts\Player\Skills\UpgradeLight.cs" initialLine="10" containingFunctionPresentation="method 'Upgrade'">
             <startOffsets>
-              <option value="222" />
+              <option value="226" />
             </startOffsets>
             <endOffsets>
-              <option value="237" />
+              <option value="241" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />

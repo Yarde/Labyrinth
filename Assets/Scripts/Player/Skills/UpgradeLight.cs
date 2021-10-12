@@ -1,4 +1,4 @@
-namespace UI
+namespace Skills
 {
     class UpgradeLight : Skill
     {
@@ -9,7 +9,7 @@ namespace UI
         public override void Upgrade()
         {
             base.Upgrade();
-            _player.LightLevel += Data.BonusPerLevel;
+            _player.LightLevel += Data.bonusPerLevel;
         }
     }
 }
