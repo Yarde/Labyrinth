@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        // todo get dimension of maze somehow
+        transform.position = new Vector3(10f, 0f, 10f);
+        
         LightLevel = baseLightStrength;
         FieldOfViewLevel = baseViewDistance;
         MovementSpeed = baseMovementSpeed;
@@ -53,30 +56,17 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.CompareTag("QuestionTrigger"))
         {
-            OpenQuestion(collision);
+            OpenQuestion(collision.collider);
         }
     }
 
-    private async UniTask OpenQuestion(Collision collision)
+    private async UniTask OpenQuestion(Component component)
     {
-        Debug.Log($"Collision entered with {collision.collider.name}");
+        Debug.Log($"Collision entered with {component.name}");
         await ui.OpenQuestion();
-        Destroy(collision.collider.gameObject);
-    }
+        Destroy(component.gameObject);
 
-    #region Debug
-    private void Update()
-    {
-        if (Time.timeScale == 0)
-        {
-            return;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Coins += 11;
-            Experience += 12;
-        }
+        Coins += 100;
+        Experience += 200;
     }
-    #endregion
 }

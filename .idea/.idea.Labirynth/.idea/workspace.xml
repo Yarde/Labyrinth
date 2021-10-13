@@ -2,33 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/Treasure.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/Treasure.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/QuestionScreenBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/QuestionScreenBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiceQuestionScreen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiceQuestionScreen.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/GenerationAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/GenerationAlgorithm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/GenerationAlgorithm.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/GenerationAlgorithm.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/HuntAndKillAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/HuntAndKillAlgorithm.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Cell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Timer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiceQuestionScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiceQuestionScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +46,6 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/ProceduralNumberGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/TransformExtensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Vector3Extensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" />
@@ -76,11 +60,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Skill.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ExperienceBar.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeVision.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Cell.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/GenerationAlgorithm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/SkillSettings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/SkillData.cs" />
@@ -88,9 +70,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Utils.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/HuntAndKillAlgorithm.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/GenerationAlgorithm.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Timer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" />
@@ -99,11 +79,16 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/QuestionScreenBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/QuestionScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiseQuestionScreen.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiceQuestionScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Cell.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiceQuestionScreen.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />
@@ -173,7 +158,7 @@
       <workItem from="1633961768686" duration="6366000" />
       <workItem from="1634056348532" duration="9618000" />
       <workItem from="1634131318213" duration="2312000" />
-      <workItem from="1634140561770" duration="3506000" />
+      <workItem from="1634140561770" duration="6636000" />
     </task>
     <servers />
   </component>
@@ -197,24 +182,5 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs</url>
-          <line>10</line>
-          <properties documentPath="E:\unity\Labirynth\Assets\Scripts\Player\Skills\UpgradeLight.cs" initialLine="10" containingFunctionPresentation="method 'Upgrade'">
-            <startOffsets>
-              <option value="226" />
-            </startOffsets>
-            <endOffsets>
-              <option value="241" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

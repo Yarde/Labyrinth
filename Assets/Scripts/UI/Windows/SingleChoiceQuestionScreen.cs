@@ -16,6 +16,7 @@ namespace UI.Windows
         public override async UniTask DisplayQuestion()
         {
             startTime = Time.realtimeSinceStartup;
+            finished = false;
             confirmButton.onClick.AddListener(ConfirmChoice);
 
             await UniTask.WaitUntil(() => finished);

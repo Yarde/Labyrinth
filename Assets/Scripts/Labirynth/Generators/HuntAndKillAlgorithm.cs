@@ -20,7 +20,7 @@ namespace Labirynth.Generators
             HuntAndKill();
 
             // Clears the start area
-            var size = new Vector2Int(Dimensions.x / 10, Dimensions.y / 10);
+            var size = new Vector2Int(Dimensions.x / 20, Dimensions.y / 20);
             GenerateStartingArea(size);
         }
 
@@ -127,9 +127,9 @@ namespace Labirynth.Generators
 
         private void GenerateStartingArea(Vector2Int size)
         {
-            for (var i = Dimensions.x / 2 - size.x; i < Dimensions.x / 2 + size.x; i++)
+            for (var i = Dimensions.x / 2 - size.x; i <= Dimensions.x / 2 + size.x; i++)
             {
-                for (var j = Dimensions.y / 2 - size.y; j < Dimensions.y / 2 + size.y; j++)
+                for (var j = Dimensions.y / 2 - size.y; j <= Dimensions.y / 2 + size.y; j++)
                 {
                     Cells[i, j].North.DestroyIfExist();
                     Cells[i, j].South.DestroyIfExist();
