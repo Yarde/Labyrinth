@@ -2,7 +2,7 @@
 using UnityEngine;
 using Utils;
 
-namespace Labirynth
+namespace Labirynth.Generators
 {
     public class HuntAndKillAlgorithm : GenerationAlgorithm
     { 
@@ -15,7 +15,7 @@ namespace Labirynth
         {
         }
 
-        public override void CreateMaze()
+        public override void CreateLabirynth()
         {
             HuntAndKill();
 

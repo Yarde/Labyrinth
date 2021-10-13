@@ -1,4 +1,5 @@
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Skills;
 using UI;
 using UnityEngine;
@@ -47,13 +48,35 @@ public class Player : MonoBehaviour
             new UpgradeMovement(this, skills.FirstOrDefault(x => x.skillName == "UpgradeMovement"))
         };
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("QuestionTrigger"))
+        {
+            OpenQuestion(collision);
+        }
+    }
 
+    private async UniTask OpenQuestion(Collision collision)
+    {
+        Debug.Log($"Collision entered with {collision.collider.name}");
+        await ui.OpenQuestion();
+        Destroy(collision.collider.gameObject);
+    }
+
+    #region Debug
     private void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Coins += 11;
             Experience += 12;
         }
     }
+    #endregion
 }

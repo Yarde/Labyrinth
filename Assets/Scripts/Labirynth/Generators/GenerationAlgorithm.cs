@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Labirynth
+namespace Labirynth.Generators
 {
     public abstract class GenerationAlgorithm
     {
@@ -13,6 +13,6 @@ namespace Labirynth
             Dimensions = dimensions;
         }
 
-        public abstract void CreateMaze();
+        public abstract void CreateLabirynth();
     }
 }

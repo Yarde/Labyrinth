@@ -1,3 +1,4 @@
+using Labirynth.Generators;
 using UnityEngine;
 
 namespace Labirynth
@@ -16,7 +17,9 @@ namespace Labirynth
             InitializeLabirynth();
 
             var generationAlgorithm = new HuntAndKillAlgorithm(_cells, dimensions);
-            generationAlgorithm.CreateMaze();
+            generationAlgorithm.CreateLabirynth();
+            
+            // todo add question triggers
         }
 
         private void InitializeLabirynth()

@@ -8,12 +8,29 @@ namespace UI
         [SerializeField] private TextMeshProUGUI timeText;
         [SerializeField] private string timeFormat = "{0}:{1}";
 
-        private float startTime;
+        private bool isRunning;
+        private float lastTime;
+        private float timePassed;
 
         private void Update()
         {
-            var time = Time.realtimeSinceStartup - startTime;
-            timeText.text = string.Format(timeFormat, GetMinute(time), GetSecond(time));
+            if (isRunning)
+            {
+                timePassed += Time.realtimeSinceStartup - lastTime;
+                lastTime = Time.realtimeSinceStartup;
+                timeText.text = string.Format(timeFormat, GetMinute(timePassed), GetSecond(timePassed));
+            }
+        }
+
+        public void StartTimer()
+        {
+            isRunning = true;
+            lastTime = Time.realtimeSinceStartup;
+        }
+        
+        public void StopTimer()
+        {
+            isRunning = false;
         }
 
         private string GetMinute(float time)
@@ -31,11 +48,6 @@ namespace UI
         {
             var seconds = (int) time % 60;
             return seconds > 9 ? seconds.ToString() : $"0{seconds}";
-        }
-
-        public void Setup()
-        {
-            startTime = Time.realtimeSinceStartup;
         }
     }
 }

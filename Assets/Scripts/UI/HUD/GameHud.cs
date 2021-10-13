@@ -20,7 +20,20 @@ namespace UI
             skillPanel.Setup(player, skills);
             healthBar.SetupBar(player);
             experienceBar.SetupBar(player);
-            timer.Setup();
+            
+            Resume();
+        }
+        
+        public void Resume()
+        {
+            Time.timeScale = 1;
+            timer.StartTimer();
+        }
+
+        public void Pause()
+        {
+            Time.timeScale = 0;
+            timer.StopTimer();
         }
 
         private void Update()

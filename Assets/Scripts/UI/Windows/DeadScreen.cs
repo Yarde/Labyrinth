@@ -1,6 +1,6 @@
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.Windows
 {
     public class DeadScreen : WindowState
     {
