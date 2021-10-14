@@ -1,5 +1,6 @@
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using Labirynth.Questions;
 using Skills;
 using UI;
 using UnityEngine;
@@ -57,16 +58,18 @@ public class Player : MonoBehaviour
         if (collision.collider.CompareTag("QuestionTrigger"))
         {
 #pragma warning disable 4014
-            OpenQuestion(collision.collider);
+            var trigger = collision.collider.GetComponent<QuestionTrigger>();
+            OpenQuestion(trigger);
 #pragma warning restore 4014
         }
     }
 
-    private async UniTask OpenQuestion(Component component)
+    private async UniTask OpenQuestion(QuestionTrigger trigger)
     {
-        Debug.Log($"Collision entered with {component.name}");
+        Debug.Log($"Collision entered with {trigger.name}");
         await ui.OpenQuestion();
-        Destroy(component.gameObject);
+
+        trigger.Destroy();
 
         Coins += 100;
         Experience += 200;

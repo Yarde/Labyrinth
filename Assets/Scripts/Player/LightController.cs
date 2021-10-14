@@ -14,7 +14,7 @@ public class LightController : MonoBehaviour {
 
         var destination = player.transform.position + offset;
         var smoothed = Vector3.Lerp(transform.position, destination, smoothSpeed * Time.deltaTime);
-        transform.position = smoothed.WithY(smoothed.y + player.FieldOfViewLevel);
+        transform.position = smoothed.WithY(smoothed.y + player.LightLevel * 0.01f);
     }
 
 }

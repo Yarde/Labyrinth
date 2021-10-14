@@ -28,7 +28,7 @@ namespace Labirynth
             // _dimensions = Reply.dimensions;
             // _seed = Reply.seed;
             // _questions = Reply.questions;
-            //_seed = Random.Range(0, 1000000);
+            _seed = Random.Range(0, 1000000);
             
             ProceduralNumberGenerator.Initialize(_seed);
             
