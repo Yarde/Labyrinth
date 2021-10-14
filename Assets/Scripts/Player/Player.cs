@@ -56,7 +56,9 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.CompareTag("QuestionTrigger"))
         {
+#pragma warning disable 4014
             OpenQuestion(collision.collider);
+#pragma warning restore 4014
         }
     }
 

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Labirynth.Generators;
 using Labirynth.Questions;
 using UnityEngine;
@@ -26,7 +28,7 @@ namespace Labirynth
             // _dimensions = Reply.dimensions;
             // _seed = Reply.seed;
             // _questions = Reply.questions;
-            _seed = Random.Range(0, 1000000);
+            //_seed = Random.Range(0, 1000000);
             
             ProceduralNumberGenerator.Initialize(_seed);
             
@@ -35,28 +37,59 @@ namespace Labirynth
             var generationAlgorithm = new HuntAndKillAlgorithm(_cells, _dimensions);
             generationAlgorithm.CreateLabirynth();
             
+            AddQuestionTriggers();
+        }
+
+        private void AddQuestionTriggers()
+        {
             // todo add question triggers
+            var cellList = LabirynthToList();
+            
+            // Debug.Log($"There is {cellList.FindAll(x => x.DeadEnd).Count} dead ends");
+            // var s = "";
+            // foreach (var cell in cellList)
+            // {
+            //     s = $"{s}{cell.Floor.name}, {cell.DistanceFromCenter}\n";
+            // }
+            // Debug.Log($"There are distances to all cells:\n{s}");
+            
+            var deadEnds = cellList.Where(x => x.DeadEnd).ToList();
+            deadEnds.Shuffle();
+
+            if (deadEnds.Count < _questions)
+            {
+                Debug.LogError($"More questions than dead ends {deadEnds.Count} < {_questions}");
+            }
+
             for (var i = 0; i < _questions; i++)
             {
-                AddQuestion(i);
+                AddTrigger(deadEnds, i);
             }
         }
 
-        private void AddQuestion(int i)
+        private void AddTrigger(List<Cell> deadEnds, int i)
         {
-            while (true)
+            deadEnds[i].Occupied = true;
+            var trigger = Instantiate(questionTrigger, triggersSpawnTransform);
+            trigger.transform.position = deadEnds[i].Floor.transform.position;
+            trigger.name = $"{questionTrigger.name} - {i}";
+        }
+
+        private List<Cell> LabirynthToList()
+        {
+            var labirynthToList = new List<Cell>();
+            for (var i = 0; i < _dimensions.x; i++)
             {
-                var randomCellCoordinates = ProceduralNumberGenerator.GetRandomCell(_dimensions);
-                var randomCell = _cells[randomCellCoordinates.x, randomCellCoordinates.y];
-                if (randomCell is {Occupied: false})
+                for (var j = 0; j < _dimensions.y; j++)
                 {
-                    randomCell.Occupied = true;
-                    var trigger = Instantiate(questionTrigger, triggersSpawnTransform);
-                    trigger.transform.position = randomCell.Floor.transform.position;
-                    trigger.name = $"{questionTrigger.name} - {i}";
-                    break;
+                    if (_cells[i, j] != null)
+                    {
+                        labirynthToList.Add(_cells[i, j]);
+                    }
                 }
             }
+
+            return labirynthToList;
         }
 
         private void InitializeLabirynth()

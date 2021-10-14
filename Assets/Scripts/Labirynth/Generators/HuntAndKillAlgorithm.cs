@@ -30,6 +30,7 @@ namespace Labirynth.Generators
             _currentColumn = Dimensions.y / 2;
 
             Cells[_currentRow, _currentColumn].Visited = true;
+            Cells[_currentRow, _currentColumn].DistanceFromCenter = 0;
 
             while (!_courseComplete)
             {
@@ -44,10 +45,14 @@ namespace Labirynth.Generators
             {
                 KillNextCell();
             }
+
+            Cells[_currentRow, _currentColumn].DeadEnd = true;
         }
 
         private void KillNextCell()
         {
+            var previousCellDistance = Cells[_currentRow, _currentColumn].DistanceFromCenter;
+            
             var direction = ProceduralNumberGenerator.GetNextNumber();
             switch (direction)
             {
@@ -70,6 +75,7 @@ namespace Labirynth.Generators
             }
 
             Cells[_currentRow, _currentColumn].Visited = true;
+            Cells[_currentRow, _currentColumn].DistanceFromCenter = previousCellDistance + 1;
         }
 
         private void Hunt()
