@@ -2,29 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Key_gold_mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Key_gold_mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Key_iron_mat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Key_iron_mat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/key.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/key.obj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/Key.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/Key.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/KeyY.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/KeyY.tga.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/key.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/key.psd.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/keyY_specular.tga" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/keyY_specular.tga.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Key_gold_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Key_gold_mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/Key.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/Key.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,18 +80,18 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressElement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameData/GeneratorData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameData/ObjectiveData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
     </changedPaths>
   </component>
@@ -148,10 +134,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12244">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="12244" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -178,7 +164,7 @@
       <workItem from="1634131318213" duration="2312000" />
       <workItem from="1634140561770" duration="7316000" />
       <workItem from="1634221049285" duration="8426000" />
-      <workItem from="1634461507582" duration="7288000" />
+      <workItem from="1634461507582" duration="8690000" />
     </task>
     <servers />
   </component>

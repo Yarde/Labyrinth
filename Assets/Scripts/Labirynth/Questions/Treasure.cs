@@ -12,6 +12,7 @@ namespace Labirynth.Questions
 
         public override async UniTask Destroy()
         {
+            Collected = true;
             idleBox.SetActive(false);
             destroyBox.SetActive(true);
             

@@ -7,7 +7,7 @@ namespace Labirynth.Questions
 
         public override async UniTask Destroy()
         {
-
+            Collected = true;
             Destroy(gameObject);
         }
     }

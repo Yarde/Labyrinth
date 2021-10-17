@@ -30,10 +30,9 @@ public class Player : MonoBehaviour
 
     private Skill[] _skills;
 
-    public void Setup(Dictionary<Type, ObjectiveData> objectives)
+    public void Setup(Dictionary<Type, ObjectiveData> objectives, Vector2Int dimensions)
     {
-        // todo get dimension of maze somehow
-        transform.position = new Vector3(10f, 0f, 10f);
+        transform.position = new Vector3(dimensions.x/2f, 0f, dimensions.y/2f);
 
         Objectives = objectives;
         
@@ -50,7 +49,10 @@ public class Player : MonoBehaviour
         if (collision.collider.CompareTag("QuestionTrigger"))
         {
             var trigger = collision.collider.GetComponent<QuestionTrigger>();
-            await OpenQuestion(trigger);
+            if (!trigger.Collected)
+            {
+                await OpenQuestion(trigger);
+            }
         }
     }
 

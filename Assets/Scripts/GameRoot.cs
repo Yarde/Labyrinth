@@ -29,7 +29,7 @@ public class GameRoot : MonoBehaviour
         SetupObjectives();
         SetupGeneratorData();
         labirynth.Setup(_generatorData);
-        player.Setup(_objectives);
+        player.Setup(_objectives, _generatorData.Dimensions);
         
         SetupSkills();
         
