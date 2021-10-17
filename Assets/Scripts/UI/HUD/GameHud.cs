@@ -11,6 +11,7 @@ namespace UI
         [SerializeField] private TextMeshProUGUI coinCounter;
         [SerializeField] private Timer timer;
         [SerializeField] private SkillPanel skillPanel;
+        [SerializeField] private ProgressPanel progressPanel;
 
         private Player _player;
         
@@ -20,6 +21,7 @@ namespace UI
             skillPanel.Setup(player, skills);
             healthBar.SetupBar(player);
             experienceBar.SetupBar(player);
+            progressPanel.Setup(player);
             
             Resume();
         }

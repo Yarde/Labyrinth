@@ -2,92 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/BoxOfPandora.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/BoxOfPandora.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Animations/BoxCrashAC.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Animations/BoxCrashAC.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Animations/BoxIdleAC.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Animations/BoxIdleAC.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Animations/BoxOfPandora_Idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Animations/BoxOfPandora_Idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Animations/ItemsAC.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Animations/ItemsAC.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/DemoScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/DemoScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/DemoSceneSettings.lighting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/DemoSceneSettings.lighting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Bottle_blue.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Bottle_blue.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Bottle_green.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Bottle_green.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Bottle_red.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Bottle_red.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Box_Of_Pandora.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Box_Of_Pandora.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Coin.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Coin.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Dust_particles.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Dust_particles.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Glow_particles.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Glow_particles.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Stars_particles.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Materials/Stars_particles.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Bottles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Bottles/bottle_blue.FBX" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Bottles/bottle_blue.FBX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Bottles/bottle_green.FBX" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Bottles/bottle_green.FBX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Bottles/bottle_red.FBX" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Bottles/bottle_red.FBX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Box.FBX" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Box.FBX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Coin.FBX" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Models/Coin.FBX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Prefabs/Bottle_Endurance.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Prefabs/Bottle_Endurance.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Prefabs/Bottle_Health.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Prefabs/Bottle_Health.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Prefabs/Bottle_Mana.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Prefabs/Bottle_Mana.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Prefabs/Coin.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Prefabs/Coin.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottle_blue_diff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottle_blue_diff.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottle_green_diff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottle_green_diff.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottle_red_diff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottle_red_diff.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottles_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottles_normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottles_spec.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Bottles_spec.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/BoxOfPandora_diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/BoxOfPandora_diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Coin_diffuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Coin_diffuse.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Coin_normals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Coin_normals.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Dust_particles.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/Dust_particles.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/sprite_radiance.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/sprite_radiance.tif.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RPG Pack/Textures/star.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Objective.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Objective.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameData/GeneratorData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameData/GeneratorData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameData/ObjectiveData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameData/ObjectiveData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/treasure.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/treasure.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/Treasure.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/QuestionTriggers/Treasure.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/GameHud.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/GameHud.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,18 +88,24 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/QuestionScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiseQuestionScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiceQuestionScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Cell.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressElement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameData/GeneratorData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameData/ObjectiveData.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />
@@ -204,10 +147,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26708">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="26708" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -233,7 +176,8 @@
       <workItem from="1634056348532" duration="9618000" />
       <workItem from="1634131318213" duration="2312000" />
       <workItem from="1634140561770" duration="7316000" />
-      <workItem from="1634221049285" duration="7833000" />
+      <workItem from="1634221049285" duration="8426000" />
+      <workItem from="1634461507582" duration="4809000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using GameData;
 using Labirynth.Generators;
 using Labirynth.Questions;
 using UnityEngine;
@@ -14,21 +16,19 @@ namespace Labirynth
         
         [SerializeField] private GameObject wallPrefab;
         [SerializeField] private GameObject floorPrefab;
-        [SerializeField] private QuestionTrigger questionTrigger;
         [SerializeField] private float size = 1;
 
         private Cell[,] _cells;
-        private Vector2Int _dimensions = new Vector2Int(20, 20);
-        private int _questions = 20;
-        private int _seed = 42;
+        private Vector2Int _dimensions;
+        private int _seed;
+        private Dictionary<Type, ObjectiveData> _objectives;
 
-        private void Start()
+        public void Setup(GeneratorData generatorData)
         {
             // todo get labirynth data from backend, size, questions, goal and so on
-            // _dimensions = Reply.dimensions;
-            // _seed = Reply.seed;
-            // _questions = Reply.questions;
-            _seed = Random.Range(0, 1000000);
+            _dimensions = generatorData.Dimensions;
+            _objectives = generatorData.Objectives;
+            _seed = generatorData.Seed;
             
             ProceduralNumberGenerator.Initialize(_seed);
             
@@ -56,23 +56,25 @@ namespace Labirynth
             var deadEnds = cellList.Where(x => x.DeadEnd).ToList();
             deadEnds.Shuffle();
 
-            if (deadEnds.Count < _questions)
+            var treasures = _objectives[typeof(Treasure)];
+
+            if (deadEnds.Count < treasures.Total)
             {
-                Debug.LogError($"More questions than dead ends {deadEnds.Count} < {_questions}");
+                Debug.LogError($"More treasure questions than dead ends {deadEnds.Count} < {treasures.Total}");
             }
 
-            for (var i = 0; i < _questions; i++)
+            for (var i = 0; i < treasures.Total; i++)
             {
-                AddTrigger(deadEnds, i);
+                AddTrigger(deadEnds, i, treasures.prefab);
             }
         }
 
-        private void AddTrigger(List<Cell> deadEnds, int i)
+        private void AddTrigger(List<Cell> deadEnds, int i, QuestionTrigger treasuresPrefab)
         {
             deadEnds[i].Occupied = true;
-            var trigger = Instantiate(questionTrigger, triggersSpawnTransform);
+            var trigger = Instantiate(treasuresPrefab, triggersSpawnTransform);
             trigger.transform.position = deadEnds[i].Floor.transform.position;
-            trigger.name = $"{questionTrigger.name} - {i}";
+            trigger.name = $"{treasuresPrefab.name} - {i}";
         }
 
         private List<Cell> LabirynthToList()

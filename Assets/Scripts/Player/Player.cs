@@ -1,5 +1,7 @@
-using System.Linq;
+using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using GameData;
 using Labirynth.Questions;
 using Skills;
 using UI;
@@ -15,8 +17,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float baseLightStrength = 5f;
     [SerializeField] private float baseViewDistance = 0.1f;
     [SerializeField] private float baseMovementSpeed = 2f;
-    
-    [SerializeField] private SkillData[] skills;
 
     public int Hearts { get; private set; }
     public int Points { get; private set; }
@@ -26,41 +26,31 @@ public class Player : MonoBehaviour
     public float LightLevel { get; set; }
     public float FieldOfViewLevel { get; set; }
     public float MovementSpeed { get; set; }
-    
+    public Dictionary<Type, ObjectiveData> Objectives { get; set; }
+
     private Skill[] _skills;
 
-    private void Start()
+    public void Setup(Dictionary<Type, ObjectiveData> objectives)
     {
         // todo get dimension of maze somehow
         transform.position = new Vector3(10f, 0f, 10f);
+
+        Objectives = objectives;
         
         LightLevel = baseLightStrength;
         FieldOfViewLevel = baseViewDistance;
         MovementSpeed = baseMovementSpeed;
         Experience = 0;
         Hearts = 5;
-        SetupSkills();
-        ui.Setup(this, _skills);
     }
-    
-    private void SetupSkills()
+
+    private async void OnCollisionEnter(Collision collision)
     {
-        _skills = new Skill[]
-        {
-            new UpgradeLight(this, skills.FirstOrDefault(x => x.skillName == "UpgradeLight")),
-            new UpgradeVision(this, skills.FirstOrDefault(x => x.skillName == "UpgradeVision")),
-            new UpgradeMovement(this, skills.FirstOrDefault(x => x.skillName == "UpgradeMovement"))
-        };
-    }
-    
-    private void OnCollisionEnter(Collision collision)
-    {
+        // todo you can collide with already answered question, fix it
         if (collision.collider.CompareTag("QuestionTrigger"))
         {
-#pragma warning disable 4014
             var trigger = collision.collider.GetComponent<QuestionTrigger>();
-            OpenQuestion(trigger);
-#pragma warning restore 4014
+            await OpenQuestion(trigger);
         }
     }
 
@@ -69,9 +59,11 @@ public class Player : MonoBehaviour
         Debug.Log($"Collision entered with {trigger.name}");
         await ui.OpenQuestion();
 
-        trigger.Destroy();
+        Objectives[trigger.GetType()].Collected++;
 
         Coins += 100;
         Experience += 200;
+
+        trigger.Destroy();
     }
 }
