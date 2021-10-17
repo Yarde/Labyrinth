@@ -52,29 +52,49 @@ namespace Labirynth
             //     s = $"{s}{cell.Floor.name}, {cell.DistanceFromCenter}\n";
             // }
             // Debug.Log($"There are distances to all cells:\n{s}");
-            
-            var deadEnds = cellList.Where(x => x.DeadEnd).ToList();
+            var deadEnds = cellList.Where(x => x.DeadEnd).Where(y => y.DistanceFromCenter > 10).ToList();
             deadEnds.Shuffle();
-
-            var treasures = _objectives[typeof(Treasure)];
-
-            if (deadEnds.Count < treasures.Total)
-            {
-                Debug.LogError($"More treasure questions than dead ends {deadEnds.Count} < {treasures.Total}");
-            }
-
-            for (var i = 0; i < treasures.Total; i++)
-            {
-                AddTrigger(deadEnds, i, treasures.prefab);
-            }
+            
+            var i = AddKeyTriggers(cellList, deadEnds);
+            AddTreasureTriggers(cellList, deadEnds, i);
         }
 
-        private void AddTrigger(List<Cell> deadEnds, int i, QuestionTrigger treasuresPrefab)
+        private int AddKeyTriggers(List<Cell> cellList, List<Cell> deadEnds)
         {
-            deadEnds[i].Occupied = true;
-            var trigger = Instantiate(treasuresPrefab, triggersSpawnTransform);
-            trigger.transform.position = deadEnds[i].Floor.transform.position;
-            trigger.name = $"{treasuresPrefab.name} - {i}";
+            var key = _objectives[typeof(Key)];
+
+            if (deadEnds.Count < key.Total)
+            {
+                Debug.LogError($"More key questions than dead ends {deadEnds.Count} < {key.Total}");
+            }
+
+            for (var i = 0; i < key.Total; i++)
+            {
+                deadEnds[i].Occupied = true;
+                var trigger = Instantiate(key.prefab, triggersSpawnTransform);
+                trigger.transform.position = deadEnds[i].Floor.transform.position;
+                trigger.name = $"{key.prefab.name} - {i}";
+            }
+
+            return key.Total;
+        }
+        
+        private void AddTreasureTriggers(List<Cell> cellList, List<Cell> deadEnds, int startIndex)
+        {
+            var treasure = _objectives[typeof(Treasure)];
+
+            if (deadEnds.Count < treasure.Total + startIndex)
+            {
+                Debug.LogError($"More treasure questions than dead ends {deadEnds.Count} < {treasure.Total + startIndex}");
+            }
+
+            for (var i = startIndex; i < treasure.Total; i++)
+            {
+                deadEnds[i].Occupied = true;
+                var trigger = Instantiate(treasure.prefab, triggersSpawnTransform);
+                trigger.transform.position = deadEnds[i].Floor.transform.position;
+                trigger.name = $"{treasure.prefab.name} - {i}";
+            }
         }
 
         private List<Cell> LabirynthToList()

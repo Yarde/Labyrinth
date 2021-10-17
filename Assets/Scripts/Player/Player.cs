@@ -64,6 +64,6 @@ public class Player : MonoBehaviour
         Coins += 100;
         Experience += 200;
 
-        trigger.Destroy();
+        await trigger.Destroy();
     }
 }

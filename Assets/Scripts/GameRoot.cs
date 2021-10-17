@@ -16,8 +16,9 @@ public class GameRoot : MonoBehaviour
     [SerializeField] private UserInterface ui;
     [SerializeField] private SkillData[] skills;
 
-    [Header("Object to instantiate")] [SerializeField]
-    private QuestionTrigger treasurePrefab;
+    [Header("Object to instantiate")] 
+    [SerializeField] private QuestionTrigger treasurePrefab;
+    [SerializeField] private QuestionTrigger keyPrefab;
 
     private Dictionary<Type, ObjectiveData> _objectives;
     private GeneratorData _generatorData;
@@ -49,7 +50,8 @@ public class GameRoot : MonoBehaviour
     {
         _objectives = new Dictionary<Type, ObjectiveData>
         {
-            {typeof(Treasure), new ObjectiveData {Collected = 0, Total = 20, prefab = treasurePrefab}}
+            {typeof(Treasure), new ObjectiveData {Collected = 0, Total = 10, prefab = treasurePrefab}},
+            {typeof(Key), new ObjectiveData {Collected = 0, Total = 10, prefab = keyPrefab}}
         };
     }
 
