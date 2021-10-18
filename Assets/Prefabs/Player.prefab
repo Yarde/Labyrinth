@@ -55,10 +55,6 @@ MonoBehaviour:
   baseLightStrength: 5
   baseViewDistance: 0.1
   baseMovementSpeed: 2
-  skills:
-  - {fileID: 11400000, guid: 94a520faf25900244958b73468233f05, type: 2}
-  - {fileID: 11400000, guid: 17202ae77ef3d5144a534b46e612f7d5, type: 2}
-  - {fileID: 11400000, guid: dcf4acd16bf0eec4e904cd4d4bafbd80, type: 2}
 --- !u!114 &4908335023367846165
 MonoBehaviour:
   m_ObjectHideFlags: 0
