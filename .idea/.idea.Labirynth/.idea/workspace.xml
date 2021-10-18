@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/TMProFontReplacer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/TMProFontReplacer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/FloorMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/FloorMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/FloorVisitedMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/FloorVisitedMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Floor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Floor.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/WallMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/WallMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LabirynthElements/Floor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LabirynthElements/Floor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +46,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/TransformExtensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Vector3Extensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/DeadScreen.cs" />
@@ -81,13 +89,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameData/ObjectiveData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Editor/TMProFontReplacer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Floor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />

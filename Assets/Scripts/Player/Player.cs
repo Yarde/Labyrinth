@@ -54,6 +54,12 @@ public class Player : MonoBehaviour
                 await OpenQuestion(trigger);
             }
         }
+
+        if (collision.collider.CompareTag("Floor"))
+        {
+            var trigger = collision.collider.GetComponent<Floor>();
+            trigger.MarkVisited();
+        }
     }
 
     private async UniTask OpenQuestion(QuestionTrigger trigger)

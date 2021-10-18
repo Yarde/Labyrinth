@@ -48,7 +48,7 @@ namespace Labirynth
             var deadEnds = cellList.Where(x => x.DeadEnd && !x.Occupied && x.DistanceFromCenter > 20).ToList();
             deadEnds.Shuffle();
             
-            var extraPoints = cellList.Where(x => !x.Occupied && x.DistanceFromCenter > 20).ToList();
+            var extraPoints = cellList.Where(x => !x.DeadEnd && !x.Occupied && x.DistanceFromCenter > 30).ToList();
             extraPoints.Shuffle();
 
             var possibleSpawnPoints = deadEnds.Concat(extraPoints).ToList();
