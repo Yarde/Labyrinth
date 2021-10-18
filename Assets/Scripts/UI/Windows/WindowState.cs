@@ -8,14 +8,18 @@ namespace UI
         public abstract void OnEnter();
         public abstract void OnExit();
         
+        public bool IsOnTop { get; set; }
+        
         protected void Pause()
         {
+            IsOnTop = true;
             gameObject.SetActive(true);
             Time.timeScale = 0;
         }
         
         protected void Resume()
         {
+            IsOnTop = false;
             gameObject.SetActive(false);
             Time.timeScale = 1;
         }
@@ -29,7 +33,7 @@ namespace UI
         protected void MainMenu()
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Scene");
         }
     }
 }

@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Menu;
 using Skills;
 using UI.Windows;
 using UnityEngine;
@@ -7,44 +8,92 @@ namespace UI
 {
     public class UserInterface : MonoBehaviour
     {
-        [SerializeField] private GameHud gameHud;
-        [SerializeField] private QuestionScreenBase questionScreen;
-        
-        [SerializeField] private WindowState deadScreen;
-        [SerializeField] private WindowState pauseScreen;
+        [Header("Windows Prefabs")]
+        [SerializeField] private GameHud gameHudPrefab;
+        [SerializeField] private MenuWindow menuPrefab;
+        [SerializeField] private QuestionScreenBase singleChoiceQuestionPrefab;
+        [SerializeField] private WindowState deadScreenPrefab;
+        [SerializeField] private WindowState pauseScreenPrefab;
 
-        #region Debug
+        private MenuWindow _menu;
+        private GameHud _hud;
+        private WindowState _pauseScreen;
+        private QuestionScreenBase _singleChoiceQuestion;
+
+        private bool DisableInput { get; set; }
+
+        private Player _player;
+        
         private void Update()
         {
-            if (Time.timeScale == 0)
+            if (DisableInput)
             {
                 return;
             }
             
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKey(KeyCode.Space))
             {
-                if (Time.timeScale == 0)
-                    pauseScreen.OnExit();
+                _player.Coins += 100;
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Escape) && _hud)
+            {
+                if (Time.timeScale == 0 && _pauseScreen.IsOnTop)
+                {
+                    _hud.Resume();
+                    _pauseScreen.OnExit();
+                }
                 else
-                    pauseScreen.OnEnter();
+                {
+                    _hud.Pause();
+                    _pauseScreen.OnEnter();
+                }
             }
         }
-        #endregion
-        
+
         public void Setup(Player player, Skill[] skills)
         {
-            gameHud.Setup(player, skills);
+            _player = player;
+            
+            _hud = Instantiate(gameHudPrefab, transform);
+            _hud.Setup(player, skills);
+
+            if (!_pauseScreen)
+            {
+                _pauseScreen = Instantiate(pauseScreenPrefab, transform);
+                _pauseScreen.gameObject.SetActive(false);
+            }
+            if (!_singleChoiceQuestion)
+            {
+                _singleChoiceQuestion = Instantiate(singleChoiceQuestionPrefab, transform);
+                _singleChoiceQuestion.gameObject.SetActive(false);
+            }
         }
 
         public async UniTask OpenQuestion()
         {
-            gameHud.Pause();
+            _hud.Pause();
+            DisableInput = true;
             
-            questionScreen.gameObject.SetActive(true);
-            await questionScreen.DisplayQuestion();
-            questionScreen.gameObject.SetActive(false);
+            _singleChoiceQuestion.gameObject.SetActive(true);
+            await _singleChoiceQuestion.DisplayQuestion();
+            _singleChoiceQuestion.gameObject.SetActive(false);
             
-            gameHud.Resume();
+            DisableInput = false;
+            _hud.Resume();
+        }
+
+        public async UniTask<object> ShowMenu()
+        {
+            if (_hud)
+            {
+                Destroy(_hud.gameObject);
+            }
+            
+            _menu = Instantiate(menuPrefab, transform);
+            var data = await _menu.ShowMenu();
+            Destroy(_menu.gameObject);
+            return data;
         }
     }
 }

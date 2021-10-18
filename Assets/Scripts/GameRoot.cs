@@ -24,7 +24,13 @@ public class GameRoot : MonoBehaviour
     private GeneratorData _generatorData;
     private Skill[] _skills;
 
-    private void Start()
+    private async void Awake()
+    {
+        var data = await ui.ShowMenu();
+        StartGame(data);
+    }
+
+    private void StartGame(object data)
     {
         SetupObjectives();
         SetupGeneratorData();
@@ -50,8 +56,8 @@ public class GameRoot : MonoBehaviour
     {
         _objectives = new Dictionary<Type, ObjectiveData>
         {
-            {typeof(Treasure), new ObjectiveData {Collected = 0, Total = 10, prefab = treasurePrefab}},
-            {typeof(Key), new ObjectiveData {Collected = 0, Total = 10, prefab = keyPrefab}}
+            {typeof(Treasure), new ObjectiveData {Collected = 0, Total = 10, Prefab = treasurePrefab}},
+            {typeof(Key), new ObjectiveData {Collected = 0, Total = 10, Prefab = keyPrefab}}
         };
     }
 

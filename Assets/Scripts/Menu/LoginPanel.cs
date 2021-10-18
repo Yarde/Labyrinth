@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Menu
@@ -13,10 +12,12 @@ namespace Menu
         [SerializeField] private TextMeshProUGUI emailError;
         [SerializeField] private TextMeshProUGUI codeError;
         
-        
         [SerializeField] private Button start;
+        
+        // todo change to BE data
+        public object Data { get; set; }
 
-        private void Start()
+        public void Setup()
         {
             start.onClick.AddListener(RunGame);
         }
@@ -25,8 +26,9 @@ namespace Menu
         {
             if (ValidateTexts())
             {
-                 // todo send some request to authenticate and some shit
-                 SceneManager.LoadScene(1);
+
+                // todo send some request to authenticate and some shit
+                Data = this;
             }
         }
 

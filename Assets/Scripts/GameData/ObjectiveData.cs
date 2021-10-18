@@ -6,6 +6,6 @@ namespace GameData
     {
         public int Collected { get; set; }
         public int Total;
-        public QuestionTrigger prefab;
+        public QuestionTrigger Prefab;
     }
 }

@@ -64,9 +64,9 @@ namespace Labirynth
             for (var i = startIndex; i < triggerData.Total + startIndex; i++)
             {
                 cellList[i].Occupied = true;
-                var trigger = Instantiate(triggerData.prefab, triggersSpawnTransform);
+                var trigger = Instantiate(triggerData.Prefab, triggersSpawnTransform);
                 trigger.transform.position = cellList[i].Floor.transform.position;
-                trigger.name = $"{triggerData.prefab.name} - {i}";
+                trigger.name = $"{triggerData.Prefab.name} - {i}";
             }
 
             return triggerData.Total;

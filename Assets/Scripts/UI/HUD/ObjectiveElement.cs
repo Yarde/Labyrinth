@@ -15,7 +15,7 @@ namespace UI
         public void Setup(ObjectiveData objectiveData)
         {
             objectiveText.text = $"{objectiveData.Collected}/{objectiveData.Total}";
-            objectiveImage.sprite = objectiveData.prefab.Icon;
+            objectiveImage.sprite = objectiveData.Prefab.Icon;
 
             _objectiveData = objectiveData;
         }

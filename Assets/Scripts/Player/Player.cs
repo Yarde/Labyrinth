@@ -74,12 +74,4 @@ public class Player : MonoBehaviour
 
         await trigger.Destroy();
     }
-
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Coins += 100;
-        }
-    }
 }
