@@ -18,7 +18,7 @@ namespace UI
                 _skillButtons[index] = Instantiate(buttonPrefab, transform);
                 
                 var skill = skills[index];
-                _skillButtons[index].SetupSkill(skill, null, player);
+                _skillButtons[index].SetupSkill(skill, player);
             }
         }
     }

@@ -17,3 +17,6 @@ MonoBehaviour:
   maxLevel: 15
   bonusPerLevel: 1
   startingCost: 15
+  frame: {fileID: 21300000, guid: 6aaeff0fa84edea43bc31313235e7d90, type: 3}
+  icon: {fileID: 21300000, guid: 0712891f23e7c394eb2d52438421ce9d, type: 3}
+  color: {r: 0.7075472, g: 0.62398905, b: 0.18289423, a: 1}

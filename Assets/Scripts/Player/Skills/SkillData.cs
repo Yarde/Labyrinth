@@ -10,5 +10,8 @@ namespace Skills
         public int maxLevel;
         public float bonusPerLevel;
         public int startingCost;
+        public Sprite frame;
+        public Sprite icon;
+        public Color color;
     }
 }
