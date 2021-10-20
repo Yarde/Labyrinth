@@ -19,6 +19,7 @@ public class GameRoot : MonoBehaviour
     [Header("Object to instantiate")] 
     [SerializeField] private QuestionTrigger treasurePrefab;
     [SerializeField] private QuestionTrigger keyPrefab;
+    [SerializeField] private QuestionTrigger enemyPrefab;
 
     private Dictionary<Type, ObjectiveData> _objectives;
     private GeneratorData _generatorData;
@@ -57,7 +58,8 @@ public class GameRoot : MonoBehaviour
         _objectives = new Dictionary<Type, ObjectiveData>
         {
             {typeof(Treasure), new ObjectiveData {Collected = 0, Total = 10, Prefab = treasurePrefab}},
-            {typeof(Key), new ObjectiveData {Collected = 0, Total = 10, Prefab = keyPrefab}}
+            {typeof(Key), new ObjectiveData {Collected = 0, Total = 10, Prefab = keyPrefab}},
+            {typeof(Enemy), new ObjectiveData {Collected = 0, Total = 10, Prefab = enemyPrefab}}
         };
     }
 

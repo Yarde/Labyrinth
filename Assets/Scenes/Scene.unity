@@ -459,6 +459,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17202ae77ef3d5144a534b46e612f7d5, type: 2}
   treasurePrefab: {fileID: 2945742143488225944, guid: efebddd0b5766bd499be8b63f581de68, type: 3}
   keyPrefab: {fileID: 4893066204994727074, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
+  enemyPrefab: {fileID: 5926212058165235570, guid: 4892e456c1411f542911892b176cdaa1, type: 3}
 --- !u!4 &1667411698
 Transform:
   m_ObjectHideFlags: 0

@@ -55,6 +55,7 @@ namespace Labirynth
             
             var i = AddTriggers(possibleSpawnPoints, typeof(Key), 0);
             i = AddTriggers(possibleSpawnPoints, typeof(Treasure), i);
+            AddTriggers(possibleSpawnPoints, typeof(Enemy), i);
         }
         
         private int AddTriggers(List<Cell> cellList, Type type, int startIndex)
@@ -65,11 +66,11 @@ namespace Labirynth
             {
                 cellList[i].Occupied = true;
                 var trigger = Instantiate(triggerData.Prefab, triggersSpawnTransform);
-                trigger.transform.position = cellList[i].Floor.transform.position;
+                trigger.transform.position = cellList[i].Floor.transform.position.WithY(-0.4f);
                 trigger.name = $"{triggerData.Prefab.name} - {i}";
             }
 
-            return triggerData.Total;
+            return triggerData.Total + startIndex;
         }
 
         private List<Cell> LabirynthToList()
