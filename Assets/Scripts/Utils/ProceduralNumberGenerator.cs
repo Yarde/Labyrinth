@@ -37,6 +37,12 @@ namespace Utils
             return new Vector2Int(x, y);
         }
         
+        public static Vector3 GetRandomDirection(List<Vector3> directions)
+        {
+            var x = (int) (Random.value * directions.Count);
+            return directions[x];
+        }
+        
         public static void Shuffle<T>(this IList<T> list)  
         {  
             var n = list.Count;  

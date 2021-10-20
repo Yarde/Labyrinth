@@ -1,4 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Utils;
 
@@ -6,19 +8,31 @@ namespace Labirynth.Questions
 {
     public class Enemy : QuestionTrigger
     {
-        private const int raycastDistance = 200;
+        private const int raycastDistance = 5;
         
         [SerializeField] private Rigidbody rigidBody;
-        
+
+        private Vector3 direction = Vector3.left;
+        private List<Vector3> possibleDirections = new List<Vector3>
+        {
+            Vector3.left,
+            Vector3.right,
+            Vector3.forward,
+            Vector3.back
+        };
+
         private void FixedUpdate()
         {
-            
-            
-            transform.position = transform.position.WithX(transform.position.x + 0.01f);
+            if (rigidBody.velocity.magnitude < 0.1f)
+            {
+                var directions = possibleDirections.Where(x => x != direction).ToList();
+                direction = ProceduralNumberGenerator.GetRandomDirection(directions);
+            }
             
             var origin = transform.position;
-            var direction = transform.forward;
-            //Debug.DrawLine(origin, origin + (direction * raycastDistance), Color.red, 2, false);
+            rigidBody.velocity = direction;
+
+            Debug.DrawLine(origin, origin + direction * raycastDistance, Color.red);
         }
 
         public override async UniTask Destroy()
