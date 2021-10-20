@@ -12,13 +12,13 @@ namespace Labirynth.Questions
         
         private void FixedUpdate()
         {
-            rigidBody.
+            
             
             transform.position = transform.position.WithX(transform.position.x + 0.01f);
             
             var origin = transform.position;
             var direction = transform.forward;
-            Debug.DrawLine(origin, origin + (direction * raycastDistance), Color.red, 2, false);
+            //Debug.DrawLine(origin, origin + (direction * raycastDistance), Color.red, 2, false);
         }
 
         public override async UniTask Destroy()

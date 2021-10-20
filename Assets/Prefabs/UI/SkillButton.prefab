@@ -209,7 +209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 6386049479192282903}
   icon: {fileID: 1953590488977962280}
-  frame: {fileID: 1970063011860166479}
+  frame: {fileID: 5155197619858562378}
+  frameFill: {fileID: 1970063011860166479}
   cloud: {fileID: 1220647395306056677}
   coinIcon: {fileID: 6924377358107266981}
   levelText: {fileID: 6386049480315299284}

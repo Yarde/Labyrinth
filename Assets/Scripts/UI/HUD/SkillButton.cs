@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 
 namespace UI
 {
@@ -34,7 +35,7 @@ namespace UI
                 //not enough coins
                 button.interactable = false;
                 costText.color = Color.gray;
-                frame.color = Color.gray;
+                frame.color = Color.gray.WithA(0.4f);
                 frameFill.color = Color.gray;
                 icon.color = Color.gray;
                 coinIcon.color = Color.gray;
@@ -43,7 +44,7 @@ namespace UI
             {
                 button.interactable = true;
                 costText.color = Color.white;
-                frame.color = Color.white;
+                frame.color = Color.white.WithA(0.4f);
                 frameFill.color = Color.white;
                 icon.color = Color.white;
                 coinIcon.color = Color.white;
@@ -75,11 +76,7 @@ namespace UI
             {
                 button.interactable = false;
                 // todo block button and change sprite color to gold or something like that
-                button.interactable = false;
                 costText.color = Color.yellow;
-                frame.color = Color.yellow;
-                frameFill.color = Color.yellow;
-                icon.color = Color.yellow;
             }
         }
 

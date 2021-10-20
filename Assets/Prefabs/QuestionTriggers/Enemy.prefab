@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: ee8a6a461c84dd640a5d7d98929387f9, type: 3}
+  rigidBody: {fileID: 6931962657259509276}
 --- !u!33 &5926212058165235568
 MeshFilter:
   m_ObjectHideFlags: 0
