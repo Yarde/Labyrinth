@@ -26,8 +26,8 @@ public class GameRoot : MonoBehaviour
 
     private async void Awake()
     {
-        var data = await ui.ShowMenu();
-        StartGame(data);
+        //var data = await ui.ShowMenu();
+        StartGame(null);
     }
 
     private void StartGame(object data)

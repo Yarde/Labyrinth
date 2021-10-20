@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 5072604588822166300}
-  visitedMaterial: {fileID: 2100000, guid: 893d4c77bdf33ee43acb87ef28be5d5d, type: 2}
-  notVisitedMaterial: {fileID: 2100000, guid: e5a1347b49ba3454391e9c03b2429529, type: 2}
+  visitedMaterial: {fileID: 2100000, guid: a717768ae0ddfdb4b84cff3948f71909, type: 2}
+  notVisitedMaterial: {fileID: 2100000, guid: 1a631ec76893a3e449a27af35c3eed95, type: 2}
 --- !u!33 &261304576730329548
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e5a1347b49ba3454391e9c03b2429529, type: 2}
+  - {fileID: 2100000, guid: 1a631ec76893a3e449a27af35c3eed95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

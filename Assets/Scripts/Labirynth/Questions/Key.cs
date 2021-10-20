@@ -9,6 +9,7 @@ namespace Labirynth.Questions
         {
             Collected = true;
             Destroy(gameObject);
+            await UniTask.CompletedTask;
         }
     }
 }
