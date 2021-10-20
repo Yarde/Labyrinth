@@ -10,6 +10,7 @@ namespace UI
         [SerializeField] private Button button;
         [SerializeField] private Image icon;
         [SerializeField] private Image frame;
+        [SerializeField] private Image frameFill;
         [SerializeField] private Image cloud;
         [SerializeField] private Image coinIcon;
         [SerializeField] private TextMeshProUGUI levelText;
@@ -34,6 +35,7 @@ namespace UI
                 button.interactable = false;
                 costText.color = Color.gray;
                 frame.color = Color.gray;
+                frameFill.color = Color.gray;
                 icon.color = Color.gray;
                 coinIcon.color = Color.gray;
             }
@@ -42,6 +44,7 @@ namespace UI
                 button.interactable = true;
                 costText.color = Color.white;
                 frame.color = Color.white;
+                frameFill.color = Color.white;
                 icon.color = Color.white;
                 coinIcon.color = Color.white;
             }
@@ -54,6 +57,7 @@ namespace UI
            
             icon.sprite = skill.Data.icon;
             frame.sprite = skill.Data.frame;
+            frameFill.sprite = skill.Data.frame;
             cloud.color = skill.Data.color;
             SetTexts();
             
@@ -65,7 +69,7 @@ namespace UI
         private void UpdateSkill()
         {
             SetTexts();
-            frame.fillAmount = _skill.Level / (float) _skill.Data.maxLevel;
+            frameFill.fillAmount = _skill.Level / (float) _skill.Data.maxLevel;
 
             if (_skill.Level == _skill.Data.maxLevel)
             {
@@ -74,6 +78,7 @@ namespace UI
                 button.interactable = false;
                 costText.color = Color.yellow;
                 frame.color = Color.yellow;
+                frameFill.color = Color.yellow;
                 icon.color = Color.yellow;
             }
         }

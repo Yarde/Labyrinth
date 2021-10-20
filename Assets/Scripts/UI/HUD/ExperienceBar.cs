@@ -37,7 +37,7 @@ namespace UI
         {
             currentExperience = _player.Experience;
             CalculateLevel();
-            experienceText.text = $"Level {level}, exp left {experienceLeft}/{experienceNeeded}";
+            experienceText.text = $"Level {level} - {experienceLeft}/{experienceNeeded} exp";
             slider.value = experienceLeft / (float) experienceNeeded;
         }
 
