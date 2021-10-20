@@ -16000,6 +16000,7 @@ MonoBehaviour:
   animator: {fileID: 95000011159147032}
   idleBox: {fileID: 1000014204504060}
   destroyBox: {fileID: 1000011714421220}
+  collider: {fileID: 4740890904355359747}
 --- !u!65 &4740890904355359747
 BoxCollider:
   m_ObjectHideFlags: 0
