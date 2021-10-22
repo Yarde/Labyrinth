@@ -8,8 +8,6 @@ using UI;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement))]
-[RequireComponent(typeof(PlayerRotation))]
-[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour 
 {
     [SerializeField] private UserInterface ui;
@@ -54,11 +52,12 @@ public class Player : MonoBehaviour
                 await OpenQuestion(trigger);
             }
         }
-        else if (collision.collider.CompareTag("Floor"))
+        // todo optimize before use
+        /*else if (collision.collider.CompareTag("Floor"))
         {
             var trigger = collision.collider.GetComponent<Floor>();
             trigger.MarkVisited();
-        }
+        }*/
     }
 
     private async UniTask OpenQuestion(QuestionTrigger trigger)
