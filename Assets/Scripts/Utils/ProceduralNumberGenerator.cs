@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Labirynth;
 using UnityEngine;
 
 namespace Utils
@@ -35,6 +36,12 @@ namespace Utils
             var x = (int) (Random.value * dimensions.x);
             var y = (int) (Random.value * dimensions.y);
             return new Vector2Int(x, y);
+        }
+        
+        public static Cell GetRandomCell(List<Cell> cells)
+        {
+            var x = (int) (Random.value * cells.Count);
+            return cells[x];
         }
         
         public static Vector3 GetRandomDirection(List<Vector3> directions)

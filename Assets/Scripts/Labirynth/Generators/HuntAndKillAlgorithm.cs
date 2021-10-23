@@ -5,7 +5,7 @@ using Utils;
 namespace Labirynth.Generators
 {
     public class HuntAndKillAlgorithm : GenerationAlgorithm
-    { 
+    {
         private int _currentRow;
         private int _currentColumn;
 
@@ -17,11 +17,11 @@ namespace Labirynth.Generators
 
         public override void CreateLabirynth()
         {
-            HuntAndKill();
-
             // Clears the start area
             var size = new Vector2Int(Dimensions.x / 20, Dimensions.y / 20);
             GenerateStartingArea(size);
+
+            HuntAndKill();
         }
 
         private void HuntAndKill()
@@ -51,8 +51,8 @@ namespace Labirynth.Generators
 
         private void KillNextCell()
         {
-            var previousCellDistance = Cells[_currentRow, _currentColumn].DistanceFromCenter;
-            
+            var previousCell = Cells[_currentRow, _currentColumn];
+
             var direction = ProceduralNumberGenerator.GetNextNumber();
             switch (direction)
             {
@@ -74,8 +74,28 @@ namespace Labirynth.Generators
                     break;
             }
 
-            Cells[_currentRow, _currentColumn].Visited = true;
-            Cells[_currentRow, _currentColumn].DistanceFromCenter = previousCellDistance + 1;
+            var currentCell = Cells[_currentRow, _currentColumn];
+
+            if (currentCell != previousCell)
+            {
+                currentCell.Visited = true;
+                currentCell.DistanceFromCenter = previousCell.DistanceFromCenter + 1;
+
+                AddAdjacentCell(previousCell, currentCell);
+            }
+        }
+
+        private static void AddAdjacentCell(Cell previousCell, Cell currentCell)
+        {
+            if (!previousCell.AdjacentCells.Contains(currentCell))
+            {
+                previousCell.AdjacentCells.Add(currentCell);
+            }
+
+            if (!currentCell.AdjacentCells.Contains(currentCell))
+            {
+                currentCell.AdjacentCells.Add(previousCell);
+            }
         }
 
         private void Hunt()
@@ -118,15 +138,19 @@ namespace Labirynth.Generators
             {
                 case 1:
                     GoNorth(row, column);
+                    AddAdjacentCell(Cells[row, column], Cells[row - 1, column]);
                     break;
                 case 2:
                     GoSouth(row, column);
+                    AddAdjacentCell(Cells[row, column], Cells[row + 1, column]);
                     break;
                 case 3:
                     GoEast(row, column);
+                    AddAdjacentCell(Cells[row, column], Cells[row, column - 1]);
                     break;
                 case 4:
                     GoWest(row, column);
+                    AddAdjacentCell(Cells[row, column], Cells[row, column + 1]);
                     break;
             }
         }

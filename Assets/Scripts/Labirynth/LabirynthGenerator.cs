@@ -45,10 +45,10 @@ namespace Labirynth
             // todo add question triggers
             var cellList = LabirynthToList();
             
-            var deadEnds = cellList.Where(x => x.DeadEnd && !x.Occupied && x.DistanceFromCenter > 20).ToList();
+            var deadEnds = cellList.Where(x => x.DeadEnd).ToList();
             deadEnds.Shuffle();
             
-            var extraPoints = cellList.Where(x => !x.DeadEnd && !x.Occupied && x.DistanceFromCenter > 30).ToList();
+            var extraPoints = cellList.Where(x => !x.DeadEnd && x.DistanceFromCenter > 10).ToList();
             extraPoints.Shuffle();
 
             var possibleSpawnPoints = deadEnds.Concat(extraPoints).ToList();
@@ -64,10 +64,11 @@ namespace Labirynth
 
             for (var i = startIndex; i < triggerData.Total + startIndex; i++)
             {
-                cellList[i].Occupied = true;
+                var selectedCell = cellList[i];
                 var trigger = Instantiate(triggerData.Prefab, triggersSpawnTransform);
-                trigger.transform.position = cellList[i].Floor.transform.position.WithY(-0.4f);
+                trigger.transform.position = selectedCell.Floor.transform.position.WithY(-0.4f);
                 trigger.name = $"{triggerData.Prefab.name} - {i}";
+                trigger.Cell = selectedCell;
             }
 
             return triggerData.Total + startIndex;
