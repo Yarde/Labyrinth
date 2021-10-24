@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4389829867476735141}
-  - component: {fileID: 4389829867476735146}
+  - component: {fileID: 433130548824555345}
   m_Layer: 0
   m_Name: SingleChoiceQuestion
   m_TagString: Untagged
@@ -39,7 +39,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4389829867476735146
+--- !u!114 &433130548824555345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,8 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14453a6039541ebbb0bd21a9ba3a9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 4389829868270269706}
-  confirmButton: {fileID: 4389829868634398773}
+  timer: {fileID: 0}
+  answerButtonPrefab: {fileID: 0}
+  answerButtonHolder: {fileID: 0}
+  confirmButton: {fileID: 0}
+  questionText: {fileID: 0}
 --- !u!1 &4389829868270269700
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,11 +88,11 @@ RectTransform:
   m_Father: {fileID: 4389829867476735141}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!222 &4389829868270269707
 CanvasRenderer:
   m_ObjectHideFlags: 0
