@@ -59,5 +59,13 @@ namespace Utils
             point = dir + pivot;
             return point;
         }
+        
+        public static void SetTransform(this GameObject toSet, Transform other)
+        {
+            var transform = toSet.transform;
+            transform.position = other.position;
+            transform.rotation = other.rotation;
+            transform.localScale = other.localScale;
+        }
     }
 }

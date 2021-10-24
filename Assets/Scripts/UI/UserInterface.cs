@@ -14,11 +14,13 @@ namespace UI
         [SerializeField] private QuestionScreenBase singleChoiceQuestionPrefab;
         [SerializeField] private WindowState deadScreenPrefab;
         [SerializeField] private WindowState pauseScreenPrefab;
+        [SerializeField] private TipDisplay tipDisplayPrefab;
 
         private MenuWindow _menu;
         private GameHud _hud;
         private WindowState _pauseScreen;
         private QuestionScreenBase _singleChoiceQuestion;
+        private TipDisplay _tipDisplay;
 
         private bool DisableInput { get; set; }
 
@@ -31,11 +33,20 @@ namespace UI
                 return;
             }
             
+            Cheats();
+            HandlePauseScreen();
+        }
+
+        private void Cheats()
+        {
             if (Input.GetKey(KeyCode.Space))
             {
                 _player.Coins += 100;
             }
-            
+        }
+
+        private void HandlePauseScreen()
+        {
             if (Input.GetKeyDown(KeyCode.Escape) && _hud)
             {
                 if (Time.timeScale == 0 && _pauseScreen.IsOnTop)
@@ -61,6 +72,7 @@ namespace UI
             if (!_pauseScreen)
             {
                 _pauseScreen = Instantiate(pauseScreenPrefab, transform);
+                _pauseScreen.Setup();
                 _pauseScreen.gameObject.SetActive(false);
             }
             if (!_singleChoiceQuestion)
@@ -83,6 +95,19 @@ namespace UI
             _hud.Resume();
         }
 
+        public async UniTask DisplayTip(string text)
+        {
+            if (!_tipDisplay)
+            {
+                _tipDisplay = Instantiate(tipDisplayPrefab, transform);
+                _tipDisplay.gameObject.SetActive(false);
+            }
+
+            await _tipDisplay.DisplayTip(text);
+        }
+
+            
+            // todo change `object` to real data
         public async UniTask<object> ShowMenu()
         {
             if (_hud)
@@ -94,6 +119,13 @@ namespace UI
             var data = await _menu.ShowMenu();
             Destroy(_menu.gameObject);
             return data;
+        }
+
+        public void PauseGame()
+        {
+            DisableInput = true;
+            _hud.Pause();
+            Time.timeScale = 0;
         }
     }
 }

@@ -31,11 +31,10 @@ namespace Utils
             return int.Parse(currentNum);
         }
 
-        public static Vector2Int GetRandomCell(Vector2Int dimensions)
+        public static GameObject GetRandomCell(List<GameObject> spawns)
         {
-            var x = (int) (Random.value * dimensions.x);
-            var y = (int) (Random.value * dimensions.y);
-            return new Vector2Int(x, y);
+            var x = (int) (Random.value * spawns.Count);
+            return spawns[x];
         }
         
         public static Cell GetRandomCell(List<Cell> cells)

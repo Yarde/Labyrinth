@@ -5,6 +5,7 @@ namespace UI
 {
     public abstract class WindowState : MonoBehaviour
     {
+        public abstract void Setup();
         public abstract void OnEnter();
         public abstract void OnExit();
         

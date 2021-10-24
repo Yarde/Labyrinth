@@ -7,18 +7,25 @@ namespace UI.Windows
         public Button again;
         public Button menu;
 
-        public override void OnEnter()
+        public override void Setup()
         {
-            Pause();
             again.onClick.AddListener(PlayAgain);
             menu.onClick.AddListener(MainMenu);
         }
 
-        public override void OnExit()
+        private void OnDestroy()
         {
-            
             again.onClick.RemoveListener(PlayAgain);
             menu.onClick.RemoveListener(MainMenu);
+        }
+        
+        public override void OnEnter()
+        {
+            Pause();
+        }
+
+        public override void OnExit()
+        {
         }
     }
 }

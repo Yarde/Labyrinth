@@ -240,6 +240,7 @@ MonoBehaviour:
   singleChoiceQuestionPrefab: {fileID: 4389829867476735146, guid: 2aaad665eed22854481d3d685de0eae1, type: 3}
   deadScreenPrefab: {fileID: 476805244956709627, guid: 327b806170a016e2ba86de3fd8b1f087, type: 3}
   pauseScreenPrefab: {fileID: 8043393252971936292, guid: 094e5549d588344bbb557e3f86f32539, type: 3}
+  tipDisplayPrefab: {fileID: 1031466086783261239, guid: 0accb08e4d415b24781be9cb5a645ac3, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

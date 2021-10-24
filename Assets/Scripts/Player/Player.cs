@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using GameData;
 using Labirynth.Questions;
@@ -10,6 +11,9 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 public class Player : MonoBehaviour 
 {
+    private const string NOT_ENOUGH_KEYS_TIP_TEXT = "Come back where you collected all the Keys";
+    private const string GAME_WON_TIP_TEXT = "You won! Congratulations";
+    
     [SerializeField] private UserInterface ui;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private float baseLightStrength = 5f;
@@ -25,7 +29,6 @@ public class Player : MonoBehaviour
     public float FieldOfViewLevel { get; set; }
     public float MovementSpeed { get; set; }
     public Dictionary<Type, ObjectiveData> Objectives { get; set; }
-
     private Skill[] _skills;
 
     public void Setup(Dictionary<Type, ObjectiveData> objectives, Vector2Int dimensions)
@@ -46,11 +49,11 @@ public class Player : MonoBehaviour
         // todo you can collide with already answered question, fix it
         if (collision.collider.CompareTag("QuestionTrigger"))
         {
-            var trigger = collision.collider.GetComponent<QuestionTrigger>();
-            if (!trigger.Collected)
-            {
-                await OpenQuestion(trigger);
-            }
+            await HandleQuestion(collision);
+        }
+        else if (collision.collider.CompareTag("Exit"))
+        {
+            await HandleExit();
         }
         // todo optimize before use
         /*else if (collision.collider.CompareTag("Floor"))
@@ -58,6 +61,30 @@ public class Player : MonoBehaviour
             var trigger = collision.collider.GetComponent<Floor>();
             trigger.MarkVisited();
         }*/
+    }
+
+    private async Task HandleQuestion(Collision collision)
+    {
+        var trigger = collision.collider.GetComponent<QuestionTrigger>();
+        if (!trigger.Collected)
+        {
+            await OpenQuestion(trigger);
+        }
+    }
+    
+    private async Task HandleExit()
+    {
+        var mainObjective = Objectives[typeof(Key)];
+        if (mainObjective.Collected == mainObjective.Total)
+        {
+            // todo game won, do something
+            ui.PauseGame();
+            await ui.DisplayTip(GAME_WON_TIP_TEXT);
+        }
+        else
+        {
+            ui.DisplayTip(NOT_ENOUGH_KEYS_TIP_TEXT);
+        }
     }
 
     private async UniTask OpenQuestion(QuestionTrigger trigger)

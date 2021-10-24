@@ -16,6 +16,7 @@ namespace Labirynth
         
         [SerializeField] private GameObject wallPrefab;
         [SerializeField] private GameObject floorPrefab;
+        [SerializeField] private GameObject exitPrefab;
         [SerializeField] private float size = 1;
 
         private Cell[,] _cells;
@@ -37,14 +38,12 @@ namespace Labirynth
             var generationAlgorithm = new HuntAndKillAlgorithm(_cells, _dimensions);
             generationAlgorithm.CreateLabirynth();
             
-            AddQuestionTriggers();
+            SpawnGameElements();
         }
 
-        private void AddQuestionTriggers()
+        private void SpawnGameElements()
         {
-            // todo add question triggers
             var cellList = LabirynthToList();
-            
             var deadEnds = cellList.Where(x => x.DeadEnd).ToList();
             deadEnds.Shuffle();
             
@@ -52,12 +51,26 @@ namespace Labirynth
             extraPoints.Shuffle();
 
             var possibleSpawnPoints = deadEnds.Concat(extraPoints).ToList();
-            
-            var i = AddTriggers(possibleSpawnPoints, typeof(Key), 0);
-            i = AddTriggers(possibleSpawnPoints, typeof(Treasure), i);
-            AddTriggers(possibleSpawnPoints, typeof(Enemy), i);
+
+            AddExitTrigger(possibleSpawnPoints[0]);
+            AddQuestionTriggers(possibleSpawnPoints);
         }
         
+        private void AddExitTrigger(Cell cell)
+        {
+            var exit = Instantiate(exitPrefab, wallsSpawnTransform);
+            exit.SetTransform(cell.Floor.transform);
+        }
+        
+        private void AddQuestionTriggers(List<Cell> possibleSpawnPoints)
+        {
+            // first cell is always taken by the exit so we start at index 1;
+            var cellOffset = 1;
+            cellOffset = AddTriggers(possibleSpawnPoints, typeof(Key), cellOffset);
+            cellOffset = AddTriggers(possibleSpawnPoints, typeof(Treasure), cellOffset);
+            AddTriggers(possibleSpawnPoints, typeof(Enemy), cellOffset);
+        }
+
         private int AddTriggers(List<Cell> cellList, Type type, int startIndex)
         {
             var triggerData = _objectives[type];
