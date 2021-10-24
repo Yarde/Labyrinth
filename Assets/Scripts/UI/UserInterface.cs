@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Gameplay;
 using Menu;
 using Skills;
 using UI.Windows;
@@ -88,7 +89,9 @@ namespace UI
             DisableInput = true;
             
             _singleChoiceQuestion.gameObject.SetActive(true);
-            await _singleChoiceQuestion.DisplayQuestion();
+            // todo mock question
+            var question = new Question();
+            await _singleChoiceQuestion.DisplayQuestion(question);
             _singleChoiceQuestion.gameObject.SetActive(false);
             
             DisableInput = false;
