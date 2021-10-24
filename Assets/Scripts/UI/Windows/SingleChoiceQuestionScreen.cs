@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using Gameplay;
 using TMPro;
@@ -33,15 +34,43 @@ namespace UI.Windows
             foreach (var answer in question.Answers)
             {
                 var newAnswer = Instantiate(answerButtonPrefab, answerButtonHolder);
-                newAnswer.Setup(answer);
+                newAnswer.Setup(answer, () => OnAnswerClicked(answer.AnswerID));
                 _answers.Add(newAnswer);
             }
 
             await UniTask.WaitUntil(() => finished);
         }
 
+        private void OnAnswerClicked(uint clickedId)
+        {
+            var clicked = _answers.Where(x => x.IsSelected).ToList();
+            confirmButton.interactable = clicked.Count > 0;
+
+            // todo this is only for single choice question,
+            // make separate implementation for single and multiple choice questions
+            if (clicked.Count > 0)
+            {
+                foreach (var button in clicked)
+                {
+                    if (button.AnswerId != clickedId)
+                    {
+                        button.Unselect();
+                    }
+                }
+            }
+        }
+
         private void ConfirmChoice()
         {
+            foreach (var button in _answers)
+            {
+                button.ResolveQuestion();
+            }
+            
+            // todo animate reward or heart lost
+            
+            
+            
             finished = true;
         }
 
