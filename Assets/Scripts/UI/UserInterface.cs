@@ -105,7 +105,7 @@ namespace UI
             }
         }
 
-        public async UniTask OpenQuestion()
+        public async UniTask<QuestionResult> OpenQuestion()
         {
             _hud.Pause();
             DisableInput = true;
@@ -121,6 +121,9 @@ namespace UI
             
             DisableInput = false;
             _hud.Resume();
+
+            // pass the reward here
+            return new QuestionResult();
         }
 
         private static Question MockQuestion()
@@ -192,5 +195,9 @@ namespace UI
             _hud.Pause();
             GameRoot.IsPaused = true;
         }
+    }
+
+    public class QuestionResult
+    {
     }
 }

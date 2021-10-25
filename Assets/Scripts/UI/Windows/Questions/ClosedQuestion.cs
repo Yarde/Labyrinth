@@ -14,9 +14,12 @@ namespace UI.Windows
         [SerializeField] private Transform answerButtonHolder;
         [SerializeField] protected Button confirmButton;
         [SerializeField] private TextMeshProUGUI questionText;
+
+        [SerializeField] private RewardPopup rewardPopupPrefab;
         
         private bool finished;
         protected List<AnswerButton> _answers;
+        private RewardPopup _rewardPopup;
         
         public override async UniTask DisplayQuestion(Question question)
         {
@@ -36,9 +39,18 @@ namespace UI.Windows
             {
                 SpawnAnswers(question);
             }
-           
 
             await UniTask.WaitUntil(() => finished);
+        }
+        
+        public override async UniTask DisplayReward(QuestionResult result)
+        {
+            if (_rewardPopup == null)
+            {
+                _rewardPopup = Instantiate(rewardPopupPrefab, transform);
+            }
+
+            await _rewardPopup.DisplayReward(result);
         }
 
         private void SpawnAnswers(Question question)

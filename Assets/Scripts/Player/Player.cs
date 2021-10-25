@@ -90,13 +90,12 @@ public class Player : MonoBehaviour
     private async UniTask OpenQuestion(QuestionTrigger trigger)
     {
         Debug.Log($"Collision entered with {trigger.name}");
-        await ui.OpenQuestion();
-
-        Objectives[trigger.GetType()].Collected++;
-
+        var result = await ui.OpenQuestion();
+        
         Coins += 100;
         Experience += 200;
-
+        
+        Objectives[trigger.GetType()].Collected++;
         await trigger.Destroy();
     }
 }
