@@ -9,27 +9,34 @@ namespace UI.Windows
 {
     public abstract class ClosedQuestion : QuestionScreenBase
     {
-        [SerializeField] private TextMeshProUGUI timer;
+        [SerializeField] private Timer timer;
         [SerializeField] private AnswerButton answerButtonPrefab;
         [SerializeField] private Transform answerButtonHolder;
         [SerializeField] protected Button confirmButton;
         [SerializeField] private TextMeshProUGUI questionText;
         
-        private float startTime;
         private bool finished;
-
         protected List<AnswerButton> _answers;
         
         public override async UniTask DisplayQuestion(Question question)
         {
-            startTime = Time.realtimeSinceStartup;
+            timer.StartTimer();
+
             finished = false;
             confirmButton.onClick.AddListener(ConfirmChoice);
             confirmButton.interactable = false;
 
             questionText.text = question.Content;
 
-            SpawnAnswers(question);
+            if (_answers != null && _answers.Count > 0)
+            {
+                UpdateAnswers(question);
+            }
+            else
+            {
+                SpawnAnswers(question);
+            }
+           
 
             await UniTask.WaitUntil(() => finished);
         }
@@ -37,6 +44,7 @@ namespace UI.Windows
         private void SpawnAnswers(Question question)
         {
             _answers = new List<AnswerButton>();
+
             foreach (var answer in question.Answers)
             {
                 var newAnswer = Instantiate(answerButtonPrefab, answerButtonHolder);
@@ -44,24 +52,38 @@ namespace UI.Windows
                 _answers.Add(newAnswer);
             }
         }
+        
+        private void UpdateAnswers(Question question)
+        {
+            // todo use pool instead to handle changing answer count
+            for (var i = 0; i < question.Answers.Count; i++)
+            {
+                var answer = question.Answers[i];
+                var button = _answers[i];
+                button.Setup(answer, () => OnAnswerClicked(answer.AnswerID));
+            }
+        }
 
         protected abstract void OnAnswerClicked(uint clickedId);
 
         private void ConfirmChoice()
         {
+            timer.StopTimer();
+            confirmButton.onClick.RemoveListener(ConfirmChoice);
             foreach (var button in _answers)
             {
                 button.ResolveQuestion();
             }
             
-            // todo animate reward or heart lost
-            finished = true;
+            PresentResult().Forget();
         }
 
-        private void Update()
+        private async UniTask PresentResult()
         {
-            var timePassed = Mathf.Round((Time.realtimeSinceStartup - startTime) * 10f) / 10f;
-            timer.text = $"Time passed: {timePassed}sec";
+            // todo animate reward or heart lost
+            await UniTask.Delay(2000);
+
+            finished = true;
         }
     }
 }

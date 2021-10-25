@@ -8,6 +8,11 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if (GameRoot.IsPaused)
+        {
+            return;
+        }
+        
         _movement.x = Input.GetAxis("Horizontal");
         _movement.z = Input.GetAxis("Vertical");
         

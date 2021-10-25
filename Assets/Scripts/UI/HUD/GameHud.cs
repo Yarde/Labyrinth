@@ -28,13 +28,13 @@ namespace UI
         
         public void Resume()
         {
-            Time.timeScale = 1;
+            GameRoot.IsPaused = false;
             timer.StartTimer();
         }
 
         public void Pause()
         {
-            Time.timeScale = 0;
+            GameRoot.IsPaused = true;
             timer.StopTimer();
         }
 

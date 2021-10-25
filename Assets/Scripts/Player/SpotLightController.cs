@@ -10,6 +10,11 @@ public class SpotLightController : MonoBehaviour {
 
     private void FixedUpdate() 
     {
+        if (GameRoot.IsPaused)
+        {
+            return;
+        }
+        
         lightSource.range = player.LightLevel;
 
         var destination = player.transform.position + offset;

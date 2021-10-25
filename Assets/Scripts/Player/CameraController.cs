@@ -9,6 +9,11 @@ public class CameraController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameRoot.IsPaused)
+        {
+            return;
+        }
+        
         var destination = player.transform.position + offset;
         var smoothed = Vector3.Lerp(transform.position, destination, smoothSpeed * Time.deltaTime);
         transform.position = smoothed.WithY(smoothed.y + player.FieldOfViewLevel);

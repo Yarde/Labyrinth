@@ -40,6 +40,11 @@ namespace Labirynth.Questions
 
         private void FixedUpdate()
         {
+            if (GameRoot.IsPaused)
+            {
+                return;
+            }
+            
             if (!_isMoving)
             {
                 MoveToNextCell().WithCancellation(_cancellationToken.Token);;

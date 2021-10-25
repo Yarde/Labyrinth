@@ -50,7 +50,7 @@ namespace UI
         {
             if (Input.GetKeyDown(KeyCode.Escape) && _hud)
             {
-                if (Time.timeScale == 0 && _pauseScreen.IsOnTop)
+                if (GameRoot.IsPaused && _pauseScreen.IsOnTop)
                 {
                     _hud.Resume();
                     _pauseScreen.OnExit();
@@ -153,7 +153,7 @@ namespace UI
         {
             DisableInput = true;
             _hud.Pause();
-            Time.timeScale = 0;
+            GameRoot.IsPaused = true;
         }
     }
 }

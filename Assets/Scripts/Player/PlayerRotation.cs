@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[Obsolete("PlayerRotation is deprecated, please use fix before using.")]
 public class PlayerRotation : MonoBehaviour
 {
     private Camera _camera;

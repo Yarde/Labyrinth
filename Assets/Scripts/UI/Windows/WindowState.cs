@@ -15,25 +15,25 @@ namespace UI
         {
             IsOnTop = true;
             gameObject.SetActive(true);
-            Time.timeScale = 0;
+            GameRoot.IsPaused = true;
         }
         
         protected void Resume()
         {
             IsOnTop = false;
             gameObject.SetActive(false);
-            Time.timeScale = 1;
+            GameRoot.IsPaused = false;
         }
         
         protected void PlayAgain()
         {
-            Time.timeScale = 1;
+            GameRoot.IsPaused = false;
             SceneManager.LoadScene("Scene");
         }
 
         protected void MainMenu()
         {
-            Time.timeScale = 1;
+            GameRoot.IsPaused = false;
             SceneManager.LoadScene("Scene");
         }
     }

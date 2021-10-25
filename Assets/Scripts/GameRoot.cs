@@ -11,6 +11,8 @@ using Random = UnityEngine.Random;
 
 public class GameRoot : MonoBehaviour
 {
+    public static bool IsPaused = false;
+    
     [SerializeField] private Player player;
     [SerializeField] private LabirynthGenerator labirynth;
     [SerializeField] private UserInterface ui;

@@ -150,7 +150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4389829867476735141
 RectTransform:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14453a6039541ebbb0bd21a9ba3a9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 4389829868270269706}
+  timer: {fileID: 8059784480728479495}
   answerButtonPrefab: {fileID: 2869136311464325822, guid: bf95ebdd890619046a70ed985ca8b76c, type: 3}
   answerButtonHolder: {fileID: 8648483753196945906}
   confirmButton: {fileID: 4389829868634398773}
@@ -202,6 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4389829868270269701}
   - component: {fileID: 4389829868270269707}
+  - component: {fileID: 8059784480728479495}
   - component: {fileID: 4389829868270269706}
   m_Layer: 0
   m_Name: Timer
@@ -237,6 +238,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4389829868270269700}
   m_CullTransparentMesh: 1
+--- !u!114 &8059784480728479495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389829868270269700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a13d4c505d4b4bbb795df4830da79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 4389829868270269706}
+  timeFormat: '{0}:{1}'
 --- !u!114 &4389829868270269706
 MonoBehaviour:
   m_ObjectHideFlags: 0
