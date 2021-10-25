@@ -24,31 +24,35 @@ namespace UI.Windows
             
             button.interactable = true;
             text.text = answer.Content;
+            button.onClick.RemoveAllListeners();
             button.onClick.AddListener(Select);
             _onClick = onClick;
 
-            Unselect();
+            Unselect(false);
         }
 
         private void Select()
         {
             button.onClick.RemoveListener(Select);
-            button.onClick.AddListener(Unselect);
+            button.onClick.AddListener(() => Unselect());
             
             frame.color = Color.blue;
             IsSelected = true;
             _onClick.Invoke();
         }
 
-        public void Unselect()
+        public void Unselect(bool wasClicked = true)
         {
-            button.onClick.RemoveListener(Unselect);
+            button.onClick.RemoveListener(() => Unselect());
             button.onClick.AddListener(Select);
             
             IsSelected = false;
             frame.color = Color.white;
-            
-            _onClick.Invoke();
+
+            if (wasClicked)
+            {
+                _onClick.Invoke();
+            }
         }
 
         public void ResolveQuestion()
