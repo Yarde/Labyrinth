@@ -8,7 +8,7 @@ namespace Labirynth.Questions
         [SerializeField] private Animator animator;
         [SerializeField] private GameObject idleBox;
         [SerializeField] private GameObject destroyBox;
-        [SerializeField] private Collider collider;
+        [SerializeField] private Collider treasureCollider;
         private static readonly int DestroyTrigger = Animator.StringToHash("Destroy");
 
         public override async UniTask Destroy()
@@ -19,7 +19,7 @@ namespace Labirynth.Questions
             
             animator.SetTrigger(DestroyTrigger);
 
-            collider.enabled = false;
+            treasureCollider.enabled = false;
             var animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
             await UniTask.Delay((int)(animationLength * 1000));
             

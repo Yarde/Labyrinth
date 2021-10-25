@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            ui.DisplayTip(NOT_ENOUGH_KEYS_TIP_TEXT);
+            ui.DisplayTip(NOT_ENOUGH_KEYS_TIP_TEXT).Forget();
         }
     }
 

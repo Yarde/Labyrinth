@@ -90,7 +90,32 @@ namespace UI
             
             _singleChoiceQuestion.gameObject.SetActive(true);
             // todo mock question
-            var question = new Question();
+            var question = new Question()
+            {
+                Content = "Here will be Question, just select A",
+                QuestionType = Question.Types.QuestionType.Abcd,
+                Answers = { new Question.Types.Answer()
+                {
+                    AnswerID = 1,
+                    Content = "A",
+                    Correct = true
+                },new Question.Types.Answer()
+                {
+                    AnswerID = 2,
+                    Content = "B",
+                    Correct = false
+                },new Question.Types.Answer()
+                {
+                    AnswerID = 3,
+                    Content = "C",
+                    Correct = false
+                },new Question.Types.Answer()
+                {
+                    AnswerID = 4,
+                    Content = "D",
+                    Correct = false
+                }, }
+            };
             await _singleChoiceQuestion.DisplayQuestion(question);
             _singleChoiceQuestion.gameObject.SetActive(false);
             

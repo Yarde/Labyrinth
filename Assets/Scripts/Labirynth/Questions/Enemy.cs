@@ -9,7 +9,7 @@ namespace Labirynth.Questions
 {
     public class Enemy : QuestionTrigger
     {
-        [SerializeField] private Light light;
+        [SerializeField] private Light enemyLight;
 
         private const float MoveTime = 1f;
 
@@ -28,10 +28,10 @@ namespace Labirynth.Questions
             var sign = 1;
             while (!_cancellationToken.IsCancellationRequested)
             {
-                light.range += 0.1f * sign;
+                enemyLight.range += 0.1f * sign;
                 await UniTask.Delay(100);
 
-                if (light.range <= 0 || light.range >= 1)
+                if (enemyLight.range <= 0 || enemyLight.range >= 1)
                 {
                     sign *= -1;
                 }
