@@ -28,31 +28,32 @@ namespace UI.Windows
             button.onClick.AddListener(Select);
             _onClick = onClick;
 
-            Unselect(false);
+            Unselect();
         }
 
         private void Select()
         {
             button.onClick.RemoveListener(Select);
-            button.onClick.AddListener(() => Unselect());
+            button.onClick.AddListener(UnselectOnClick);
             
             frame.color = Color.blue;
             IsSelected = true;
             _onClick.Invoke();
         }
 
-        public void Unselect(bool wasClicked = true)
+        private void UnselectOnClick()
         {
-            button.onClick.RemoveListener(() => Unselect());
+            Unselect();
+            _onClick.Invoke();
+        }
+        
+        public void Unselect()
+        {
+            button.onClick.RemoveListener(UnselectOnClick);
             button.onClick.AddListener(Select);
             
             IsSelected = false;
             frame.color = Color.white;
-
-            if (wasClicked)
-            {
-                _onClick.Invoke();
-            }
         }
 
         public void ResolveQuestion()

@@ -4,6 +4,7 @@ using Menu;
 using Skills;
 using UI.Windows;
 using UnityEngine;
+using Utils;
 
 namespace UI
 {
@@ -12,16 +13,21 @@ namespace UI
         [Header("Windows Prefabs")]
         [SerializeField] private GameHud gameHudPrefab;
         [SerializeField] private MenuWindow menuPrefab;
-        [SerializeField] private QuestionScreenBase singleChoiceQuestionPrefab;
         [SerializeField] private WindowState deadScreenPrefab;
         [SerializeField] private WindowState pauseScreenPrefab;
         [SerializeField] private TipDisplay tipDisplayPrefab;
+        
+        [Header("Question Types")]
+        [SerializeField] private QuestionScreenBase singleChoiceQuestionPrefab;
+        [SerializeField] private QuestionScreenBase multiChoiceQuestionPrefab;
 
         private MenuWindow _menu;
         private GameHud _hud;
         private WindowState _pauseScreen;
-        private QuestionScreenBase _singleChoiceQuestion;
         private TipDisplay _tipDisplay;
+        
+        private QuestionScreenBase _singleChoiceQuestion;
+        private QuestionScreenBase _multiChoiceQuestion;
 
         private bool DisableInput { get; set; }
 
@@ -40,9 +46,25 @@ namespace UI
 
         private void Cheats()
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Y))
             {
                 _player.Coins += 100;
+            }
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                _player.transform.position = _player.transform.position.WithZ(_player.transform.position.z + 1f);
+            }
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                _player.transform.position = _player.transform.position.WithZ(_player.transform.position.z - 1f);
+            }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                _player.transform.position = _player.transform.position.WithX(_player.transform.position.x - 1f);
+            }
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                _player.transform.position = _player.transform.position.WithX(_player.transform.position.x + 1f);
             }
         }
 
@@ -89,38 +111,53 @@ namespace UI
             DisableInput = true;
             
             _singleChoiceQuestion.gameObject.SetActive(true);
-            // todo mock question
-            var question = new Question()
-            {
-                Content = "Here will be Question, just select A",
-                QuestionType = Question.Types.QuestionType.Abcd,
-                Answers = { new Question.Types.Answer()
-                {
-                    AnswerID = 1,
-                    Content = "A",
-                    Correct = true
-                },new Question.Types.Answer()
-                {
-                    AnswerID = 2,
-                    Content = "B",
-                    Correct = false
-                },new Question.Types.Answer()
-                {
-                    AnswerID = 3,
-                    Content = "C",
-                    Correct = false
-                },new Question.Types.Answer()
-                {
-                    AnswerID = 4,
-                    Content = "D",
-                    Correct = false
-                }, }
-            };
+            
+            // todo change to real data
+            var question = MockQuestion();
+
+            //select the correct type of window
             await _singleChoiceQuestion.DisplayQuestion(question);
             _singleChoiceQuestion.gameObject.SetActive(false);
             
             DisableInput = false;
             _hud.Resume();
+        }
+
+        private static Question MockQuestion()
+        {
+            var question = new Question()
+            {
+                Content = "Here will be Question, just select A",
+                QuestionType = Question.Types.QuestionType.Abcd,
+                Answers =
+                {
+                    new Question.Types.Answer()
+                    {
+                        AnswerID = 1,
+                        Content = "A",
+                        Correct = true
+                    },
+                    new Question.Types.Answer()
+                    {
+                        AnswerID = 2,
+                        Content = "B",
+                        Correct = false
+                    },
+                    new Question.Types.Answer()
+                    {
+                        AnswerID = 3,
+                        Content = "C",
+                        Correct = false
+                    },
+                    new Question.Types.Answer()
+                    {
+                        AnswerID = 4,
+                        Content = "D",
+                        Correct = false
+                    },
+                }
+            };
+            return question;
         }
 
         public async UniTask DisplayTip(string text)
