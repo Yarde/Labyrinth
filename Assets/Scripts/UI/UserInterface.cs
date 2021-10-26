@@ -130,32 +130,32 @@ namespace UI
         {
             var question = new Question()
             {
-                Content = "Here will be Question, just select A",
+                Content = "Who was the first president of United States of America",
                 QuestionType = Question.Types.QuestionType.Abcd,
                 Answers =
                 {
                     new Question.Types.Answer()
                     {
                         AnswerID = 1,
-                        Content = "A",
+                        Content = "George Washington",
                         Correct = true
                     },
                     new Question.Types.Answer()
                     {
                         AnswerID = 2,
-                        Content = "B",
+                        Content = "Thomas Jefferson",
                         Correct = false
                     },
                     new Question.Types.Answer()
                     {
                         AnswerID = 3,
-                        Content = "C",
+                        Content = "Abraham Lincoln",
                         Correct = false
                     },
                     new Question.Types.Answer()
                     {
                         AnswerID = 4,
-                        Content = "D",
+                        Content = "Benjamin Franklin",
                         Correct = false
                     },
                 }

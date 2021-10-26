@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -150, y: 200}
-  m_SizeDelta: {x: -700, y: -600}
+  m_AnchoredPosition: {x: -200, y: 225}
+  m_SizeDelta: {x: -600, y: -550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4286215997287661023
 CanvasRenderer:
@@ -150,7 +150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4389829867476735141
 RectTransform:
   m_ObjectHideFlags: 0
@@ -192,6 +192,7 @@ MonoBehaviour:
   answerButtonHolder: {fileID: 8648483753196945906}
   confirmButton: {fileID: 4389829868634398773}
   questionText: {fileID: 8666133660289168246}
+  rewardPopupPrefab: {fileID: 0}
 --- !u!1 &4389829868270269700
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +513,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -50, y: 50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &4389829868634398779
 CanvasRenderer:
@@ -535,7 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.33610716, g: 0.7830189, b: 0.4819633, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
