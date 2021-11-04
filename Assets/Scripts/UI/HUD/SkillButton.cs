@@ -17,8 +17,7 @@ namespace UI
         [SerializeField] private TextMeshProUGUI levelText;
         [SerializeField] private TextMeshProUGUI costText;
         private const string SkillTextPattern = "Level {0}\nCost {1}";
-
-        //todo pass player to button
+        
         private Player _player;
         private Skill _skill;
 

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 {
     private const string NOT_ENOUGH_KEYS_TIP_TEXT = "Come back where you collected all the Keys";
     private const string GAME_WON_TIP_TEXT = "You won! Congratulations";
-    
+
     [SerializeField] private UserInterface ui;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private float baseLightStrength = 5f;
@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
 
     private async void OnCollisionEnter(Collision collision)
     {
-        // todo you can collide with already answered question, fix it
         if (collision.collider.CompareTag("QuestionTrigger"))
         {
             await HandleQuestion(collision);
@@ -63,7 +62,7 @@ public class Player : MonoBehaviour
         }*/
     }
 
-    private async Task HandleQuestion(Collision collision)
+    private async UniTask HandleQuestion(Collision collision)
     {
         var trigger = collision.collider.GetComponent<QuestionTrigger>();
         if (!trigger.Collected)
@@ -92,8 +91,15 @@ public class Player : MonoBehaviour
         Debug.Log($"Collision entered with {trigger.name}");
         var result = await ui.OpenQuestion();
         
-        Coins += 100;
-        Experience += 200;
+        Coins += result.Coins;
+        Experience += result.Experience;
+        Hearts += result.Hearts;
+
+        if (Hearts == 0)
+        {
+            ui.LoseScreen();
+            // todo send notification that player lost
+        }
         
         Objectives[trigger.GetType()].Collected++;
         await trigger.Destroy();

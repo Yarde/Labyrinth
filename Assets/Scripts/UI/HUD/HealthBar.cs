@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +11,7 @@ namespace UI
         [SerializeField] private GameObject heartObject;
         [SerializeField] private HorizontalLayoutGroup holder;
 
-        // todo optimization
-        // it can be solved with object pool
+        // todo optimization it can be solved with object pool
         private Stack<GameObject> spawnedHearts;
         private int currentHearts = 0;
         private Player _player;
@@ -40,11 +41,13 @@ namespace UI
             currentHearts++;
         }
         
-        private void RemoveHeart()
+        private async UniTask RemoveHeart()
         {
-            var image = spawnedHearts.Pop();
-            Destroy(image);
             currentHearts--;
+            var image = spawnedHearts.Pop();
+            
+            await image.transform.DOShakeRotation(0.5f);
+            Destroy(image);
         }
     }
 }

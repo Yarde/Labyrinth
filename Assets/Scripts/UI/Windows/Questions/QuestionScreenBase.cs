@@ -6,7 +6,6 @@ namespace UI.Windows
 {
     public abstract class QuestionScreenBase : MonoBehaviour
     {
-        public abstract UniTask DisplayQuestion(Question question);
-        public abstract UniTask DisplayReward(QuestionResult result);
+        public abstract UniTask<bool> DisplayQuestion(Question question);
     }
 }

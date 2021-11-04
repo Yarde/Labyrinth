@@ -1,4 +1,6 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Gameplay;
 using TMPro;
 using UnityEngine;
@@ -11,6 +13,12 @@ namespace UI.Windows
         [SerializeField] private Button button;
         [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private Image frame;
+        
+        [Header("Color of answers")]
+        [SerializeField] private Color defaultColor;
+        [SerializeField] private Color selectedColor;
+        [SerializeField] private Color correctColor;
+        [SerializeField] private Color wrongColor;
 
         public bool IsSelected { get; private set; }
         public uint AnswerId { get; private set; }
@@ -36,7 +44,7 @@ namespace UI.Windows
             button.onClick.RemoveListener(Select);
             button.onClick.AddListener(UnselectOnClick);
             
-            frame.color = Color.blue;
+            frame.color = selectedColor;
             IsSelected = true;
             _onClick.Invoke();
         }
@@ -53,30 +61,25 @@ namespace UI.Windows
             button.onClick.AddListener(Select);
             
             IsSelected = false;
-            frame.color = Color.white;
+            frame.color = defaultColor;
         }
 
-        public void ResolveQuestion()
+        public async UniTask<bool> ResolveQuestion()
         {
             button.interactable = false;
+
+            if (!IsSelected && !_answer.Correct) 
+                return true;
+            
             if (_answer.Correct)
             {
-                if (IsSelected)
-                {
-                    frame.color = Color.green;
-                }
-                else
-                {
-                    frame.color = Color.yellow;
-                }
+                await transform.DOShakeScale(0.5f, 0.3f);
+                frame.color = correctColor;
+                return IsSelected;
             }
-            else
-            {
-                if (IsSelected)
-                {
-                    frame.color = Color.red;
-                }
-            }
+            
+            frame.color = wrongColor;
+            return false;
         }
     }
 }

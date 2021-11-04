@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using Gameplay;
 using TMPro;
@@ -20,12 +21,15 @@ namespace UI.Windows
         private bool finished;
         protected List<AnswerButton> _answers;
         private RewardPopup _rewardPopup;
+
+        private bool correct;
         
-        public override async UniTask DisplayQuestion(Question question)
+        public override async UniTask<bool> DisplayQuestion(Question question)
         {
             timer.StartTimer();
 
             finished = false;
+            correct = true;
             confirmButton.onClick.AddListener(ConfirmChoice);
             confirmButton.interactable = false;
 
@@ -41,16 +45,8 @@ namespace UI.Windows
             }
 
             await UniTask.WaitUntil(() => finished);
-        }
-        
-        public override async UniTask DisplayReward(QuestionResult result)
-        {
-            if (_rewardPopup == null)
-            {
-                _rewardPopup = Instantiate(rewardPopupPrefab, transform);
-            }
 
-            await _rewardPopup.DisplayReward(result);
+            return correct;
         }
 
         private void SpawnAnswers(Question question)
@@ -78,16 +74,27 @@ namespace UI.Windows
 
         protected abstract void OnAnswerClicked(uint clickedId);
 
-        private void ConfirmChoice()
+        private async void ConfirmChoice()
         {
             timer.StopTimer();
             confirmButton.onClick.RemoveListener(ConfirmChoice);
             foreach (var button in _answers)
             {
-                button.ResolveQuestion();
+                ResolveButton(button);
             }
-            
+
+            await UniTask.Delay(400);
             PresentResult().Forget();
+        }
+
+        private async Task ResolveButton(AnswerButton button)
+        {
+            var isCorrect = await button.ResolveQuestion();
+
+            if (!isCorrect)
+            {
+                correct = false;
+            }
         }
 
         private async UniTask PresentResult()

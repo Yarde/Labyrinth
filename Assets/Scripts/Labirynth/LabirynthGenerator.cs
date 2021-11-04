@@ -26,7 +26,6 @@ namespace Labirynth
 
         public void Setup(GeneratorData generatorData)
         {
-            // todo get labirynth data from backend, size, questions, goal and so on
             _dimensions = generatorData.Dimensions;
             _objectives = generatorData.Objectives;
             _seed = generatorData.Seed;
