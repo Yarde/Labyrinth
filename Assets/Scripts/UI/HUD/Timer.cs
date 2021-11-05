@@ -28,6 +28,13 @@ namespace UI
         {
             isRunning = true;
             lastTime = Time.realtimeSinceStartup;
+            timePassed = 0f;
+        }
+        
+        public void ResumeTimer()
+        {
+            isRunning = true;
+            lastTime = Time.realtimeSinceStartup;
         }
         
         public void StopTimer()

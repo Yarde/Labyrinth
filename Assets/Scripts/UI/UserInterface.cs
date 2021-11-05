@@ -4,24 +4,23 @@ using Menu;
 using Skills;
 using UI.Windows;
 using UnityEngine;
+using UnityEngine.UI;
 using Utils;
 
 namespace UI
 {
     public class UserInterface : MonoBehaviour
     {
-        [Header("Windows Prefabs")] [SerializeField]
-        private GameHud gameHudPrefab;
-
+        [Header("Windows Prefabs")] 
+        [SerializeField] private GameHud gameHudPrefab;
         [SerializeField] private MenuWindow menuPrefab;
         [SerializeField] private WindowState deadScreenPrefab;
         [SerializeField] private WindowState pauseScreenPrefab;
         [SerializeField] private TipDisplay tipDisplayPrefab;
         [SerializeField] private RewardPopup rewardPopupPrefab;
 
-        [Header("Question Types")] [SerializeField]
-        private QuestionScreenBase singleChoiceQuestionPrefab;
-
+        [Header("Question Types")] 
+        [SerializeField] private QuestionScreenBase singleChoiceQuestionPrefab;
         [SerializeField] private QuestionScreenBase multiChoiceQuestionPrefab;
 
         private MenuWindow _menu;

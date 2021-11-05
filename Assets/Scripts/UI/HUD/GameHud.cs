@@ -1,6 +1,8 @@
-﻿using Skills;
+﻿using DG.Tweening;
+using Skills;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -12,6 +14,8 @@ namespace UI
         [SerializeField] private Timer timer;
         [SerializeField] private SkillPanel skillPanel;
         [SerializeField] private ProgressPanel progressPanel;
+        
+        [SerializeField] private Image blendCloud;
 
         private Player _player;
         
@@ -22,14 +26,17 @@ namespace UI
             healthBar.SetupBar(player);
             experienceBar.SetupBar(player);
             progressPanel.Setup(player);
-            
+
+            blendCloud.transform.DORotate(new Vector3(0f, 0f, 360f), 80f, RotateMode.FastBeyond360)
+                .SetLoops(-1).SetEase(Ease.Linear);
+
             Resume();
         }
         
         public void Resume()
         {
             GameRoot.IsPaused = false;
-            timer.StartTimer();
+            timer.ResumeTimer();
         }
 
         public void Pause()
@@ -41,6 +48,13 @@ namespace UI
         private void Update()
         {
             coinCounter.text = _player.Coins.ToString();
+
+            var cloudScale = blendCloud.transform.localScale;
+            var newScale = Vector3.one * (1f + _player.FieldOfViewLevel);
+            if (cloudScale != newScale)
+            {
+                blendCloud.transform.DOScale(newScale, 0.5f);
+            }
         }
     }
 }

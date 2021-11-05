@@ -17,7 +17,8 @@ namespace UI
         [SerializeField] private TextMeshProUGUI levelText;
         [SerializeField] private TextMeshProUGUI costText;
         private const string SkillTextPattern = "Level {0}\nCost {1}";
-        
+        private static readonly Color lightGray = new Color(0.7f, 0.7f, 0.7f, 0.7f);
+
         private Player _player;
         private Skill _skill;
 
@@ -33,11 +34,11 @@ namespace UI
             {
                 //not enough coins
                 button.interactable = false;
-                costText.color = Color.gray;
-                frame.color = Color.gray.WithA(0.4f);
-                frameFill.color = Color.gray;
-                icon.color = Color.gray;
-                coinIcon.color = Color.gray;
+                costText.color = lightGray;
+                frame.color = lightGray.WithA(0.4f);
+                frameFill.color = lightGray;
+                icon.color = lightGray;
+                coinIcon.color = lightGray;
             }
             else
             {
