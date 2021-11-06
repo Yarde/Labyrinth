@@ -144,9 +144,18 @@ namespace UI
             return data;
         }
         
-        private void ShowTutorial()
+        private async void ShowTutorial()
         {
+            if (!_hud) 
+                return;
+
+            PauseGame();
+            
             var tutorial = Instantiate(tutorialSystemPrefab, transform);
+            await tutorial.DisplayTutorial();
+            Destroy(tutorial.gameObject);
+
+            ResumeGame();
         }
         
         private void HandlePauseScreen()
@@ -171,6 +180,13 @@ namespace UI
             DisableInput = true;
             _hud.Pause();
             GameRoot.IsPaused = true;
+        }
+        
+        public void ResumeGame()
+        {
+            DisableInput = false;
+            _hud.Resume();
+            GameRoot.IsPaused = false;
         }
         
         public void LoseScreen()

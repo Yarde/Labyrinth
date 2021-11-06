@@ -8,8 +8,7 @@ namespace UI.Windows
         public string tipText;
         public Vector3 tipPosition;
         public Vector3 cutoutPosition;
-        public float cutoutWidth;
-        public float cutoutHeight;
+        public Vector2 cutoutSize;
         public float arrowRotationZ;
     }
 }
