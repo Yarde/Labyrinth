@@ -241,6 +241,7 @@ MonoBehaviour:
   pauseScreenPrefab: {fileID: 8043393252971936292, guid: 094e5549d588344bbb557e3f86f32539, type: 3}
   tipDisplayPrefab: {fileID: 1031466086783261239, guid: 0accb08e4d415b24781be9cb5a645ac3, type: 3}
   rewardPopupPrefab: {fileID: 924090905928640872, guid: 82a5a68671f2a3142a8de975eb8ebfb3, type: 3}
+  tutorialSystemPrefab: {fileID: 439669833813986882, guid: 4d91a4a85db14ca418046e8e97288caf, type: 3}
   singleChoiceQuestionPrefab: {fileID: 433130548824555345, guid: 2aaad665eed22854481d3d685de0eae1, type: 3}
   multiChoiceQuestionPrefab: {fileID: 0}
 --- !u!1 &963194225

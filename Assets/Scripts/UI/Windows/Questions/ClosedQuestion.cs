@@ -80,7 +80,7 @@ namespace UI.Windows
             confirmButton.onClick.RemoveListener(ConfirmChoice);
             foreach (var button in _answers)
             {
-                ResolveButton(button);
+                _ = ResolveButton(button);
             }
 
             await UniTask.Delay(400);

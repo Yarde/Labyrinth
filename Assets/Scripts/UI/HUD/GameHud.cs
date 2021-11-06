@@ -2,6 +2,7 @@
 using Skills;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI
@@ -14,6 +15,9 @@ namespace UI
         [SerializeField] private Timer timer;
         [SerializeField] private SkillPanel skillPanel;
         [SerializeField] private ProgressPanel progressPanel;
+        
+        [SerializeField] private Button menuButton;
+        [SerializeField] private Button tutorialButton;
         
         [SerializeField] private Image blendCloud;
 
@@ -31,6 +35,12 @@ namespace UI
                 .SetLoops(-1).SetEase(Ease.Linear);
 
             Resume();
+        }
+        
+        public void SetListeners(UnityAction onMenuClick, UnityAction onTutorialClick)
+        {
+            menuButton.onClick.AddListener(onMenuClick);
+            tutorialButton.onClick.AddListener(onTutorialClick);
         }
         
         public void Resume()

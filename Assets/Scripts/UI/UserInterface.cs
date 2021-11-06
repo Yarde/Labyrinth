@@ -4,7 +4,6 @@ using Menu;
 using Skills;
 using UI.Windows;
 using UnityEngine;
-using UnityEngine.UI;
 using Utils;
 
 namespace UI
@@ -18,6 +17,7 @@ namespace UI
         [SerializeField] private WindowState pauseScreenPrefab;
         [SerializeField] private TipDisplay tipDisplayPrefab;
         [SerializeField] private RewardPopup rewardPopupPrefab;
+        [SerializeField] private TutorialSystem tutorialSystemPrefab;
 
         [Header("Question Types")] 
         [SerializeField] private QuestionScreenBase singleChoiceQuestionPrefab;
@@ -45,51 +45,10 @@ namespace UI
             }
 
             Cheats();
-            HandlePauseScreen();
-        }
 
-        private void Cheats()
-        {
-            if (Input.GetKeyDown(KeyCode.Y))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                _player.Coins += 100;
-            }
-
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                _player.transform.position = _player.transform.position.WithZ(_player.transform.position.z + 1f);
-            }
-
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                _player.transform.position = _player.transform.position.WithZ(_player.transform.position.z - 1f);
-            }
-
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                _player.transform.position = _player.transform.position.WithX(_player.transform.position.x - 1f);
-            }
-
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                _player.transform.position = _player.transform.position.WithX(_player.transform.position.x + 1f);
-            }
-        }
-
-        private void HandlePauseScreen()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape) && _hud)
-            {
-                if (GameRoot.IsPaused && _pauseScreen.IsOnTop)
-                {
-                    _hud.Resume();
-                    _pauseScreen.OnExit();
-                }
-                else
-                {
-                    _hud.Pause();
-                    _pauseScreen.OnEnter();
-                }
+                HandlePauseScreen();
             }
         }
 
@@ -99,6 +58,7 @@ namespace UI
 
             _hud = Instantiate(gameHudPrefab, transform);
             _hud.Setup(player, skills);
+            _hud.SetListeners(HandlePauseScreen, ShowTutorial);
 
             if (!_pauseScreen)
             {
@@ -183,6 +143,28 @@ namespace UI
             Destroy(_menu.gameObject);
             return data;
         }
+        
+        private void ShowTutorial()
+        {
+            var tutorial = Instantiate(tutorialSystemPrefab, transform);
+        }
+        
+        private void HandlePauseScreen()
+        {
+            if (!_hud) 
+                return;
+            
+            if (GameRoot.IsPaused && _pauseScreen.IsOnTop)
+            {
+                _hud.Resume();
+                _pauseScreen.OnExit();
+            }
+            else
+            {
+                _hud.Pause();
+                _pauseScreen.OnEnter();
+            }
+        }
 
         public void PauseGame()
         {
@@ -241,6 +223,34 @@ namespace UI
                 }
             };
             return question;
+        }
+        
+        private void Cheats()
+        {
+            if (Input.GetKeyDown(KeyCode.Y))
+            {
+                _player.Coins += 100;
+            }
+
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                _player.transform.position = _player.transform.position.WithZ(_player.transform.position.z + 1f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                _player.transform.position = _player.transform.position.WithZ(_player.transform.position.z - 1f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                _player.transform.position = _player.transform.position.WithX(_player.transform.position.x - 1f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                _player.transform.position = _player.transform.position.WithX(_player.transform.position.x + 1f);
+            }
         }
         #endregion
     }

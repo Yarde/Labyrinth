@@ -39,7 +39,7 @@ namespace Utils
             var startTime = Time.realtimeSinceStartup;
             var timePassed = 0f;
 
-            transform.DOShakeRotation(duration, new Vector3(0f, 0f, 20f));
+            _ = transform.DOShakeRotation(duration, new Vector3(0f, 0f, 20f));
             while (Time.realtimeSinceStartup < startTime + duration)
             {
                 timePassed += DELAY;

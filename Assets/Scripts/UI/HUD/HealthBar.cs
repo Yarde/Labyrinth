@@ -20,7 +20,7 @@ namespace UI
         {
             while (currentHearts > _player.Hearts)
             {
-                RemoveHeart();
+                _ = RemoveHeart();
             }
             while (currentHearts < _player.Hearts)
             {
