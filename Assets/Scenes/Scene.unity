@@ -244,6 +244,57 @@ MonoBehaviour:
   tutorialSystemPrefab: {fileID: 439669833813986882, guid: 4d91a4a85db14ca418046e8e97288caf, type: 3}
   singleChoiceQuestionPrefab: {fileID: 433130548824555345, guid: 2aaad665eed22854481d3d685de0eae1, type: 3}
   multiChoiceQuestionPrefab: {fileID: 0}
+  mockQuestionStrings:
+  - Who was the first president of United States of America;George Washington;Thomas
+    Jefferson;Abraham Lincoln;Benjamin Franklin;1
+  - What is the largest big cat?;Lion;Tiger;Cheetah;Leopard;2
+  - What land animal can open its mouth the widest?;Alligator;Crocodile;Baboon;Hippo;4
+  - What is the largest animal on Earth?;The African elephant;The blue whale;The
+    sperm whale;The giant squid;2
+  - What is the only flying mammal?;The bat;The flying squirrel;The bald eagle;The
+    colugo;1
+  - What is an animal called that eats plants and meat?;Carnivore;Herbivore;Omnivore;Pescatarian;3
+  - "Why do sea otters hold hands?;Because they love each other;To show they\u2019re
+    in the same family;So they don\u2019t float away when they\u2019re sleeping;Because
+    they\u2019re playing;3"
+  - "How can you tell an insect and a spider apart?;Insects have three body parts,
+    spiders have two.;Insects have six legs, spiders have eight.;Insects can have
+    wings but spiders can\u2019t.;All of the above.;4"
+  - What does the duck-billed platypus do that hardly any other mammals do?;Quacks
+    like a duck;Lays eggs;Builds nests;Waddles;2
+  - "Why do snakes stick out their tongue?;To scare predators;To lick their prey;To
+    make a hissing sound;To \u201Csmell\u201D the air;4"
+  - What is it called when there are no more of one kind of animal left on Earth?;Evolution;Conservation;Extinction;Endangered;3
+  - "What\u2019s the biggest planet in our solar system?;Jupiter;Saturn;Neptune;Mercury;1"
+  - What planet has the shortest day?;Mercury;Earth;Neptune;Jupiter;4
+  - What star is closest to the Earth?;The North Star (Polaris);The Dog Star (Sirius);The
+    sun;Andromeda;3
+  - Who was the first person to walk on the moon?;Buzz Aldrin;Neil Armstrong;Michael
+    Collins;Alan Shepard;2
+  - "What\u2019s a blue moon?;When the moon turns blue;When the moon falls on Halloween;The
+    second full moon in a month;When a Hunter\u2019s Moon falls on Halloween;3"
+  - "What\u2019s a lunar eclipse?;When the Earth is in between the sun and the moon;When
+    the moon is in between the Earth and the sun;When the sun is in between the Earth
+    and the moon;When the moon is closest to the Earth;1"
+  - What direction does the sun rise in?;North;South;East;West;3
+  - Does ice sink or float in water?;Sink;Float;Sometimes it sinks, sometimes it
+    floats;Ice is water, so this is a trick question;2
+  - "What\u2019s the force that makes objects fall to the ground?;Electromagnetism;Gravity;Nuclear
+    force;It\u2019s just called \u201CThe Force\u201D;2"
+  - What kind of trees grow from acorns?;Oak;Maple;Hickory;Walnut;1
+  - "What\u2019s the difference between a hurricane and a typhoon?;Typhoons are stronger
+    than hurricanes.;Typhoons happen over land, hurricanes over water.;Hurricanes
+    are slower-moving.;Nothing except where they happen.;4"
+  - How many colors are in a rainbow?;7;10;6;8;1
+  - "What\u2019s the hardest substance in our body?;Bones;Hair;Nails;Teeth;4"
+  - How many bones are in the adult human body?;501;105;206;347;3
+  - Where is the fastest muscle in the body?;The leg;The arm;The fingers;The eye;4
+  - What is the largest body of water on Earth?;The Pacific Ocean;The Atlantic Ocean;The
+    Indian Ocean;The Caspian Sea;1
+  - What is the largest country on Earth?;The United States;Canada;China;Russia;4
+  - What is the smallest country on Earth?;Monaco;Luxembourg;Vatican City;Madagascar;3
+  - What is the coldest place on Earth?;The North Pole;Antarctica;Siberia;Cape Horn,
+    South America;2
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

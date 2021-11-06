@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Gameplay;
+using Google.Protobuf.Collections;
 using Menu;
 using Skills;
 using UI.Windows;
@@ -82,7 +84,7 @@ namespace UI
             _singleChoiceQuestion.gameObject.SetActive(true);
 
             // todo change to real data
-            var question = MockQuestion();
+            var question = GetMockQuestion();
 
             //select the correct type of window
             var correct = await _singleChoiceQuestion.DisplayQuestion(question);
@@ -204,43 +206,52 @@ namespace UI
         }
         
         #region Debug
-        private static Question MockQuestion()
+
+        private Queue<Question> mockQuestions;
+        [SerializeField] private string[] mockQuestionStrings;
+        
+        private Question GetMockQuestion()
         {
-            var question = new Question
+            if (mockQuestions == null)
             {
-                Content = "Who was the first president of United States of America",
-                QuestionType = Question.Types.QuestionType.Abcd,
-                Answers =
+                var shuffledList = new List<string>(mockQuestionStrings);
+                shuffledList.Shuffle();
+                mockQuestions = new Queue<Question>();
+                foreach (var s in shuffledList)
                 {
-                    new Question.Types.Answer
-                    {
-                        AnswerID = 1,
-                        Content = "George Washington",
-                        Correct = true
-                    },
-                    new Question.Types.Answer
-                    {
-                        AnswerID = 2,
-                        Content = "Thomas Jefferson",
-                        Correct = false
-                    },
-                    new Question.Types.Answer
-                    {
-                        AnswerID = 3,
-                        Content = "Abraham Lincoln",
-                        Correct = false
-                    },
-                    new Question.Types.Answer
-                    {
-                        AnswerID = 4,
-                        Content = "Benjamin Franklin",
-                        Correct = false
-                    },
+                    var q = CreateQuestionFromString(s);
+                    mockQuestions.Enqueue(q);
                 }
-            };
+            }
+
+            var question = mockQuestions.Dequeue();
+            mockQuestions.Enqueue(question);
             return question;
         }
-        
+
+        private static Question CreateQuestionFromString(string question)
+        {
+            var split = question.Split(';');
+            var correct = int.Parse(split[split.Length - 1]);
+            var answers = new RepeatedField<Question.Types.Answer>();
+            for (var i = 1; i < split.Length - 1; i++)
+            {
+                answers.Add(new Question.Types.Answer()
+                {
+                    AnswerID = (uint) (i - 1),
+                    Content = split[i],
+                    Correct = correct == i
+                });
+            }
+
+            return new Question
+            {
+                Content = split[0],
+                QuestionType = Question.Types.QuestionType.Abcd,
+                Answers = {answers}
+            };
+        }
+
         private void Cheats()
         {
             if (Input.GetKeyDown(KeyCode.Y))
