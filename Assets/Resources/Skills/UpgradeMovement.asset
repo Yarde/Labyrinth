@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: UpgradeMovement
   displayName: Speed Up
-  maxLevel: 15
+  maxLevel: 20
   bonusPerLevel: 0.1
   startingCost: 10
   frame: {fileID: 21300000, guid: 01ba812c111aea04db0aeb5082f42304, type: 3}

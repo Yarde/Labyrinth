@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/CoinTip.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/CoinTip.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/HealthTip.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/HealthTip.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/ObjectivesTip.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/ObjectivesTip.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/SkillsTip.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/SkillsTip.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/TimeTip.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/TimeTip.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TutorialScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/TutorialScreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialTipData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialTipData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/QuestionWindows/AnswerButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/QuestionWindows/AnswerButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/UpgradeLight.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/UpgradeLight.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/UpgradeMovement.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/UpgradeMovement.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/UpgradeVision.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/UpgradeVision.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +49,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/GenerationAlgorithm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/QuestionScreenBase.cs" />
@@ -83,8 +75,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuWindow.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/QuestionResult.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionScreenBase.cs" />
@@ -106,7 +96,10 @@
       <option value="$PROJECT_DIR$/Assets/TutorialCutout.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialTipData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Network/Gameplay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />
@@ -148,10 +141,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21012">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21012" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -183,7 +176,8 @@
       <workItem from="1634735783600" duration="1118000" />
       <workItem from="1636039043829" duration="11460000" />
       <workItem from="1636130412923" duration="3478000" />
-      <workItem from="1636205603143" duration="6938000" />
+      <workItem from="1636205603143" duration="12117000" />
+      <workItem from="1636298643304" duration="2945000" />
     </task>
     <servers />
   </component>

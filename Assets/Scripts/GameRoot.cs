@@ -27,9 +27,9 @@ public class GameRoot : MonoBehaviour
     private GeneratorData _generatorData;
     private Skill[] _skills;
 
-    private void Awake()
+    private async void Awake()
     {
-        //var data = await ui.ShowMenu();
+        var data = await ui.ShowMenu();
         StartGame(null);
     }
 

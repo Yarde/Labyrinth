@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -21,6 +22,13 @@ namespace Labirynth.Questions
         {
             _cancellationToken = new CancellationTokenSource();
             FlashLight().WithCancellation(_cancellationToken.Token);
+        }
+
+        private void OnDestroy()
+        {
+            _cancellationToken.Cancel();
+            _cancellationToken.Dispose();
+            _cancellationToken = null;
         }
 
         private async UniTask FlashLight()
@@ -76,9 +84,6 @@ namespace Labirynth.Questions
 
         public override async UniTask Destroy()
         {
-            _cancellationToken.Cancel();
-            _cancellationToken.Dispose();
-            _cancellationToken = null;
             Collected = true;
             Destroy(gameObject);
             await UniTask.CompletedTask;

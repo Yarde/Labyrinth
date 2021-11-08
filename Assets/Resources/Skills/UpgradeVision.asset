@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: UpgradeVision
   displayName: See More
-  maxLevel: 15
+  maxLevel: 20
   bonusPerLevel: 0.02
   startingCost: 20
   frame: {fileID: 21300000, guid: 9969d54709be1ea4e9545086743142b9, type: 3}
