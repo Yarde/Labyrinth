@@ -7,8 +7,8 @@ using Labirynth.Questions;
 using Skills;
 using UI;
 using UnityEngine;
+using Utils;
 using Random = UnityEngine.Random;
-
 public class GameRoot : MonoBehaviour
 {
     public static bool IsPaused = false;
@@ -26,9 +26,11 @@ public class GameRoot : MonoBehaviour
     private Dictionary<Type, ObjectiveData> _objectives;
     private GeneratorData _generatorData;
     private Skill[] _skills;
+    private ConnectionManager _connectionManager;
 
     private async void Awake()
     {
+        _connectionManager = new ConnectionManager();
         var data = await ui.ShowMenu();
         StartGame(null);
     }

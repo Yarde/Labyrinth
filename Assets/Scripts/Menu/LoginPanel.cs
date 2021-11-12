@@ -1,7 +1,9 @@
-﻿using TMPro;
+﻿using Cysharp.Threading.Tasks;
+using Gameplay;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Utils;
 namespace Menu
 {
     public class LoginPanel : MonoBehaviour
@@ -11,25 +13,44 @@ namespace Menu
         
         [SerializeField] private TextMeshProUGUI emailError;
         [SerializeField] private TextMeshProUGUI codeError;
+        [SerializeField] private TextMeshProUGUI serverError;
         
         [SerializeField] private Button start;
         
         // todo change to BE data
-        public object Data { get; set; }
+        public StartGameResponse Data { get; set; }
 
         public void Setup()
         {
             start.onClick.AddListener(RunGame);
         }
 
-        private void RunGame()
+        private async void RunGame()
         {
             if (ValidateTexts())
             {
+                StartGameResponse response = await SendStartGameRequest();
 
-                // todo send some request to authenticate and some shit
-                Data = this;
+                if (response.Error)
+                {
+                    serverError.gameObject.SetActive(true);
+                    serverError.text = response.ErrorMsg;
+                }
+                else
+                {
+                    Data = response;
+                }
             }
+        }
+        private async UniTask<StartGameResponse> SendStartGameRequest()
+        {
+            var request = new StartGameRequest
+            {
+                Email = email.text,
+                Code = code.text
+            };
+            var response = await ConnectionManager.Instance.GetMessageAsync<StartGameResponse>(request, "dawid/sth");
+            return response;
         }
 
         private bool ValidateTexts()
