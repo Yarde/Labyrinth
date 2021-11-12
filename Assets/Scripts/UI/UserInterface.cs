@@ -7,7 +7,6 @@ using Skills;
 using UI.Windows;
 using UnityEngine;
 using Utils;
-
 namespace UI
 {
     public class UserInterface : MonoBehaviour
@@ -207,16 +206,16 @@ namespace UI
         
         #region Debug
 
-        private Queue<Question> mockQuestions;
+        private Queue<QuestionResponse> mockQuestions;
         [SerializeField] private string[] mockQuestionStrings;
         
-        private Question GetMockQuestion()
+        private QuestionResponse GetMockQuestion()
         {
             if (mockQuestions == null)
             {
                 var shuffledList = new List<string>(mockQuestionStrings);
                 shuffledList.Shuffle();
-                mockQuestions = new Queue<Question>();
+                mockQuestions = new Queue<QuestionResponse>();
                 foreach (var s in shuffledList)
                 {
                     var q = CreateQuestionFromString(s);
@@ -229,25 +228,24 @@ namespace UI
             return question;
         }
 
-        private static Question CreateQuestionFromString(string question)
+        private static QuestionResponse CreateQuestionFromString(string question)
         {
             var split = question.Split(';');
             var correct = int.Parse(split[split.Length - 1]);
-            var answers = new RepeatedField<Question.Types.Answer>();
+            var answers = new RepeatedField<QuestionResponse.Types.Answer>();
             for (var i = 1; i < split.Length - 1; i++)
             {
-                answers.Add(new Question.Types.Answer()
+                answers.Add(new QuestionResponse.Types.Answer()
                 {
-                    AnswerID = (uint) (i - 1),
+                    AnswersID = (uint) (i - 1),
                     Content = split[i],
                     Correct = correct == i
                 });
             }
 
-            return new Question
+            return new QuestionResponse()
             {
                 Content = split[0],
-                QuestionType = Question.Types.QuestionType.Abcd,
                 Answers = {answers}
             };
         }

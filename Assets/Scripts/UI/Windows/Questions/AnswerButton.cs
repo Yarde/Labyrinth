@@ -22,13 +22,13 @@ namespace UI.Windows
 
         public bool IsSelected { get; private set; }
         public uint AnswerId { get; private set; }
-        private Question.Types.Answer _answer;
+        private QuestionResponse.Types.Answer _answer;
         private Action _onClick;
 
-        public void Setup(Question.Types.Answer answer, Action onClick)
+        public void Setup(QuestionResponse.Types.Answer answer, Action onClick)
         {
             _answer = answer;
-            AnswerId = answer.AnswerID;
+            AnswerId = answer.AnswersID;
             
             button.interactable = true;
             text.text = answer.Content;

@@ -24,7 +24,7 @@ namespace UI.Windows
 
         private bool correct;
         
-        public override async UniTask<bool> DisplayQuestion(Question question)
+        public override async UniTask<bool> DisplayQuestion(QuestionResponse question)
         {
             timer.StartTimer();
 
@@ -49,26 +49,26 @@ namespace UI.Windows
             return correct;
         }
 
-        private void SpawnAnswers(Question question)
+        private void SpawnAnswers(QuestionResponse question)
         {
             _answers = new List<AnswerButton>();
 
             foreach (var answer in question.Answers)
             {
                 var newAnswer = Instantiate(answerButtonPrefab, answerButtonHolder);
-                newAnswer.Setup(answer, () => OnAnswerClicked(answer.AnswerID));
+                newAnswer.Setup(answer, () => OnAnswerClicked(answer.AnswersID));
                 _answers.Add(newAnswer);
             }
         }
         
-        private void UpdateAnswers(Question question)
+        private void UpdateAnswers(QuestionResponse question)
         {
             // todo use pool instead to handle changing answer count
             for (var i = 0; i < question.Answers.Count; i++)
             {
                 var answer = question.Answers[i];
                 var button = _answers[i];
-                button.Setup(answer, () => OnAnswerClicked(answer.AnswerID));
+                button.Setup(answer, () => OnAnswerClicked(answer.AnswersID));
             }
         }
 
