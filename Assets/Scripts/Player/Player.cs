@@ -7,7 +7,6 @@ using Gameplay;
 using Labirynth.Questions;
 using Network;
 using UI;
-using UI.Windows.Questions;
 using UnityEngine;
 using QuestionTrigger = Labirynth.Questions.QuestionTrigger;
 
@@ -82,7 +81,19 @@ namespace Player
             {
                 Playtime += ui.GetEndgamePlaytime();
                 Points = CalculatePoints();
-                await ui.WinScreen();
+                ui.WinScreen();
+                var request = new EndGameRequest
+                {
+                    SessionCode = GameRoot.SessionCode,
+                    GameplayTime = (uint) Playtime,
+                    ScenarioEnded = true,
+                    StudentEndGameData = new EndGameRequest.Types.StudentEndGameData
+                    {
+                        Experience = Experience,
+                        Money = Coins
+                    }
+                };
+                await ConnectionManager.Instance.SendMessageAsync<Empty>(request, "dawid/end");
             }
             else
             {
@@ -101,7 +112,7 @@ namespace Player
         private async UniTask OpenQuestion(QuestionTrigger trigger)
         {
             Debug.Log($"Collision entered with {trigger.name}");
-            QuestionResult result = await ui.OpenQuestion();
+            var result = await ui.OpenQuestion();
         
             Coins += result.Coins;
             Experience += result.Experience;
@@ -121,7 +132,7 @@ namespace Player
                         Money = Coins
                     }
                 };
-                UniTask<Empty> task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "dawid/end");
+                var task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "dawid/end");
                 await ui.LoseScreen(task);
             }
         
