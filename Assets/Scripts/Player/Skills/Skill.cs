@@ -31,6 +31,7 @@ namespace Player.Skills
                 return;
             }
 
+            Player.Points += Cost;
             Player.Coins -= Cost;
             Cost = (int) (Cost + Mathf.Sqrt(Cost));
             Level++;

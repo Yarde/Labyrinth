@@ -32,7 +32,12 @@ namespace Menu
                 StartGameResponse = new StartGameResponse
                 {
                     SessionCode = "1",
-                    QuestionsNumber = { 10, 10, 10 }
+                    QuestionsNumber = { 10, 10, 10 },
+                    StudentData = new StartGameResponse.Types.StudentData
+                    {
+                        Experience = 123,
+                        Money = 0
+                    }
                 };
             });
         }

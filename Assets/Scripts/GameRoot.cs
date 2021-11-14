@@ -20,6 +20,7 @@ public class GameRoot : MonoBehaviour
     [Header("Server Settings")]
     [SerializeField] private string serverHost = "http://zpi2021.westeurope.cloudapp.azure.com/api/";
 
+    [Header("Bindings")]
     [SerializeField] private Player.Player player;
     [SerializeField] private LabirynthGenerator labirynth;
     [SerializeField] private UserInterface ui;
@@ -38,7 +39,7 @@ public class GameRoot : MonoBehaviour
     private async void Awake()
     {
         _connectionManager = new ConnectionManager(serverHost);
-        StartGameResponse startGameResponse = await ui.ShowMenu();
+        var startGameResponse = await ui.ShowMenu();
         StartGame(startGameResponse);
     }
 

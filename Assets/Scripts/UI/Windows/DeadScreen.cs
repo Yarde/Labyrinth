@@ -1,31 +1,37 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI.Windows
 {
     public class DeadScreen : WindowState
     {
-        public Button again;
-        public Button menu;
+        [SerializeField] private Button menu;
+        [SerializeField] private GameObject loading;
 
-        public override void Setup()
+        public void Setup()
         {
-            again.onClick.AddListener(PlayAgain);
             menu.onClick.AddListener(MainMenu);
+            menu.gameObject.SetActive(false);
+            loading.gameObject.SetActive(true);
+            
+            gameObject.SetActive(true);
         }
 
         private void OnDestroy()
         {
-            again.onClick.RemoveListener(PlayAgain);
             menu.onClick.RemoveListener(MainMenu);
         }
         
-        public override void OnEnter()
+        private void MainMenu()
         {
-            Pause();
+            GameRoot.IsPaused = false;
+            SceneManager.LoadScene("Scene");
         }
-
-        public override void OnExit()
+        public void OnRequestSent()
         {
+            menu.gameObject.SetActive(true);
+            loading.gameObject.SetActive(false);
         }
     }
 }

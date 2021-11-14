@@ -1,13 +1,14 @@
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.Windows
 {
     public class PauseScreen : WindowState
     {
-        public Button resume;
-        public Button menu;
+        [SerializeField] private  Button resume;
+        [SerializeField] private  Button menu;
 
-        public override void Setup()
+        public void Setup()
         {
             resume.onClick.AddListener(Resume);
             menu.onClick.AddListener(MainMenu);
@@ -17,16 +18,6 @@ namespace UI.Windows
         {
             resume.onClick.RemoveListener(Resume);
             menu.onClick.RemoveListener(MainMenu);
-        }
-
-        public override void OnEnter()
-        {
-            Pause();
-        }
-
-        public override void OnExit()
-        {
-            Resume();
         }
     }
 }

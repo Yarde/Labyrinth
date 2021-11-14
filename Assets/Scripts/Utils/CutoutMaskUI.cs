@@ -12,9 +12,9 @@ namespace Utils
         {
             get
             {
-                var material = new Material(base.materialForRendering);
-                material.SetInt(StencilComp, (int) CompareFunction.NotEqual);
-                return material;
+                var renderingMaterial = new Material(base.materialForRendering);
+                renderingMaterial.SetInt(StencilComp, (int) CompareFunction.NotEqual);
+                return renderingMaterial;
             }
         }
     }

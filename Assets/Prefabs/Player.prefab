@@ -382,10 +382,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9676dc96ab81c277bc7d98015a4aacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 4908335023367846170}
-  _movement: {x: 0, y: 0, z: 0}
-  _animator: {fileID: 0}
-  _rigidBody: {fileID: 4908335023367846167}
+  player: {fileID: 4908335023367846170}
+  movement: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
+  rigidBody: {fileID: 4908335023367846167}
 --- !u!23 &4908335023367846175
 MeshRenderer:
   m_ObjectHideFlags: 0

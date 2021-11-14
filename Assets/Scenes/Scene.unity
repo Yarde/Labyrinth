@@ -239,6 +239,7 @@ MonoBehaviour:
   menuPrefab: {fileID: 4273637455561955142, guid: 997edf5f50f4c4f47a8cf517e2fe4472, type: 3}
   deadScreenPrefab: {fileID: 476805244956709627, guid: 327b806170a016e2ba86de3fd8b1f087, type: 3}
   pauseScreenPrefab: {fileID: 8043393252971936292, guid: 094e5549d588344bbb557e3f86f32539, type: 3}
+  winScreenPrefab: {fileID: 669276346460715052, guid: 3daadb33ddc44f74196ac1367982f884, type: 3}
   tipDisplayPrefab: {fileID: 1031466086783261239, guid: 0accb08e4d415b24781be9cb5a645ac3, type: 3}
   rewardPopupPrefab: {fileID: 924090905928640872, guid: 82a5a68671f2a3142a8de975eb8ebfb3, type: 3}
   tutorialSystemPrefab: {fileID: 439669833813986882, guid: 4d91a4a85db14ca418046e8e97288caf, type: 3}
@@ -489,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd283cc91844ddaa2a22df3c6ccfa1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serverHost: http://zpi2021.westeurope.cloudapp.azure.com/api/
   player: {fileID: 2136045742}
   labirynth: {fileID: 6312112345100141840}
   ui: {fileID: 903042969}

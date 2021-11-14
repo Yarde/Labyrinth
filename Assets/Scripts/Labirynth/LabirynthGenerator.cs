@@ -46,7 +46,7 @@ namespace Labirynth
             var deadEnds = cellList.Where(x => x.DeadEnd).ToList();
             deadEnds.Shuffle();
             
-            var extraPoints = cellList.Where(x => !x.DeadEnd && x.DistanceFromCenter > 10).ToList();
+            var extraPoints = cellList.Where(x => !x.DeadEnd && x.DistanceFromCenter > _dimensions.x/2).ToList();
             extraPoints.Shuffle();
 
             var possibleSpawnPoints = deadEnds.Concat(extraPoints).ToList();
@@ -66,8 +66,8 @@ namespace Labirynth
             // first cell is always taken by the exit so we start at index 1;
             var cellOffset = 1;
             cellOffset = AddTriggers(possibleSpawnPoints, typeof(Key), cellOffset);
-            cellOffset = AddTriggers(possibleSpawnPoints, typeof(Treasure), cellOffset);
-            AddTriggers(possibleSpawnPoints, typeof(Enemy), cellOffset);
+            cellOffset = AddTriggers(possibleSpawnPoints, typeof(Enemy), cellOffset);
+            AddTriggers(possibleSpawnPoints, typeof(Treasure), cellOffset);
         }
 
         private int AddTriggers(List<Cell> cellList, Type type, int startIndex)

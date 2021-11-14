@@ -6,8 +6,8 @@ namespace Utils
 {
     public static class ProceduralNumberGenerator
     {
-        private static int _currentPosition = 0;
-        private static string _key;
+        private static int CurrentPosition;
+        private static string Key;
 
         public static void Initialize(int seed)
         {
@@ -20,14 +20,13 @@ namespace Utils
             for (var i = 0; i < 40; i++)
             {
                 var nextRandom = (int) (Random.value * 4 + 1);
-                _key += nextRandom;
+                Key += nextRandom;
             }
-            //_key = "12342412123334242143223314412441212322344321212233344";
         }
 
         public static int GetNextNumber()
         {
-            var currentNum = _key.Substring(_currentPosition++ % _key.Length, 1);
+            string currentNum = Key.Substring(CurrentPosition++ % Key.Length, 1);
             return int.Parse(currentNum);
         }
 

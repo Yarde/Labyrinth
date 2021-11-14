@@ -16,8 +16,8 @@ namespace UI.HUD
         [SerializeField] private Image coinIcon;
         [SerializeField] private TextMeshProUGUI levelText;
         [SerializeField] private TextMeshProUGUI costText;
-        private const string SkillTextPattern = "Level {0}\nCost {1}";
-        private static readonly Color lightGray = new Color(0.7f, 0.7f, 0.7f, 0.7f);
+        private const string SKILL_TEXT_PATTERN = "Level {0}\nCost {1}";
+        private static readonly Color LightGray = new Color(0.7f, 0.7f, 0.7f, 0.7f);
 
         private Player.Player _player;
         private Skill _skill;
@@ -34,11 +34,11 @@ namespace UI.HUD
             {
                 //not enough coins
                 button.interactable = false;
-                costText.color = lightGray;
-                frame.color = lightGray.WithA(0.4f);
-                frameFill.color = lightGray;
-                icon.color = lightGray;
-                coinIcon.color = lightGray;
+                costText.color = LightGray;
+                frame.color = LightGray.WithA(0.4f);
+                frameFill.color = LightGray;
+                icon.color = LightGray;
+                coinIcon.color = LightGray;
             }
             else
             {
@@ -82,7 +82,7 @@ namespace UI.HUD
 
         private void SetTexts()
         {
-            levelText.text = string.Format(SkillTextPattern, _skill.Level, _skill.Cost);
+            levelText.text = string.Format(SKILL_TEXT_PATTERN, _skill.Level, _skill.Cost);
             costText.text = _skill.Cost.ToString();
         }
     }

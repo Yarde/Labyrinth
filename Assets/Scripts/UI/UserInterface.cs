@@ -17,8 +17,9 @@ namespace UI
         [Header("Windows Prefabs")] 
         [SerializeField] private GameHud gameHudPrefab;
         [SerializeField] private MenuWindow menuPrefab;
-        [SerializeField] private WindowState deadScreenPrefab;
-        [SerializeField] private WindowState pauseScreenPrefab;
+        [SerializeField] private DeadScreen deadScreenPrefab;
+        [SerializeField] private PauseScreen pauseScreenPrefab;
+        [SerializeField] private WinScreen winScreenPrefab;
         [SerializeField] private TipDisplay tipDisplayPrefab;
         [SerializeField] private RewardPopup rewardPopupPrefab;
         [SerializeField] private TutorialSystem tutorialSystemPrefab;
@@ -29,31 +30,25 @@ namespace UI
 
         private MenuWindow _menu;
         private GameHud _hud;
-        private WindowState _pauseScreen;
-        private WindowState _deadScreen;
+        private PauseScreen _pauseScreen;
+        private WinScreen _winScreen;
+        private DeadScreen _deadScreen;
         private TipDisplay _tipDisplay;
         private RewardPopup _rewardPopup;
 
         private QuestionScreenBase _singleChoiceQuestion;
         private QuestionScreenBase _multiChoiceQuestion;
 
-        private bool DisableInput { get; set; } = true;
-
         private Player.Player _player;
 
         private void Update()
         {
-            if (DisableInput)
+            if (GameRoot.IsPaused)
             {
                 return;
             }
 
             Cheats();
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                HandlePauseScreen();
-            }
         }
 
         public void Setup(Player.Player player, Skill[] skills)
@@ -81,7 +76,8 @@ namespace UI
         public async UniTask<QuestionResult> OpenQuestion()
         {
             _hud.Pause();
-            DisableInput = true;
+            GameRoot.IsPaused = true;
+            //DisableInput = true;
 
             _singleChoiceQuestion.gameObject.SetActive(true);
 
@@ -94,12 +90,13 @@ namespace UI
 
             // pass the reward here
             var result = correct
-                ? new QuestionResult(100, 200, 0)
-                : new QuestionResult(0, 0, -1);
+                ? new QuestionResult(100, 200, 0, 100)
+                : new QuestionResult(0, 0, -1, 0);
 
             await DisplayReward(result);
             
-            DisableInput = false;
+            GameRoot.IsPaused = false;
+            //DisableInput = false;
             _hud.Resume();
             
             return result;
@@ -169,65 +166,74 @@ namespace UI
             
             if (GameRoot.IsPaused && _pauseScreen.IsOnTop)
             {
-                _hud.Resume();
-                _pauseScreen.OnExit();
+                _pauseScreen.Resume();
+                ResumeGame();
             }
             else
             {
-                _hud.Pause();
-                _pauseScreen.OnEnter();
+                _pauseScreen.Pause();
+                PauseGame();
             }
         }
 
         public void PauseGame()
         {
-            DisableInput = true;
             _hud.Pause();
             GameRoot.IsPaused = true;
         }
         
         public void ResumeGame()
         {
-            DisableInput = false;
             _hud.Resume();
             GameRoot.IsPaused = false;
         }
         
-        public void LoseScreen()
+        public async UniTask WinScreen()
+        {
+            if (_winScreen == null)
+            {
+                _winScreen = Instantiate(winScreenPrefab, transform);
+            }
+            PauseGame();
+            await _winScreen.Setup(_player);
+        }
+        
+        public async UniTask LoseScreen(UniTask<Empty> uniTask)
         {
             if (_deadScreen == null)
             {
                 _deadScreen = Instantiate(deadScreenPrefab, transform);
-                _deadScreen.Setup();
             }
-            _deadScreen.OnEnter();
-            
-            DisableInput = true;
-            _hud.Pause();
-            GameRoot.IsPaused = true;
+            PauseGame();
+            _deadScreen.Setup();
+
+            await uniTask;
+            _deadScreen.OnRequestSent();
         }
         
-        #region Debug
+        public int GetEndgamePlaytime() => _hud.GetPlaytime();
 
-        private Queue<QuestionResponse> mockQuestions;
+#region Debug
+
+        private Queue<QuestionResponse> _mockQuestions;
         [SerializeField] private string[] mockQuestionStrings;
         
         private QuestionResponse GetMockQuestion()
         {
-            if (mockQuestions == null)
+            if (_mockQuestions == null)
             {
                 var shuffledList = new List<string>(mockQuestionStrings);
                 shuffledList.Shuffle();
-                mockQuestions = new Queue<QuestionResponse>();
+                _mockQuestions = new Queue<QuestionResponse>();
                 foreach (var s in shuffledList)
                 {
                     var q = CreateQuestionFromString(s);
-                    mockQuestions.Enqueue(q);
+                    _mockQuestions.Enqueue(q);
                 }
             }
 
-            var question = mockQuestions.Dequeue();
-            mockQuestions.Enqueue(question);
+            var question = _mockQuestions.Dequeue();
+            _mockQuestions.Enqueue(question);
             return question;
         }
 

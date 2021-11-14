@@ -13,14 +13,13 @@ namespace UI.HUD
 
         private Player.Player _player;
         
-        private int currentExperience;
-        private int level;
-        private int experienceLeft;
-        private int experienceNeeded;
+        private int _currentExperience;
+        private int _experienceLeft;
+        private int _experienceNeeded;
 
         private void Update()
         {
-            if (currentExperience < _player.Experience)
+            if (_currentExperience < _player.Experience)
             {
                 // todo animate experience gain
                 UpdateExperience();
@@ -35,19 +34,19 @@ namespace UI.HUD
         
         private void UpdateExperience()
         {
-            currentExperience = _player.Experience;
+            _currentExperience = _player.Experience;
             CalculateLevel();
-            experienceText.text = $"Level {level} - {experienceLeft}/{experienceNeeded} exp";
-            slider.value = experienceLeft / (float) experienceNeeded;
+            experienceText.text = $"Level {_player.Level} - {_experienceLeft}/{_experienceNeeded} exp";
+            slider.value = _experienceLeft / (float) _experienceNeeded;
         }
 
         private void CalculateLevel()
         {
-            level = (int) (Mathf.Floor(EXP_MULTIPLIER * Mathf.Sqrt(currentExperience)) + 1);
-            var experienceToNextLevel = (int) Mathf.Pow(level / EXP_MULTIPLIER, 2) - currentExperience;
-            experienceNeeded = (int) Mathf.Pow(level / EXP_MULTIPLIER, 2) -
-                               (int) Mathf.Pow((level - 1) / EXP_MULTIPLIER, 2);
-            experienceLeft = experienceNeeded - experienceToNextLevel;
+            _player.Level = (int) (Mathf.Floor(EXP_MULTIPLIER * Mathf.Sqrt(_currentExperience)) + 1);
+            var experienceToNextLevel = (int) Mathf.Pow(_player.Level / EXP_MULTIPLIER, 2) - _currentExperience;
+            _experienceNeeded = (int) Mathf.Pow(_player.Level / EXP_MULTIPLIER, 2) -
+                               (int) Mathf.Pow((_player.Level - 1) / EXP_MULTIPLIER, 2);
+            _experienceLeft = _experienceNeeded - experienceToNextLevel;
         }
     }
 }

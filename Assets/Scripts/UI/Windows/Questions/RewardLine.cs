@@ -25,7 +25,6 @@ namespace UI.Windows.Questions
             rewardIcon.sprite = rewardSprite;
             rewardText.SetNewValue(0, format);
             backgroundImage.color = rewardAmount > 0 ? gainColor : lossColor;
-            
             gameObject.SetActive(true);
             
             await transform.DOScale(Vector3.one, 0.25f);

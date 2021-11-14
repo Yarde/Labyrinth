@@ -10,19 +10,18 @@ namespace UI.HUD
     {
         [SerializeField] private GameObject heartObject;
         [SerializeField] private HorizontalLayoutGroup holder;
-
-        // todo optimization it can be solved with object pool
-        private Stack<GameObject> spawnedHearts;
-        private int currentHearts = 0;
+        
+        private Stack<GameObject> _spawnedHearts;
+        private int _currentHearts;
         private Player.Player _player;
 
         public void Update()
         {
-            while (currentHearts > _player.Hearts)
+            while (_currentHearts > _player.Hearts)
             {
                 _ = RemoveHeart();
             }
-            while (currentHearts < _player.Hearts)
+            while (_currentHearts < _player.Hearts)
             {
                 AddHeart();
             }
@@ -30,21 +29,21 @@ namespace UI.HUD
         
         public void SetupBar(Player.Player player)
         {
-            spawnedHearts = new Stack<GameObject>();
+            _spawnedHearts = new Stack<GameObject>();
             _player = player;
         }
 
         private void AddHeart()
         {
             var image = Instantiate(heartObject, holder.transform);
-            spawnedHearts.Push(image);
-            currentHearts++;
+            _spawnedHearts.Push(image);
+            _currentHearts++;
         }
         
         private async UniTask RemoveHeart()
         {
-            currentHearts--;
-            var image = spawnedHearts.Pop();
+            _currentHearts--;
+            var image = _spawnedHearts.Pop();
             
             await image.transform.DOShakeRotation(0.5f);
             Destroy(image);

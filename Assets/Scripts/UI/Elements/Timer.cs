@@ -8,17 +8,18 @@ namespace UI.Elements
         [SerializeField] private TextMeshProUGUI timeText;
         [SerializeField] private string timeFormat = "{0}:{1}";
 
-        private bool isRunning;
-        private float lastTime;
-        private float timePassed;
+        private bool _isRunning;
+        private float _lastTime;
+        private float _timePassed;
+        public int ElapsedSeconds => (int) _timePassed;
 
         private void Update()
         {
-            if (isRunning)
+            if (_isRunning)
             {
-                timePassed += Time.realtimeSinceStartup - lastTime;
-                lastTime = Time.realtimeSinceStartup;
-                timeText.text = string.Format(timeFormat, GetMinute(timePassed), GetSecond(timePassed));
+                _timePassed += Time.realtimeSinceStartup - _lastTime;
+                _lastTime = Time.realtimeSinceStartup;
+                timeText.text = string.Format(timeFormat, GetMinute(_timePassed), GetSecond(_timePassed));
                 // Milliseconds also implemented but it is a bit expensive and not used currently
                 //, GetMilliseconds(timePassed));
             }
@@ -26,20 +27,20 @@ namespace UI.Elements
 
         public void StartTimer()
         {
-            isRunning = true;
-            lastTime = Time.realtimeSinceStartup;
-            timePassed = 0f;
+            _isRunning = true;
+            _lastTime = Time.realtimeSinceStartup;
+            _timePassed = 0f;
         }
         
         public void ResumeTimer()
         {
-            isRunning = true;
-            lastTime = Time.realtimeSinceStartup;
+            _isRunning = true;
+            _lastTime = Time.realtimeSinceStartup;
         }
         
         public void StopTimer()
         {
-            isRunning = false;
+            _isRunning = false;
         }
 
         private string GetMinute(float time)

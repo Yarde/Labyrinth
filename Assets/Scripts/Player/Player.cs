@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using GameData;
+using Gameplay;
 using Labirynth.Questions;
-using Player.Skills;
+using Network;
 using UI;
+using UI.Windows.Questions;
 using UnityEngine;
+using QuestionTrigger = Labirynth.Questions.QuestionTrigger;
 
 namespace Player
 {
@@ -14,7 +17,6 @@ namespace Player
     public class Player : MonoBehaviour 
     {
         private const string NOT_ENOUGH_KEYS_TIP_TEXT = "Come back where you collected all the Keys";
-        private const string GAME_WON_TIP_TEXT = "You won! Congratulations";
 
         [SerializeField] private UserInterface ui;
         [SerializeField] private AudioSource audioSource;
@@ -23,15 +25,15 @@ namespace Player
         [SerializeField] private float baseMovementSpeed = 2f;
 
         public int Hearts { get; private set; }
-        public int Points { get; private set; }
+        public int Points { get; set; }
         public int Experience { get; set; }
-        public int Playtime { get; set; }
+        public int Level { get; set; }
+        public int Playtime { get; private set; }
         public int Coins { get; set; }
         public float LightLevel { get; set; }
         public float FieldOfViewLevel { get; set; }
         public float MovementSpeed { get; set; }
         public Dictionary<Type, ObjectiveData> Objectives { get; set; }
-        private Skill[] _skills;
 
         public void Setup(Dictionary<Type, ObjectiveData> objectives, Vector2Int dimensions)
         {
@@ -43,7 +45,7 @@ namespace Player
             FieldOfViewLevel = baseViewDistance;
             MovementSpeed = baseMovementSpeed;
             Experience = 0;
-            Hearts = 5;
+            Hearts = 1;
         }
 
         private async void OnCollisionEnter(Collision collision)
@@ -78,29 +80,49 @@ namespace Player
             var mainObjective = Objectives[typeof(Key)];
             if (mainObjective.Collected == mainObjective.Total)
             {
-                // todo game won, do something
-                ui.PauseGame();
-                await ui.DisplayTip(GAME_WON_TIP_TEXT);
+                Playtime += ui.GetEndgamePlaytime();
+                Points = CalculatePoints();
+                await ui.WinScreen();
             }
             else
             {
                 ui.DisplayTip(NOT_ENOUGH_KEYS_TIP_TEXT).Forget();
             }
         }
+        private int CalculatePoints()
+        {
+            var toAdd = 0;
+            toAdd += Coins;
+            toAdd += Hearts * 20;
+
+            return toAdd;
+        }
 
         private async UniTask OpenQuestion(QuestionTrigger trigger)
         {
             Debug.Log($"Collision entered with {trigger.name}");
-            var result = await ui.OpenQuestion();
+            QuestionResult result = await ui.OpenQuestion();
         
             Coins += result.Coins;
             Experience += result.Experience;
             Hearts += result.Hearts;
+            Points += result.Points;
 
             if (Hearts == 0)
             {
-                ui.LoseScreen();
-                // todo send notification that player lost
+                var request = new EndGameRequest
+                {
+                    SessionCode = GameRoot.SessionCode,
+                    GameplayTime = (uint) Playtime,
+                    ScenarioEnded = false,
+                    StudentEndGameData = new EndGameRequest.Types.StudentEndGameData
+                    {
+                        Experience = Experience,
+                        Money = Coins
+                    }
+                };
+                UniTask<Empty> task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "dawid/end");
+                await ui.LoseScreen(task);
             }
         
             Objectives[trigger.GetType()].Collected++;

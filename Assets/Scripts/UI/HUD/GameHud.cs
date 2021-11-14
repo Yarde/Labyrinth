@@ -46,13 +46,11 @@ namespace UI.HUD
         
         public void Resume()
         {
-            GameRoot.IsPaused = false;
             timer.ResumeTimer();
         }
 
         public void Pause()
         {
-            GameRoot.IsPaused = true;
             timer.StopTimer();
         }
 
@@ -67,5 +65,6 @@ namespace UI.HUD
                 blendCloud.transform.DOScale(newScale, 0.5f);
             }
         }
+        public int GetPlaytime() => timer.ElapsedSeconds;
     }
 }
