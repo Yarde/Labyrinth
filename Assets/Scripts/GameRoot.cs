@@ -4,16 +4,20 @@ using System.Linq;
 using GameData;
 using Labirynth;
 using Labirynth.Questions;
-using Skills;
+using Network;
+using Player.Skills;
 using UI;
 using UnityEngine;
-using Utils;
 using Random = UnityEngine.Random;
+
 public class GameRoot : MonoBehaviour
 {
     public static bool IsPaused = false;
-    
-    [SerializeField] private Player player;
+
+    [Header("Server Settings")]
+    [SerializeField] private string serverHost = "http://zpi2021.westeurope.cloudapp.azure.com/api/";
+
+    [SerializeField] private Player.Player player;
     [SerializeField] private LabirynthGenerator labirynth;
     [SerializeField] private UserInterface ui;
     [SerializeField] private SkillData[] skills;
@@ -30,9 +34,9 @@ public class GameRoot : MonoBehaviour
 
     private async void Awake()
     {
-        _connectionManager = new ConnectionManager();
+        _connectionManager = new ConnectionManager(serverHost);
         var data = await ui.ShowMenu();
-        StartGame(null);
+        StartGame(data);
     }
 
     private void StartGame(object data)

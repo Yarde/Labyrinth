@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using Cysharp.Threading.Tasks;
 
-namespace UI.Windows
+namespace UI.Windows.Questions
 {
     public class SingleChoiceQuestion : ClosedQuestion
     {

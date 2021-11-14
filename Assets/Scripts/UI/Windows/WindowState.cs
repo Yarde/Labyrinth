@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace UI
+namespace UI.Windows
 {
     public abstract class WindowState : MonoBehaviour
     {

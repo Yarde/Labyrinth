@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Windows
+namespace UI.Windows.Questions
 {
     public class AnswerButton : MonoBehaviour
     {

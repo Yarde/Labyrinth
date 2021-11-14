@@ -1,10 +1,10 @@
-﻿using Skills;
+﻿using Player.Skills;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
 
-namespace UI
+namespace UI.HUD
 {
     public class SkillButton : MonoBehaviour
     {
@@ -19,7 +19,7 @@ namespace UI
         private const string SkillTextPattern = "Level {0}\nCost {1}";
         private static readonly Color lightGray = new Color(0.7f, 0.7f, 0.7f, 0.7f);
 
-        private Player _player;
+        private Player.Player _player;
         private Skill _skill;
 
         private void Update()
@@ -51,7 +51,7 @@ namespace UI
             }
         }
 
-        public void SetupSkill(Skill skill, Player player)
+        public void SetupSkill(Skill skill, Player.Player player)
         {
             _skill = skill;
             _player = player;

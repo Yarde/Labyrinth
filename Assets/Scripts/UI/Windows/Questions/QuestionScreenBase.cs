@@ -2,7 +2,7 @@
 using Gameplay;
 using UnityEngine;
 
-namespace UI.Windows
+namespace UI.Windows.Questions
 {
     public abstract class QuestionScreenBase : MonoBehaviour
     {

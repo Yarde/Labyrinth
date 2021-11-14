@@ -1,30 +1,33 @@
 using System;
 using UnityEngine;
 
-[Obsolete("PlayerRotation is deprecated, please use fix before using.")]
-public class PlayerRotation : MonoBehaviour
+namespace Player
 {
-    private Camera _camera;
+    [Obsolete("PlayerRotation is deprecated, please use fix before using.")]
+    public class PlayerRotation : MonoBehaviour
+    {
+        private Camera _camera;
     
-    private void Start()
-    {
-        _camera = Camera.main;
-    }
-
-    private void Update()
-    {
-        if (Math.Abs(Time.timeScale - 1) < 0.1)
+        private void Start()
         {
-            var ray = _camera.ScreenPointToRay(Input.mousePosition);
+            _camera = Camera.main;
+        }
 
-            var plane = new Plane(Vector3.up, transform.position);
-
-            if (plane.Raycast(ray, out var distance))
+        private void Update()
+        {
+            if (Math.Abs(Time.timeScale - 1) < 0.1)
             {
-                var mousePointInWorld = ray.GetPoint(distance);
-                var direction = mousePointInWorld - transform.position;
+                var ray = _camera.ScreenPointToRay(Input.mousePosition);
 
-                transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+                var plane = new Plane(Vector3.up, transform.position);
+
+                if (plane.Raycast(ray, out var distance))
+                {
+                    var mousePointInWorld = ray.GetPoint(distance);
+                    var direction = mousePointInWorld - transform.position;
+
+                    transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+                }
             }
         }
     }

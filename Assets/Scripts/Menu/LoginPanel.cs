@@ -1,9 +1,10 @@
 ﻿using Cysharp.Threading.Tasks;
 using Gameplay;
+using Network;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Utils;
+
 namespace Menu
 {
     public class LoginPanel : MonoBehaviour
@@ -16,8 +17,10 @@ namespace Menu
         [SerializeField] private TextMeshProUGUI serverError;
         
         [SerializeField] private Button start;
+        [SerializeField] private GameObject loadingIcon;
         
-        // todo change to BE data
+        [SerializeField] private string onConnectionFailed = "Unable to connect to the server. Please try again later.";
+        
         public StartGameResponse Data { get; set; }
 
         public void Setup()
@@ -29,17 +32,26 @@ namespace Menu
         {
             if (ValidateTexts())
             {
+                start.interactable = false;
+                serverError.gameObject.SetActive(false);
+                loadingIcon.SetActive(true);
                 StartGameResponse response = await SendStartGameRequest();
+                loadingIcon.SetActive(false);
 
                 if (response.Error)
                 {
                     serverError.gameObject.SetActive(true);
                     serverError.text = response.ErrorMsg;
+                } else if (string.IsNullOrEmpty(response.SessionCode))
+                {
+                    serverError.gameObject.SetActive(true);
+                    serverError.text = onConnectionFailed;
                 }
                 else
                 {
                     Data = response;
                 }
+                start.interactable = true;
             }
         }
         private async UniTask<StartGameResponse> SendStartGameRequest()
@@ -49,7 +61,7 @@ namespace Menu
                 Email = email.text,
                 Code = code.text
             };
-            var response = await ConnectionManager.Instance.GetMessageAsync<StartGameResponse>(request, "dawid/sth");
+            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, "dawid/sth");
             return response;
         }
 

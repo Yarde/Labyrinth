@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utils;
 
-namespace UI.Windows
+namespace UI.Windows.Questions
 {
     public class RewardLine : MonoBehaviour
     {

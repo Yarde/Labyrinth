@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace UI
+namespace UI.HUD
 {
     public class ProgressPanel : MonoBehaviour
     {
@@ -10,7 +10,7 @@ namespace UI
 
         private List<ObjectiveElement> _objectives;
         
-        public void Setup(Player player)
+        public void Setup(Player.Player player)
         {
             _objectives = new List<ObjectiveElement>();
             

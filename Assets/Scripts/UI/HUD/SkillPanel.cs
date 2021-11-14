@@ -1,7 +1,7 @@
-﻿using Skills;
+﻿using Player.Skills;
 using UnityEngine;
 
-namespace UI
+namespace UI.HUD
 {
     public class SkillPanel : MonoBehaviour
     {
@@ -9,7 +9,7 @@ namespace UI
         
         private SkillButton[] _skillButtons;
 
-        public void Setup(Player player, Skill[] skills)
+        public void Setup(Player.Player player, Skill[] skills)
         {
             _skillButtons = new SkillButton[skills.Length];
             

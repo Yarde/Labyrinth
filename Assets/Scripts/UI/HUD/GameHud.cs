@@ -1,11 +1,12 @@
 ﻿using DG.Tweening;
-using Skills;
+using Player.Skills;
 using TMPro;
+using UI.Elements;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.HUD
 {
     public class GameHud : MonoBehaviour
     {
@@ -21,9 +22,9 @@ namespace UI
         
         [SerializeField] private Image blendCloud;
 
-        private Player _player;
+        private Player.Player _player;
         
-        public void Setup(Player player, Skill[] skills)
+        public void Setup(Player.Player player, Skill[] skills)
         {
             _player = player;
             skillPanel.Setup(player, skills);

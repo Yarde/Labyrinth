@@ -3,10 +3,13 @@ using Cysharp.Threading.Tasks;
 using Gameplay;
 using Google.Protobuf.Collections;
 using Menu;
-using Skills;
+using Player.Skills;
+using UI.HUD;
 using UI.Windows;
+using UI.Windows.Questions;
 using UnityEngine;
 using Utils;
+
 namespace UI
 {
     public class UserInterface : MonoBehaviour
@@ -34,9 +37,9 @@ namespace UI
         private QuestionScreenBase _singleChoiceQuestion;
         private QuestionScreenBase _multiChoiceQuestion;
 
-        private bool DisableInput { get; set; }
+        private bool DisableInput { get; set; } = true;
 
-        private Player _player;
+        private Player.Player _player;
 
         private void Update()
         {
@@ -53,7 +56,7 @@ namespace UI
             }
         }
 
-        public void Setup(Player player, Skill[] skills)
+        public void Setup(Player.Player player, Skill[] skills)
         {
             _player = player;
 
@@ -132,7 +135,7 @@ namespace UI
 
 
         // todo change `object` to real data
-        public async UniTask<object> ShowMenu()
+        public async UniTask<StartGameResponse> ShowMenu()
         {
             if (_hud)
             {
@@ -140,7 +143,7 @@ namespace UI
             }
 
             _menu = Instantiate(menuPrefab, transform);
-            var data = await _menu.ShowMenu();
+            StartGameResponse data = await _menu.ShowMenu();
             Destroy(_menu.gameObject);
             return data;
         }

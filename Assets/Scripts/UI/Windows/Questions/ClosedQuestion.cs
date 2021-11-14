@@ -3,10 +3,11 @@ using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using Gameplay;
 using TMPro;
+using UI.Elements;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Windows
+namespace UI.Windows.Questions
 {
     public abstract class ClosedQuestion : QuestionScreenBase
     {

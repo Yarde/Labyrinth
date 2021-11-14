@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.HUD
 {
     public class HealthBar : MonoBehaviour
     {
@@ -14,7 +14,7 @@ namespace UI
         // todo optimization it can be solved with object pool
         private Stack<GameObject> spawnedHearts;
         private int currentHearts = 0;
-        private Player _player;
+        private Player.Player _player;
 
         public void Update()
         {
@@ -28,7 +28,7 @@ namespace UI
             }
         }
         
-        public void SetupBar(Player player)
+        public void SetupBar(Player.Player player)
         {
             spawnedHearts = new Stack<GameObject>();
             _player = player;

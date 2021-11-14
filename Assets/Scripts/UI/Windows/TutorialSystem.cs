@@ -1,11 +1,10 @@
 ﻿using Cysharp.Threading.Tasks;
 using TMPro;
-using UI.Windows;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
 
-namespace UI
+namespace UI.Windows
 {
     public class TutorialSystem : MonoBehaviour
     {

@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
-public class Floor : MonoBehaviour
+namespace Labirynth
 {
-    [SerializeField] private MeshRenderer meshRenderer;
-    
-    [SerializeField] private Material visitedMaterial;
-    [SerializeField] private Material notVisitedMaterial;
-    
-    public void MarkVisited()
+    public class Floor : MonoBehaviour
     {
-        meshRenderer.material = visitedMaterial;
+        [SerializeField] private MeshRenderer meshRenderer;
+    
+        [SerializeField] private Material visitedMaterial;
+        [SerializeField] private Material notVisitedMaterial;
+    
+        public void MarkVisited()
+        {
+            meshRenderer.material = visitedMaterial;
+        }
     }
 }

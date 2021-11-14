@@ -1,4 +1,4 @@
-namespace Skills
+namespace Player.Skills
 {
     class UpgradeLight : Skill
     {

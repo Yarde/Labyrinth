@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using Gameplay;
 using UnityEngine;
 
 namespace Menu
@@ -7,7 +8,7 @@ namespace Menu
     {
         [SerializeField] private LoginPanel loginPanel;
 
-        public async UniTask<object> ShowMenu()
+        public async UniTask<StartGameResponse> ShowMenu()
         {
             loginPanel.Setup();
             await UniTask.WaitUntil(() => loginPanel.Data != null);

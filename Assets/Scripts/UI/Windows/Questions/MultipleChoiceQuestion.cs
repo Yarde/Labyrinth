@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Gameplay;
+﻿using System.Linq;
 
-namespace UI.Windows
+namespace UI.Windows.Questions
 {
     public class MultipleChoiceQuestion : ClosedQuestion
     {

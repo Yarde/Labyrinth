@@ -2,36 +2,52 @@
 using Google.Protobuf;
 using UnityEngine;
 using UnityEngine.Networking;
-namespace Utils
+
+namespace Network
 {
     public class ConnectionManager
     {
         public static ConnectionManager Instance { get; private set; }
         
-        private const string URI = "http://zpi2021.westeurope.cloudapp.azure.com/api/";
+        private string _host;
 
-        public ConnectionManager() => Instance = this;
+        public ConnectionManager(string host)
+        {
+            _host = host;
+            Instance = this;
+        }
 
-        public async UniTask<TResponse> GetMessageAsync<TResponse>(IMessage message, string endpoint)
+        public async UniTask<TResponse> SendMessageAsync<TResponse>(IMessage message, string endpoint)
             where TResponse : IMessage<TResponse>, new()
         {
             Debug.Log($"Sending started {message}");
-            UnityWebRequest request = UnityWebRequest.Post($"{URI}{endpoint}", message.ToString());
+            
+            UnityWebRequest request = UnityWebRequest.Post($"{_host}{endpoint}", message.ToString());
+            //if we want to use byte array instead of string we need to change ".Post" to ".Put" and uncomment line bellow 
             //unityWebRequest.method = "POST";
+            
             request.SetRequestHeader("Content-Type", "application/x-protobuf");
             
-            Debug.Log($"Header Set for Request");
+            Debug.Log($"Web Request Sent");
 
-            await request.SendWebRequest();
+            try
+            {
+                await request.SendWebRequest();
             
-            Debug.Log($"Request sent {request.result} {request.downloadHandler.text}");
+                Debug.Log($"Request: {request.result}\nData: {request.downloadHandler.text}");
             
-            TResponse x = new MessageParser<TResponse>(() => new TResponse())
-                .ParseFrom(request.downloadHandler.data);
+                TResponse x = new MessageParser<TResponse>(() => new TResponse())
+                    .ParseFrom(request.downloadHandler.data);
             
-            Debug.Log($"Response {x}");
+                Debug.Log($"Response {x}");
             
-            return x;
+                return x;
+            }
+            catch (UnityWebRequestException exception)
+            {
+                Debug.LogError(exception);
+                return new TResponse();
+            }
         }
     }
 }

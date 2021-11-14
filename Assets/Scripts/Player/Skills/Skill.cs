@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Skills
+namespace Player.Skills
 {
     public abstract class Skill
     {

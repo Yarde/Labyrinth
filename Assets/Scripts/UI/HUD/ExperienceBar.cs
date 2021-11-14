@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.HUD
 {
     public class ExperienceBar : MonoBehaviour
     {
@@ -11,7 +11,7 @@ namespace UI
 
         private const float EXP_MULTIPLIER = 0.1f;
 
-        private Player _player;
+        private Player.Player _player;
         
         private int currentExperience;
         private int level;
@@ -27,7 +27,7 @@ namespace UI
             }
         }
         
-        public void SetupBar(Player player)
+        public void SetupBar(Player.Player player)
         {
             _player = player;
             UpdateExperience();

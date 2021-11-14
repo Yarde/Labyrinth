@@ -1,4 +1,4 @@
-﻿namespace UI
+﻿namespace UI.Windows.Questions
 {
     public class QuestionResult
     {
