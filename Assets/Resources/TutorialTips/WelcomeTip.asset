@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4995dcb846b14e6fb7061fc0e4483634, type: 3}
-  m_Name: ObjectivesTip
+  m_Name: WelcomeTip
   m_EditorClassIdentifier: 
-  tipText: Objectives allow you to track the progress. You need to find all the keys,
-    rest is optional.
-  tipPosition: {x: 111, y: 0, z: 0}
-  cutoutPosition: {x: -584, y: 111.5479, z: 0}
-  cutoutSize: {x: 278.0832, y: 335.9201}
-  showArrow: 1
-  arrowRotationZ: -31.75
+  tipText: Welcome to Labirynt! Educational game with maze.
+  tipPosition: {x: 0, y: 0, z: 0}
+  cutoutPosition: {x: 0, y: 0, z: 0}
+  cutoutSize: {x: 0, y: 0}
+  showArrow: 0
+  arrowRotationZ: 0

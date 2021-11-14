@@ -2,52 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Elements.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Elements/SimpleLoading.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Elements/SimpleLoading.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/circulartimer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/circulartimer.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/WelcomeTip 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/WelcomeTip 2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/WelcomeTip.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/WelcomeTip.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Menu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TutorialScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/TutorialScreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/TutorialTips/ObjectivesTip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/ObjectivesTip.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Floor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Floor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/SkillData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/SkillData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeVision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeVision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/SpotLightController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/SpotLightController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ExperienceBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ExperienceBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Elements/Timer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Timer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Elements/Timer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/AnswerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/AnswerButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/MultipleChoiceQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/MultipleChoiceQuestion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionScreenBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionScreenBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/RewardLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/RewardLine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/RewardPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/RewardPopup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/SingleChoiceQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/SingleChoiceQuestion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Settings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialTipData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialTipData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +182,7 @@
       <workItem from="1636130412923" duration="3478000" />
       <workItem from="1636205603143" duration="12117000" />
       <workItem from="1636298643304" duration="2945000" />
-      <workItem from="1636882086780" duration="2904000" />
+      <workItem from="1636882086780" duration="4653000" />
     </task>
     <servers />
   </component>

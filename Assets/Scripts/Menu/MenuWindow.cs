@@ -11,8 +11,8 @@ namespace Menu
         public async UniTask<StartGameResponse> ShowMenu()
         {
             loginPanel.Setup();
-            await UniTask.WaitUntil(() => loginPanel.Data != null);
-            return loginPanel.Data;
+            await UniTask.WaitUntil(() => loginPanel.StartGameResponse != null);
+            return loginPanel.StartGameResponse;
         }
     }
 }

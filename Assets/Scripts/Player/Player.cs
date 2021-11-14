@@ -24,8 +24,8 @@ namespace Player
 
         public int Hearts { get; private set; }
         public int Points { get; private set; }
-        public int Experience { get; private set; }
-        public int Playtime { get; private set; }
+        public int Experience { get; set; }
+        public int Playtime { get; set; }
         public int Coins { get; set; }
         public float LightLevel { get; set; }
         public float FieldOfViewLevel { get; set; }

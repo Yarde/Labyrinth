@@ -311,6 +311,8 @@ MonoBehaviour:
   tipText: {fileID: 6090299866376412693}
   skipButton: {fileID: 7911536035738475098}
   tipsData:
+  - {fileID: 11400000, guid: 7198e1cb57aa8404f939117aa3c0d7c1, type: 2}
+  - {fileID: 11400000, guid: 140cb25fb3f3c0347a6c761048e2a9b2, type: 2}
   - {fileID: 11400000, guid: 7512529f8da62b2408674e7be6285cf2, type: 2}
   - {fileID: 11400000, guid: 2bf6c6e70525acb4796686ff17293937, type: 2}
   - {fileID: 11400000, guid: b5cd641118717794798f10c7ffdc27b6, type: 2}
@@ -685,8 +687,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -571, y: 260}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8033284039781164598
 GameObject:

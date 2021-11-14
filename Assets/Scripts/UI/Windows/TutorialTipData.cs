@@ -9,6 +9,7 @@ namespace UI.Windows
         public Vector3 tipPosition;
         public Vector3 cutoutPosition;
         public Vector2 cutoutSize;
+        public bool showArrow = true;
         public float arrowRotationZ;
     }
 }

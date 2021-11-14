@@ -143,12 +143,12 @@ namespace UI
             }
 
             _menu = Instantiate(menuPrefab, transform);
-            StartGameResponse data = await _menu.ShowMenu();
+            StartGameResponse startGameResponse = await _menu.ShowMenu();
             Destroy(_menu.gameObject);
-            return data;
+            return startGameResponse;
         }
         
-        private async void ShowTutorial()
+        public async void ShowTutorial()
         {
             if (!_hud) 
                 return;

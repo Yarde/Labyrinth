@@ -27,6 +27,8 @@ namespace UI.Windows
                 tipText.text = tip.tipText;
                 cutoutTransform.localPosition = tip.cutoutPosition;
                 cutoutTransform.sizeDelta = tip.cutoutSize;
+
+                arrowTransform.gameObject.SetActive(tip.showArrow);
                 arrowTransform.eulerAngles = arrowTransform.eulerAngles.WithZ(tip.arrowRotationZ);
 
                 await UniTask.WaitUntil(() => _wasSkipped);

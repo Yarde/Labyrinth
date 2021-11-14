@@ -17,15 +17,24 @@ namespace Menu
         [SerializeField] private TextMeshProUGUI serverError;
         
         [SerializeField] private Button start;
+        [SerializeField] private Button debugStart;
         [SerializeField] private GameObject loadingIcon;
         
         [SerializeField] private string onConnectionFailed = "Unable to connect to the server. Please try again later.";
         
-        public StartGameResponse Data { get; set; }
+        public StartGameResponse StartGameResponse { get; set; }
 
         public void Setup()
         {
             start.onClick.AddListener(RunGame);
+            debugStart.onClick.AddListener(() =>
+            {
+                StartGameResponse = new StartGameResponse
+                {
+                    SessionCode = "1",
+                    QuestionsNumber = { 10, 10, 10 }
+                };
+            });
         }
 
         private async void RunGame()
@@ -49,7 +58,7 @@ namespace Menu
                 }
                 else
                 {
-                    Data = response;
+                    StartGameResponse = response;
                 }
                 start.interactable = true;
             }
