@@ -40,24 +40,25 @@ namespace Gameplay {
             "ZS5BbnN3ZXISQQoOcXVlc3Rpb25SZXdhcmQYBCABKAsyKS5HYW1lcGxheS5R",
             "dWVzdGlvblJlc3BvbnNlLlF1ZXN0aW9uUmV3YXJkGjMKDlF1ZXN0aW9uUmV3",
             "YXJkEhIKCmV4cGVyaWVuY2UYASABKAUSDQoFbW9uZXkYAiABKAUaPQoGQW5z",
-            "d2VyEhEKCWFuc3dlcnNJRBgBIAEoDRIPCgdjb250ZW50GAIgASgJEg8KB2Nv",
-            "cnJlY3QYAyABKAgihQEKFFN0dWRlbnRBbnN3ZXJSZXF1ZXN0EhMKC3Nlc3Np",
+            "d2VyEhEKCWFuc3dlcnNJRBgBIAEoBRIPCgdjb250ZW50GAIgASgJEg8KB2Nv",
+            "cnJlY3QYAyABKAgioQEKFFN0dWRlbnRBbnN3ZXJSZXF1ZXN0EhMKC3Nlc3Np",
             "b25Db2RlGAEgASgJEi8KDHF1ZXN0aW9uVHlwZRgCIAEoDjIZLkdhbWVwbGF5",
-            "LlF1ZXN0aW9uVHJpZ2dlchIRCglhbnN3ZXJzSUQYAyADKA0SFAoMdGltZVRv",
-            "QW5zd2VyGAQgASgNIuQBCg5FbmRHYW1lUmVxdWVzdBITCgtzZXNzaW9uQ29k",
-            "ZRgBIAEoCRIVCg1zY2VuYXJpb0VuZGVkGAIgASgIEhQKDGdhbWVwbGF5VGlt",
-            "ZRgEIAEoDRJHChJzdHVkZW50RW5kR2FtZURhdGEYBSABKAsyKy5HYW1lcGxh",
-            "eS5FbmRHYW1lUmVxdWVzdC5TdHVkZW50RW5kR2FtZURhdGEaRwoSU3R1ZGVu",
-            "dEVuZEdhbWVEYXRhEhIKCmV4cGVyaWVuY2UYASABKAUSDQoFbW9uZXkYAiAB",
-            "KAUSDgoGc2tpbGxzGAMgAygBIgcKBUVtcHR5KjEKD1F1ZXN0aW9uVHJpZ2dl",
-            "chIHCgNLRVkQABIJCgVFTkVNWRABEgoKBk9CSkVDVBACMq8CChBHYW1lcGxh",
-            "eU1lc3NhZ2VzEkoKD1N0YXJ0TmV3U2Vzc2lvbhIaLkdhbWVwbGF5LlN0YXJ0",
-            "R2FtZVJlcXVlc3QaGy5HYW1lcGxheS5TdGFydEdhbWVSZXNwb25zZRJMChNQ",
-            "cmVwYXJlTmV4dFF1ZXN0aW9uEhkuR2FtZXBsYXkuUXVlc3Rpb25SZXF1ZXN0",
-            "GhouR2FtZXBsYXkuUXVlc3Rpb25SZXNwb25zZRJIChVVcGRhdGVTdHVkZW50",
-            "c0Fuc3dlcnMSHi5HYW1lcGxheS5TdHVkZW50QW5zd2VyUmVxdWVzdBoPLkdh",
-            "bWVwbGF5LkVtcHR5EjcKCkZpbmlzaEdhbWUSGC5HYW1lcGxheS5FbmRHYW1l",
-            "UmVxdWVzdBoPLkdhbWVwbGF5LkVtcHR5YgZwcm90bzM="));
+            "LlF1ZXN0aW9uVHJpZ2dlchIRCglhbnN3ZXJzSUQYAyADKAUSFAoMdGltZVRv",
+            "QW5zd2VyGAQgASgFEhoKEnF1ZXN0aW9uQ29ycmVjdG5lcxgFIAEoAiLkAQoO",
+            "RW5kR2FtZVJlcXVlc3QSEwoLc2Vzc2lvbkNvZGUYASABKAkSFQoNc2NlbmFy",
+            "aW9FbmRlZBgCIAEoCBIUCgxnYW1lcGxheVRpbWUYBCABKAUSRwoSc3R1ZGVu",
+            "dEVuZEdhbWVEYXRhGAUgASgLMisuR2FtZXBsYXkuRW5kR2FtZVJlcXVlc3Qu",
+            "U3R1ZGVudEVuZEdhbWVEYXRhGkcKElN0dWRlbnRFbmRHYW1lRGF0YRISCgpl",
+            "eHBlcmllbmNlGAEgASgFEg0KBW1vbmV5GAIgASgFEg4KBnNraWxscxgDIAMo",
+            "AiIHCgVFbXB0eSoxCg9RdWVzdGlvblRyaWdnZXISBwoDS0VZEAASCQoFRU5F",
+            "TVkQARIKCgZPQkpFQ1QQAjKvAgoQR2FtZXBsYXlNZXNzYWdlcxJKCg9TdGFy",
+            "dE5ld1Nlc3Npb24SGi5HYW1lcGxheS5TdGFydEdhbWVSZXF1ZXN0GhsuR2Ft",
+            "ZXBsYXkuU3RhcnRHYW1lUmVzcG9uc2USTAoTUHJlcGFyZU5leHRRdWVzdGlv",
+            "bhIZLkdhbWVwbGF5LlF1ZXN0aW9uUmVxdWVzdBoaLkdhbWVwbGF5LlF1ZXN0",
+            "aW9uUmVzcG9uc2USSAoVVXBkYXRlU3R1ZGVudHNBbnN3ZXJzEh4uR2FtZXBs",
+            "YXkuU3R1ZGVudEFuc3dlclJlcXVlc3QaDy5HYW1lcGxheS5FbXB0eRI3CgpG",
+            "aW5pc2hHYW1lEhguR2FtZXBsYXkuRW5kR2FtZVJlcXVlc3QaDy5HYW1lcGxh",
+            "eS5FbXB0eWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Gameplay.QuestionTrigger), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -67,7 +68,7 @@ namespace Gameplay {
             new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.QuestionRequest), global::Gameplay.QuestionRequest.Parser, new[]{ "SessionCode", "QuestionType" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.QuestionResponse), global::Gameplay.QuestionResponse.Parser, new[]{ "SessionCode", "Content", "Answers", "QuestionReward" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.QuestionResponse.Types.QuestionReward), global::Gameplay.QuestionResponse.Types.QuestionReward.Parser, new[]{ "Experience", "Money" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.QuestionResponse.Types.Answer), global::Gameplay.QuestionResponse.Types.Answer.Parser, new[]{ "AnswersID", "Content", "Correct" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.StudentAnswerRequest), global::Gameplay.StudentAnswerRequest.Parser, new[]{ "SessionCode", "QuestionType", "AnswersID", "TimeToAnswer" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.StudentAnswerRequest), global::Gameplay.StudentAnswerRequest.Parser, new[]{ "SessionCode", "QuestionType", "AnswersID", "TimeToAnswer", "QuestionCorrectnes" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.EndGameRequest), global::Gameplay.EndGameRequest.Parser, new[]{ "SessionCode", "ScenarioEnded", "GameplayTime", "StudentEndGameData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.EndGameRequest.Types.StudentEndGameData), global::Gameplay.EndGameRequest.Types.StudentEndGameData.Parser, new[]{ "Experience", "Money", "Skills" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.Empty), global::Gameplay.Empty.Parser, null, null, null, null, null)
           }));
@@ -1955,10 +1956,10 @@ namespace Gameplay {
 
         /// <summary>Field number for the "answersID" field.</summary>
         public const int AnswersIDFieldNumber = 1;
-        private uint answersID_;
+        private int answersID_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public uint AnswersID {
+        public int AnswersID {
           get { return answersID_; }
           set {
             answersID_ = value;
@@ -2037,7 +2038,7 @@ namespace Gameplay {
         #else
           if (AnswersID != 0) {
             output.WriteRawTag(8);
-            output.WriteUInt32(AnswersID);
+            output.WriteInt32(AnswersID);
           }
           if (Content.Length != 0) {
             output.WriteRawTag(18);
@@ -2059,7 +2060,7 @@ namespace Gameplay {
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (AnswersID != 0) {
             output.WriteRawTag(8);
-            output.WriteUInt32(AnswersID);
+            output.WriteInt32(AnswersID);
           }
           if (Content.Length != 0) {
             output.WriteRawTag(18);
@@ -2080,7 +2081,7 @@ namespace Gameplay {
         public int CalculateSize() {
           int size = 0;
           if (AnswersID != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AnswersID);
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(AnswersID);
           }
           if (Content.Length != 0) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
@@ -2125,7 +2126,7 @@ namespace Gameplay {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 8: {
-                AnswersID = input.ReadUInt32();
+                AnswersID = input.ReadInt32();
                 break;
               }
               case 18: {
@@ -2152,7 +2153,7 @@ namespace Gameplay {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                AnswersID = input.ReadUInt32();
+                AnswersID = input.ReadInt32();
                 break;
               }
               case 18: {
@@ -2213,6 +2214,7 @@ namespace Gameplay {
       questionType_ = other.questionType_;
       answersID_ = other.answersID_.Clone();
       timeToAnswer_ = other.timeToAnswer_;
+      questionCorrectnes_ = other.questionCorrectnes_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2248,24 +2250,36 @@ namespace Gameplay {
 
     /// <summary>Field number for the "answersID" field.</summary>
     public const int AnswersIDFieldNumber = 3;
-    private static readonly pb::FieldCodec<uint> _repeated_answersID_codec
-        = pb::FieldCodec.ForUInt32(26);
-    private readonly pbc::RepeatedField<uint> answersID_ = new pbc::RepeatedField<uint>();
+    private static readonly pb::FieldCodec<int> _repeated_answersID_codec
+        = pb::FieldCodec.ForInt32(26);
+    private readonly pbc::RepeatedField<int> answersID_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> AnswersID {
+    public pbc::RepeatedField<int> AnswersID {
       get { return answersID_; }
     }
 
     /// <summary>Field number for the "timeToAnswer" field.</summary>
     public const int TimeToAnswerFieldNumber = 4;
-    private uint timeToAnswer_;
+    private int timeToAnswer_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TimeToAnswer {
+    public int TimeToAnswer {
       get { return timeToAnswer_; }
       set {
         timeToAnswer_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "questionCorrectnes" field.</summary>
+    public const int QuestionCorrectnesFieldNumber = 5;
+    private float questionCorrectnes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float QuestionCorrectnes {
+      get { return questionCorrectnes_; }
+      set {
+        questionCorrectnes_ = value;
       }
     }
 
@@ -2288,6 +2302,7 @@ namespace Gameplay {
       if (QuestionType != other.QuestionType) return false;
       if(!answersID_.Equals(other.answersID_)) return false;
       if (TimeToAnswer != other.TimeToAnswer) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(QuestionCorrectnes, other.QuestionCorrectnes)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2299,6 +2314,7 @@ namespace Gameplay {
       if (QuestionType != global::Gameplay.QuestionTrigger.Key) hash ^= QuestionType.GetHashCode();
       hash ^= answersID_.GetHashCode();
       if (TimeToAnswer != 0) hash ^= TimeToAnswer.GetHashCode();
+      if (QuestionCorrectnes != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(QuestionCorrectnes);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2328,7 +2344,11 @@ namespace Gameplay {
       answersID_.WriteTo(output, _repeated_answersID_codec);
       if (TimeToAnswer != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(TimeToAnswer);
+        output.WriteInt32(TimeToAnswer);
+      }
+      if (QuestionCorrectnes != 0F) {
+        output.WriteRawTag(45);
+        output.WriteFloat(QuestionCorrectnes);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2351,7 +2371,11 @@ namespace Gameplay {
       answersID_.WriteTo(ref output, _repeated_answersID_codec);
       if (TimeToAnswer != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(TimeToAnswer);
+        output.WriteInt32(TimeToAnswer);
+      }
+      if (QuestionCorrectnes != 0F) {
+        output.WriteRawTag(45);
+        output.WriteFloat(QuestionCorrectnes);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -2371,7 +2395,10 @@ namespace Gameplay {
       }
       size += answersID_.CalculateSize(_repeated_answersID_codec);
       if (TimeToAnswer != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeToAnswer);
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TimeToAnswer);
+      }
+      if (QuestionCorrectnes != 0F) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2394,6 +2421,9 @@ namespace Gameplay {
       answersID_.Add(other.answersID_);
       if (other.TimeToAnswer != 0) {
         TimeToAnswer = other.TimeToAnswer;
+      }
+      if (other.QuestionCorrectnes != 0F) {
+        QuestionCorrectnes = other.QuestionCorrectnes;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2424,7 +2454,11 @@ namespace Gameplay {
             break;
           }
           case 32: {
-            TimeToAnswer = input.ReadUInt32();
+            TimeToAnswer = input.ReadInt32();
+            break;
+          }
+          case 45: {
+            QuestionCorrectnes = input.ReadFloat();
             break;
           }
         }
@@ -2456,7 +2490,11 @@ namespace Gameplay {
             break;
           }
           case 32: {
-            TimeToAnswer = input.ReadUInt32();
+            TimeToAnswer = input.ReadInt32();
+            break;
+          }
+          case 45: {
+            QuestionCorrectnes = input.ReadFloat();
             break;
           }
         }
@@ -2539,10 +2577,10 @@ namespace Gameplay {
 
     /// <summary>Field number for the "gameplayTime" field.</summary>
     public const int GameplayTimeFieldNumber = 4;
-    private uint gameplayTime_;
+    private int gameplayTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GameplayTime {
+    public int GameplayTime {
       get { return gameplayTime_; }
       set {
         gameplayTime_ = value;
@@ -2619,7 +2657,7 @@ namespace Gameplay {
       }
       if (GameplayTime != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(GameplayTime);
+        output.WriteInt32(GameplayTime);
       }
       if (studentEndGameData_ != null) {
         output.WriteRawTag(42);
@@ -2645,7 +2683,7 @@ namespace Gameplay {
       }
       if (GameplayTime != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(GameplayTime);
+        output.WriteInt32(GameplayTime);
       }
       if (studentEndGameData_ != null) {
         output.WriteRawTag(42);
@@ -2668,7 +2706,7 @@ namespace Gameplay {
         size += 1 + 1;
       }
       if (GameplayTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameplayTime);
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GameplayTime);
       }
       if (studentEndGameData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(StudentEndGameData);
@@ -2724,7 +2762,7 @@ namespace Gameplay {
             break;
           }
           case 32: {
-            GameplayTime = input.ReadUInt32();
+            GameplayTime = input.ReadInt32();
             break;
           }
           case 42: {
@@ -2758,7 +2796,7 @@ namespace Gameplay {
             break;
           }
           case 32: {
-            GameplayTime = input.ReadUInt32();
+            GameplayTime = input.ReadInt32();
             break;
           }
           case 42: {
@@ -2850,12 +2888,12 @@ namespace Gameplay {
 
         /// <summary>Field number for the "skills" field.</summary>
         public const int SkillsFieldNumber = 3;
-        private static readonly pb::FieldCodec<double> _repeated_skills_codec
-            = pb::FieldCodec.ForDouble(26);
-        private readonly pbc::RepeatedField<double> skills_ = new pbc::RepeatedField<double>();
+        private static readonly pb::FieldCodec<float> _repeated_skills_codec
+            = pb::FieldCodec.ForFloat(26);
+        private readonly pbc::RepeatedField<float> skills_ = new pbc::RepeatedField<float>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<double> Skills {
+        public pbc::RepeatedField<float> Skills {
           get { return skills_; }
         }
 
@@ -2993,7 +3031,7 @@ namespace Gameplay {
                 break;
               }
               case 26:
-              case 25: {
+              case 29: {
                 skills_.AddEntriesFrom(input, _repeated_skills_codec);
                 break;
               }
@@ -3021,7 +3059,7 @@ namespace Gameplay {
                 break;
               }
               case 26:
-              case 25: {
+              case 29: {
                 skills_.AddEntriesFrom(ref input, _repeated_skills_codec);
                 break;
               }

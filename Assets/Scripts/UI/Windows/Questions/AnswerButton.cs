@@ -21,7 +21,7 @@ namespace UI.Windows.Questions
         [SerializeField] private Color wrongColor;
 
         public bool IsSelected { get; private set; }
-        public uint AnswerId { get; private set; }
+        public int AnswerId { get; private set; }
         private QuestionResponse.Types.Answer _answer;
         private Action _onClick;
 

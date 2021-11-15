@@ -8,6 +8,7 @@ namespace Player.Skills
         public readonly SkillData Data;
         public int Level;
         public int Cost;
+        public float CompletionPercentage => Level / (float) Data.maxLevel;
 
         protected Skill(Player player, SkillData data)
         {

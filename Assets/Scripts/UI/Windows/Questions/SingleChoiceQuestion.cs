@@ -4,7 +4,7 @@ namespace UI.Windows.Questions
 {
     public class SingleChoiceQuestion : ClosedQuestion
     {
-        protected override void OnAnswerClicked(uint clickedId)
+        protected override void OnAnswerClicked(int clickedId)
         {
             var clicked = _answers.Where(x => x.IsSelected).ToList();
             confirmButton.interactable = clicked.Count > 0;

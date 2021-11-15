@@ -9,15 +9,15 @@ namespace UI.HUD
         
         private SkillButton[] _skillButtons;
 
-        public void Setup(Player.Player player, Skill[] skills)
+        public void Setup(Player.Player player)
         {
-            _skillButtons = new SkillButton[skills.Length];
+            _skillButtons = new SkillButton[player.Skills.Length];
             
-            for (var index = 0; index < skills.Length; index++)
+            for (var index = 0; index < player.Skills.Length; index++)
             {
                 _skillButtons[index] = Instantiate(buttonPrefab, transform);
                 
-                var skill = skills[index];
+                var skill = player.Skills[index];
                 _skillButtons[index].SetupSkill(skill, player);
             }
         }

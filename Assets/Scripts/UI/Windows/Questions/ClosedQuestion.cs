@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using Gameplay;
@@ -11,6 +12,7 @@ namespace UI.Windows.Questions
 {
     public abstract class ClosedQuestion : QuestionScreenBase
     {
+        [SerializeField] private SimpleLoading loading;
         [SerializeField] private Timer timer;
         [SerializeField] private AnswerButton answerButtonPrefab;
         [SerializeField] private Transform answerButtonHolder;
@@ -23,14 +25,15 @@ namespace UI.Windows.Questions
         protected List<AnswerButton> _answers;
         private RewardPopup _rewardPopup;
 
-        private bool correct;
-        
-        public override async UniTask<bool> DisplayQuestion(QuestionResponse question)
+        private float _correct;
+        private int _correctCount;
+
+        public override async UniTask<StudentAnswerRequest> DisplayQuestion(QuestionResponse question)
         {
             timer.StartTimer();
 
             finished = false;
-            correct = true;
+            _correct = 1.0f;
             confirmButton.onClick.AddListener(ConfirmChoice);
             confirmButton.interactable = false;
 
@@ -45,9 +48,27 @@ namespace UI.Windows.Questions
                 SpawnAnswers(question);
             }
 
+            _correctCount = question.Answers.Sum(x => x.Correct ? 1 : 0); 
+
             await UniTask.WaitUntil(() => finished);
 
-            return correct;
+            
+            var request = new StudentAnswerRequest
+                          {
+                              QuestionType = QuestionTrigger.Enemy,
+                              SessionCode = GameRoot.SessionCode,
+                              AnswersID = { GetSelectedAnswers() },
+                              TimeToAnswer = timer.ElapsedSeconds,
+                              QuestionCorrectnes = _correct
+                          };
+
+            return request;
+        }
+
+        private IEnumerable<int> GetSelectedAnswers()
+        {
+            var answers = _answers.FindAll(x => x.IsSelected).Select(y => y.AnswerId);
+            return answers;
         }
 
         private void SpawnAnswers(QuestionResponse question)
@@ -73,7 +94,7 @@ namespace UI.Windows.Questions
             }
         }
 
-        protected abstract void OnAnswerClicked(uint clickedId);
+        protected abstract void OnAnswerClicked(int clickedId);
 
         private async void ConfirmChoice()
         {
@@ -94,7 +115,7 @@ namespace UI.Windows.Questions
 
             if (!isCorrect)
             {
-                correct = false;
+                _correct -= 1f/_correctCount;
             }
         }
 

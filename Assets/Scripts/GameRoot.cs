@@ -5,9 +5,7 @@ using GameData;
 using Gameplay;
 using Labirynth;
 using Labirynth.Questions;
-using Localization;
 using Network;
-using Player.Skills;
 using UI;
 using UnityEngine;
 using QuestionTrigger = Labirynth.Questions.QuestionTrigger;
@@ -25,7 +23,6 @@ public class GameRoot : MonoBehaviour
     [SerializeField] private Player.Player player;
     [SerializeField] private LabirynthGenerator labirynth;
     [SerializeField] private UserInterface ui;
-    [SerializeField] private SkillData[] skills;
 
     [Header("Object to instantiate")]
     [SerializeField] private QuestionTrigger treasurePrefab;
@@ -34,7 +31,6 @@ public class GameRoot : MonoBehaviour
 
     private Dictionary<Type, ObjectiveData> _objectives;
     private GeneratorData _generatorData;
-    private Skill[] _skills;
     private ConnectionManager _connectionManager;
 
     private async void Awake()
@@ -53,9 +49,7 @@ public class GameRoot : MonoBehaviour
         SetupGeneratorData(response);
         labirynth.Setup(_generatorData);
         player.Setup(_objectives, _generatorData.Dimensions);
-        SetupSkills();
-
-        ui.Setup(player, _skills);
+        ui.Setup(player);
         
         if (response.StudentData != null)
         {
@@ -66,16 +60,6 @@ public class GameRoot : MonoBehaviour
         {
             ui.ShowTutorial();
         }
-    }
-
-    private void SetupSkills()
-    {
-        _skills = new Skill[]
-        {
-            new UpgradeLight(player, skills.FirstOrDefault(x => x.skillName == "UpgradeLight")),
-            new UpgradeVision(player, skills.FirstOrDefault(x => x.skillName == "UpgradeVision")),
-            new UpgradeMovement(player, skills.FirstOrDefault(x => x.skillName == "UpgradeMovement"))
-        };
     }
 
     private void SetupObjectives(StartGameResponse response)

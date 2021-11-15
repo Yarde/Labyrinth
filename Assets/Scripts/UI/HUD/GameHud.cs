@@ -24,10 +24,10 @@ namespace UI.HUD
 
         private Player.Player _player;
         
-        public void Setup(Player.Player player, Skill[] skills)
+        public void Setup(Player.Player player)
         {
             _player = player;
-            skillPanel.Setup(player, skills);
+            skillPanel.Setup(player);
             healthBar.SetupBar(player);
             experienceBar.SetupBar(player);
             progressPanel.Setup(player);

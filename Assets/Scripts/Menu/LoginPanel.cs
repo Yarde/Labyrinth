@@ -27,19 +27,23 @@ namespace Menu
         public void Setup()
         {
             start.onClick.AddListener(RunGame);
-            debugStart.onClick.AddListener(() =>
+            debugStart.onClick.AddListener(DebugLogin);
+        }
+
+        private void DebugLogin()
+        {
+            var request = new StartGameRequest
             {
-                StartGameResponse = new StartGameResponse
-                {
-                    SessionCode = "1",
-                    QuestionsNumber = { 10, 10, 10 },
-                    StudentData = new StartGameResponse.Types.StudentData
-                    {
-                        Experience = 123,
-                        Money = 0
-                    }
-                };
-            });
+                Email = "test",
+                Code = "test"
+            };
+            SendDebugRequest(request);
+        }
+
+        private async UniTask SendDebugRequest(StartGameRequest request)
+        {
+            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, "start-game");
+            StartGameResponse = response;
         }
 
         private async void RunGame()

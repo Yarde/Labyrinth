@@ -1,14 +1,17 @@
+using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Gameplay;
 using Google.Protobuf.Collections;
 using Menu;
+using Network;
 using Player.Skills;
 using UI.HUD;
 using UI.Windows;
 using UI.Windows.Questions;
 using UnityEngine;
 using Utils;
+using Player = Player.Player;
 
 namespace UI
 {
@@ -39,7 +42,7 @@ namespace UI
         private QuestionScreenBase _singleChoiceQuestion;
         private QuestionScreenBase _multiChoiceQuestion;
 
-        private Player.Player _player;
+        private global::Player.Player _player;
 
         private void Update()
         {
@@ -54,12 +57,12 @@ namespace UI
             }
         }
 
-        public void Setup(Player.Player player, Skill[] skills)
+        public void Setup(global::Player.Player player)
         {
             _player = player;
 
             _hud = Instantiate(gameHudPrefab, transform);
-            _hud.Setup(player, skills);
+            _hud.Setup(player);
             _hud.SetListeners(HandlePauseScreen, ShowTutorial);
 
             if (!_pauseScreen)
@@ -76,30 +79,39 @@ namespace UI
             }
         }
 
-        public async UniTask<QuestionResult> OpenQuestion()
+        public async UniTask<QuestionResult> OpenQuestion(Type type)
         {
             _hud.Pause();
             GameRoot.IsPaused = true;
-            //DisableInput = true;
-
-            _singleChoiceQuestion.gameObject.SetActive(true);
 
             // todo change to real data
-            var question = GetMockQuestion();
+            //var question = GetMockQuestion();
+            var request = new QuestionRequest()
+            {
+                SessionCode = GameRoot.SessionCode,
+                QuestionType = QuestionTrigger.Enemy
+            };
+            Debug.LogError(type);
+            var question = await ConnectionManager.Instance.SendMessageAsync<QuestionResponse>(request, "next-question");
 
+            _singleChoiceQuestion.gameObject.SetActive(true);
+            
             //select the correct type of window
-            var correct = await _singleChoiceQuestion.DisplayQuestion(question);
+            var answer = await _singleChoiceQuestion.DisplayQuestion(question);
             _singleChoiceQuestion.gameObject.SetActive(false);
 
+            ConnectionManager.Instance.SendMessageAsync<Empty>(answer, "answer").Forget();
+            
             // pass the reward here
-            var result = correct
-                ? new QuestionResult(100, 200, 0, 100)
-                : new QuestionResult(0, 0, -1, 0);
+            var correctness = Mathf.Max(answer.QuestionCorrectnes, 0f);
+            var coins = (int) (question.QuestionReward.Money * correctness);
+            var exp = (int) (question.QuestionReward.Experience * correctness);
+            var points = (int) (100 * correctness);
+            var result = new QuestionResult(coins, exp, correctness <= 0f ? -1 : 0, points );
 
             await DisplayReward(result);
             
             GameRoot.IsPaused = false;
-            //DisableInput = false;
             _hud.Resume();
             
             return result;
@@ -132,9 +144,7 @@ namespace UI
             await _rewardPopup.DisplayRewards(result);
             _rewardPopup.gameObject.SetActive(false);
         }
-
-
-        // todo change `object` to real data
+        
         public async UniTask<StartGameResponse> ShowMenu()
         {
             if (_hud)
@@ -143,7 +153,7 @@ namespace UI
             }
 
             _menu = Instantiate(menuPrefab, transform);
-            StartGameResponse startGameResponse = await _menu.ShowMenu();
+            var startGameResponse = await _menu.ShowMenu();
             Destroy(_menu.gameObject);
             return startGameResponse;
         }
@@ -252,7 +262,7 @@ namespace UI
             {
                 answers.Add(new QuestionResponse.Types.Answer()
                 {
-                    AnswersID = (uint) (i - 1),
+                    AnswersID = i - 1,
                     Content = split[i],
                     Correct = correct == i
                 });

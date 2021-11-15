@@ -2,19 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization/LocalizedText.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization/LocalizedText.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization/TranslationManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization/TranslationManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Loading.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Loading.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Messages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/Messages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/AnswerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/AnswerButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/MultipleChoiceQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/MultipleChoiceQuestion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionScreenBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionScreenBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/SingleChoiceQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/SingleChoiceQuestion.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +50,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Cell.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/LightController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressElement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Treasure.cs" />
@@ -68,7 +63,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/QuestionResult.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionScreenBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ColorExtensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/AnswerButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/RewardLine.cs" />
@@ -77,11 +71,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/MultiImageButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialSystem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/RewardPopup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/AnimatedText.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/CutoutMaskUI.cs" />
       <option value="$PROJECT_DIR$/Assets/TutorialCutout.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialTipData.cs" />
@@ -89,16 +81,25 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Network/Gameplay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Localization/LockitManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Localization/LocalizedText.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Localization/TranslationManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Elements/Timer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/MultipleChoiceQuestion.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/SingleChoiceQuestion.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/AnswerButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionScreenBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
     </changedPaths>
   </component>
@@ -180,7 +181,7 @@
       <workItem from="1636205603143" duration="12117000" />
       <workItem from="1636298643304" duration="2945000" />
       <workItem from="1636882086780" duration="11132000" />
-      <workItem from="1636995422478" duration="4977000" />
+      <workItem from="1636995422478" duration="9601000" />
     </task>
     <servers />
   </component>
@@ -205,24 +206,5 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Localization/LocalizedText.cs</url>
-          <line>20</line>
-          <properties documentPath="E:\unity\Labirynth\Assets\Scripts\Localization\LocalizedText.cs" initialLine="20" containingFunctionPresentation="method 'Translate'">
-            <startOffsets>
-              <option value="486" />
-            </startOffsets>
-            <endOffsets>
-              <option value="545" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
