@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player.Skills
+namespace Gameplay.Skills
 {
     [CreateAssetMenu(fileName = "Data", menuName = "Skill", order = 1)]
     public class SkillData : ScriptableObject 

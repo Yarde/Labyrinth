@@ -1,18 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using GameData;
-using Gameplay;
+using Gameplay.Skills;
 using Labirynth.Questions;
 using Network;
-using Player.Skills;
 using UI;
 using UnityEngine;
-using QuestionTrigger = Labirynth.Questions.QuestionTrigger;
 
-namespace Player
+namespace Gameplay
 {
     [RequireComponent(typeof(PlayerMovement))]
     public class Player : MonoBehaviour 
@@ -67,7 +64,7 @@ namespace Player
         {
             if (collision.collider.CompareTag("QuestionTrigger"))
             {
-                await HandleQuestion(collision, collision.collider.GetType());
+                await HandleQuestion(collision);
             }
             else if (collision.collider.CompareTag("Exit"))
             {
@@ -81,16 +78,53 @@ namespace Player
         }*/
         }
 
-        private async UniTask HandleQuestion(Collision collision, Type type)
+        private async UniTask HandleQuestion(Collision collision)
         {
-            var trigger = collision.collider.GetComponent<QuestionTrigger>();
+            var trigger = collision.collider.GetComponent<Labirynth.Questions.QuestionTrigger>();
             if (!trigger.Collected)
             {
-                await OpenQuestion(trigger, type);
+                await OpenQuestion(trigger);
             }
         }
-    
-        private async Task HandleExit()
+
+        private async UniTask OpenQuestion(Labirynth.Questions.QuestionTrigger trigger)
+        {
+            Debug.Log($"Collision entered with {trigger.name}");
+            var result = await ui.HandleQuestion(trigger.GetType());
+        
+            Coins += result.Coins;
+            Experience += result.Experience;
+            Hearts += result.Hearts;
+            Points += result.Points;
+            await HandleGameLost();
+        
+            Objectives[trigger.GetType()].Collected++;
+            await trigger.Destroy();
+        }
+
+        private async UniTask HandleGameLost()
+        {
+            if (Hearts == 0)
+            {
+                Playtime += ui.GetEndgamePlaytime();
+                var request = new EndGameRequest
+                {
+                    SessionCode = GameRoot.SessionCode,
+                    GameplayTime = Playtime,
+                    ScenarioEnded = false,
+                    StudentEndGameData = new EndGameRequest.Types.StudentEndGameData
+                    {
+                        Experience = Experience,
+                        Money = Coins,
+                        Skills = {Skills.Select(x => x.CompletionPercentage)}
+                    }
+                };
+                var task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "endgame");
+                await ui.LoseScreen(task);
+            }
+        }
+        
+        private async UniTask HandleExit()
         {
             var mainObjective = Objectives[typeof(Key)];
             if (mainObjective.Collected == mainObjective.Total)
@@ -116,6 +150,7 @@ namespace Player
                 ui.DisplayTip(NOT_ENOUGH_KEYS_TIP_TEXT).Forget();
             }
         }
+        
         private int CalculatePoints()
         {
             var toAdd = 0;
@@ -123,38 +158,6 @@ namespace Player
             toAdd += Hearts * 20;
 
             return toAdd;
-        }
-
-        private async UniTask OpenQuestion(QuestionTrigger trigger, Type type)
-        {
-            Debug.Log($"Collision entered with {trigger.name}");
-            var result = await ui.OpenQuestion(type);
-        
-            Coins += result.Coins;
-            Experience += result.Experience;
-            Hearts += result.Hearts;
-            Points += result.Points;
-            if (Hearts == 0)
-            {
-                Playtime += ui.GetEndgamePlaytime();
-                var request = new EndGameRequest
-                {
-                    SessionCode = GameRoot.SessionCode,
-                    GameplayTime = Playtime,
-                    ScenarioEnded = false,
-                    StudentEndGameData = new EndGameRequest.Types.StudentEndGameData
-                    {
-                        Experience = Experience,
-                        Money = Coins,
-                        Skills = { Skills.Select(x => x.CompletionPercentage) }
-                    }
-                };
-                var task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "endgame");
-                await ui.LoseScreen(task);
-            }
-        
-            Objectives[trigger.GetType()].Collected++;
-            await trigger.Destroy();
         }
     }
 }

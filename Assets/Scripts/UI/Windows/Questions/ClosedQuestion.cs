@@ -30,6 +30,7 @@ namespace UI.Windows.Questions
 
         public override async UniTask<StudentAnswerRequest> DisplayQuestion(QuestionResponse question)
         {
+            gameObject.SetActive(true);
             timer.StartTimer();
 
             finished = false;
@@ -51,7 +52,7 @@ namespace UI.Windows.Questions
             _correctCount = question.Answers.Sum(x => x.Correct ? 1 : 0); 
 
             await UniTask.WaitUntil(() => finished);
-
+            gameObject.SetActive(false);
             
             var request = new StudentAnswerRequest
                           {

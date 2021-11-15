@@ -1,24 +1,26 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using Gameplay;
 using Google.Protobuf.Collections;
+using Labirynth.Questions;
 using Menu;
 using Network;
-using Player.Skills;
 using UI.HUD;
 using UI.Windows;
 using UI.Windows.Questions;
 using UnityEngine;
 using Utils;
-using Player = Player.Player;
+using QuestionTrigger = Gameplay.QuestionTrigger;
 
 namespace UI
 {
     public class UserInterface : MonoBehaviour
     {
-        [Header("Windows Prefabs")] 
-        [SerializeField] private GameHud gameHudPrefab;
+        [Header("Windows Prefabs")] [SerializeField]
+        private GameHud gameHudPrefab;
+
         [SerializeField] private MenuWindow menuPrefab;
         [SerializeField] private DeadScreen deadScreenPrefab;
         [SerializeField] private PauseScreen pauseScreenPrefab;
@@ -26,9 +28,11 @@ namespace UI
         [SerializeField] private TipDisplay tipDisplayPrefab;
         [SerializeField] private RewardPopup rewardPopupPrefab;
         [SerializeField] private TutorialSystem tutorialSystemPrefab;
+        [SerializeField] private LoadingScreen loadingScreenPrefab;
 
-        [Header("Question Types")] 
-        [SerializeField] private QuestionScreenBase singleChoiceQuestionPrefab;
+        [Header("Question Types")] [SerializeField]
+        private QuestionScreenBase singleChoiceQuestionPrefab;
+
         [SerializeField] private QuestionScreenBase multiChoiceQuestionPrefab;
 
         private MenuWindow _menu;
@@ -38,11 +42,12 @@ namespace UI
         private DeadScreen _deadScreen;
         private TipDisplay _tipDisplay;
         private RewardPopup _rewardPopup;
+        private LoadingScreen _loadingScreen;
 
         private QuestionScreenBase _singleChoiceQuestion;
         private QuestionScreenBase _multiChoiceQuestion;
 
-        private global::Player.Player _player;
+        private Player _player;
 
         private void Update()
         {
@@ -57,7 +62,7 @@ namespace UI
             }
         }
 
-        public void Setup(global::Player.Player player)
+        public void Setup(Player player)
         {
             _player = player;
 
@@ -71,6 +76,12 @@ namespace UI
                 _pauseScreen.Setup(ResumeGame);
                 _pauseScreen.gameObject.SetActive(false);
             }
+            
+            if (!_loadingScreen)
+            {
+                _loadingScreen = Instantiate(loadingScreenPrefab, transform);
+                _loadingScreen.gameObject.SetActive(false);
+            }
 
             if (!_singleChoiceQuestion)
             {
@@ -79,44 +90,52 @@ namespace UI
             }
         }
 
-        public async UniTask<QuestionResult> OpenQuestion(Type type)
+        public async UniTask<QuestionResult> HandleQuestion(Type type)
         {
-            _hud.Pause();
-            GameRoot.IsPaused = true;
+            PauseGame();
+            var question = await SendQuestionRequest(type);
+            var result = await OpenQuestionWindow(question);
+            await DisplayReward(result);
+            ResumeGame();
 
-            // todo change to real data
-            //var question = GetMockQuestion();
-            var request = new QuestionRequest()
+            return result;
+        }
+
+        private async UniTask<QuestionResponse> SendQuestionRequest(Type type)
+        {
+            var request = new QuestionRequest
             {
                 SessionCode = GameRoot.SessionCode,
-                QuestionType = QuestionTrigger.Enemy
+                QuestionType = GetQuestionType(type)
             };
-            Debug.LogError(type);
-            var question = await ConnectionManager.Instance.SendMessageAsync<QuestionResponse>(request, "next-question");
-
-            _singleChoiceQuestion.gameObject.SetActive(true);
-            
-            //select the correct type of window
+            var question = await ConnectionManager.Instance.SendMessageAsync<QuestionResponse>(request, "next-question", true);
+            return question;
+        }
+        
+        private async UniTask<QuestionResult> OpenQuestionWindow(QuestionResponse question)
+        {
             var answer = await _singleChoiceQuestion.DisplayQuestion(question);
-            _singleChoiceQuestion.gameObject.SetActive(false);
-
             ConnectionManager.Instance.SendMessageAsync<Empty>(answer, "answer").Forget();
-            
-            // pass the reward here
+
+            var result = GetQuestionResult(question, answer);
+            return result;
+        }
+
+        private static QuestionResult GetQuestionResult(QuestionResponse question, StudentAnswerRequest answer)
+        {
             var correctness = Mathf.Max(answer.QuestionCorrectnes, 0f);
             var coins = (int) (question.QuestionReward.Money * correctness);
             var exp = (int) (question.QuestionReward.Experience * correctness);
             var points = (int) (100 * correctness);
-            var result = new QuestionResult(coins, exp, correctness <= 0f ? -1 : 0, points );
-
-            await DisplayReward(result);
-            
-            GameRoot.IsPaused = false;
-            _hud.Resume();
-            
+            var result = new QuestionResult(coins, exp, correctness <= 0f ? -1 : 0, points);
             return result;
         }
 
+        private QuestionTrigger GetQuestionType(Type type)
+        {
+            return type == typeof(Key) ? QuestionTrigger.Key :
+                type == typeof(Enemy) ? QuestionTrigger.Enemy : QuestionTrigger.Object;
+        }
 
         public async UniTask DisplayTip(string text)
         {
@@ -144,7 +163,7 @@ namespace UI
             await _rewardPopup.DisplayRewards(result);
             _rewardPopup.gameObject.SetActive(false);
         }
-        
+
         public async UniTask<StartGameResponse> ShowMenu()
         {
             if (_hud)
@@ -157,26 +176,26 @@ namespace UI
             Destroy(_menu.gameObject);
             return startGameResponse;
         }
-        
+
         public async void ShowTutorial()
         {
-            if (!_hud) 
+            if (!_hud)
                 return;
 
             PauseGame();
-            
+
             var tutorial = Instantiate(tutorialSystemPrefab, transform);
             await tutorial.DisplayTutorial();
             Destroy(tutorial.gameObject);
 
             ResumeGame();
         }
-        
+
         private void HandlePauseScreen()
         {
-            if (!_hud) 
+            if (!_hud)
                 return;
-            
+
             if (GameRoot.IsPaused)
             {
                 _pauseScreen.Resume();
@@ -200,40 +219,47 @@ namespace UI
             _hud.Resume();
             GameRoot.IsPaused = false;
         }
-        
+
+        public void SetLoadingActive(bool active)
+        {
+            _loadingScreen.gameObject.SetActive(active);
+        }
+
         public async UniTask WinScreen(UniTask<Empty> requestTask)
         {
             if (_winScreen == null)
             {
                 _winScreen = Instantiate(winScreenPrefab, transform);
             }
+
             PauseGame();
             _winScreen.Setup(_player).Forget();
 
             await requestTask;
             _winScreen.OnRequestSent();
         }
-        
+
         public async UniTask LoseScreen(UniTask<Empty> uniTask)
         {
             if (_deadScreen == null)
             {
                 _deadScreen = Instantiate(deadScreenPrefab, transform);
             }
+
             PauseGame();
             _deadScreen.Setup();
 
             await uniTask;
             _deadScreen.OnRequestSent();
         }
-        
+
         public int GetEndgamePlaytime() => _hud.GetPlaytime();
 
-#region Debug
+        #region Debug
 
         private Queue<QuestionResponse> _mockQuestions;
         [SerializeField] private string[] mockQuestionStrings;
-        
+
         private QuestionResponse GetMockQuestion()
         {
             if (_mockQuestions == null)
@@ -302,6 +328,7 @@ namespace UI
                 _player.transform.position = _player.transform.position.WithX(_player.transform.position.x + 1f);
             }
         }
+
         #endregion
     }
 }

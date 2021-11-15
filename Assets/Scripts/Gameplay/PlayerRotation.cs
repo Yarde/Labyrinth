@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Player
+namespace Gameplay
 {
     [Obsolete("PlayerRotation is deprecated, please use fix before using.")]
     public class PlayerRotation : MonoBehaviour

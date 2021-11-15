@@ -53,7 +53,7 @@ namespace Menu
                 start.interactable = false;
                 serverError.gameObject.SetActive(false);
                 loadingIcon.SetActive(true);
-                StartGameResponse response = await SendStartGameRequest();
+                var response = await SendStartGameRequest();
                 loadingIcon.SetActive(false);
 
                 if (response.Error)

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,7 @@ namespace UI.HUD
         
         private Stack<GameObject> _spawnedHearts;
         private int _currentHearts;
-        private Player.Player _player;
+        private Player _player;
 
         public void Update()
         {
@@ -27,7 +28,7 @@ namespace UI.HUD
             }
         }
         
-        public void SetupBar(Player.Player player)
+        public void SetupBar(Player player)
         {
             _spawnedHearts = new Stack<GameObject>();
             _player = player;

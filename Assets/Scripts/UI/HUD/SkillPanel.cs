@@ -1,4 +1,4 @@
-﻿using Player.Skills;
+﻿using Gameplay;
 using UnityEngine;
 
 namespace UI.HUD
@@ -9,7 +9,7 @@ namespace UI.HUD
         
         private SkillButton[] _skillButtons;
 
-        public void Setup(Player.Player player)
+        public void Setup(Player player)
         {
             _skillButtons = new SkillButton[player.Skills.Length];
             

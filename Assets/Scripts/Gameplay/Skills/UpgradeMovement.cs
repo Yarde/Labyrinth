@@ -1,4 +1,4 @@
-namespace Player.Skills
+namespace Gameplay.Skills
 {
     public class UpgradeMovement : Skill
     {

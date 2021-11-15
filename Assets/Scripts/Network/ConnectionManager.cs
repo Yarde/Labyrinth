@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using Google.Protobuf;
+using UI;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -9,45 +10,53 @@ namespace Network
     {
         public static ConnectionManager Instance { get; private set; }
         private readonly string _host;
+        private UserInterface _ui;
 
-        public ConnectionManager(string host)
+        public ConnectionManager(string host, UserInterface ui)
         {
             _host = host;
+            _ui = ui;
             Instance = this;
         }
 
-        public async UniTask<TResponse> SendMessageAsync<TResponse>(IMessage message, string endpoint)
+        public async UniTask<TResponse> SendMessageAsync<TResponse>(IMessage message, string endpoint, bool wait = false)
             where TResponse : IMessage<TResponse>, new()
         {
             Debug.Log($"Sending started {message}");
             
             var request = UnityWebRequest.Put($"{_host}{endpoint}", message.ToByteArray());
             request.method = "POST";
-            
             // to use string instead of bytes
             //var request = UnityWebRequest.Post($"{_host}{endpoint}", message.ToString());
-            
             request.SetRequestHeader("Content-Type", "application/x-protobuf");
-            
-            Debug.Log($"Web Request Sent");
-
             try
             {
+                if (wait)
+                {
+                    _ui.SetLoadingActive(true);
+                }
                 await request.SendWebRequest();
-            
+
                 Debug.Log($"Request: {request.result}\nData: {request.downloadHandler.text}");
-            
+
                 var response = new MessageParser<TResponse>(() => new TResponse())
                     .ParseFrom(request.downloadHandler.data);
-            
+
                 Debug.Log($"Response {response}");
-            
+
                 return response;
             }
             catch (UnityWebRequestException exception)
             {
                 Debug.LogError(exception);
                 return new TResponse();
+            }
+            finally
+            {
+                if (wait)
+                {
+                    _ui.SetLoadingActive(false);
+                }
             }
         }
     }

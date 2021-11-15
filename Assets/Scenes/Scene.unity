@@ -243,6 +243,7 @@ MonoBehaviour:
   tipDisplayPrefab: {fileID: 1031466086783261239, guid: 0accb08e4d415b24781be9cb5a645ac3, type: 3}
   rewardPopupPrefab: {fileID: 924090905928640872, guid: 82a5a68671f2a3142a8de975eb8ebfb3, type: 3}
   tutorialSystemPrefab: {fileID: 439669833813986882, guid: 4d91a4a85db14ca418046e8e97288caf, type: 3}
+  loadingScreenPrefab: {fileID: 1713732210008205517, guid: b07212bc989c7f74ca7a53813e35d9ec, type: 3}
   singleChoiceQuestionPrefab: {fileID: 433130548824555345, guid: 2aaad665eed22854481d3d685de0eae1, type: 3}
   multiChoiceQuestionPrefab: {fileID: 0}
   mockQuestionStrings:
@@ -490,14 +491,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd283cc91844ddaa2a22df3c6ccfa1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverHost: http://192.168.0.12:5000/api-game/
+  serverHost: http://zpi2021.westeurope.cloudapp.azure.com/api-game/
   player: {fileID: 2136045742}
   labirynth: {fileID: 6312112345100141840}
   ui: {fileID: 903042969}
-  skills:
-  - {fileID: 11400000, guid: 94a520faf25900244958b73468233f05, type: 2}
-  - {fileID: 11400000, guid: dcf4acd16bf0eec4e904cd4d4bafbd80, type: 2}
-  - {fileID: 11400000, guid: 17202ae77ef3d5144a534b46e612f7d5, type: 2}
   treasurePrefab: {fileID: 2945742143488225944, guid: efebddd0b5766bd499be8b63f581de68, type: 3}
   keyPrefab: {fileID: 4893066204994727074, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
   enemyPrefab: {fileID: 5926212058165235570, guid: 4892e456c1411f542911892b176cdaa1, type: 3}

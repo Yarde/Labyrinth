@@ -1,5 +1,5 @@
 ﻿using DG.Tweening;
-using Player.Skills;
+using Gameplay;
 using TMPro;
 using UI.Elements;
 using UnityEngine;
@@ -22,9 +22,9 @@ namespace UI.HUD
         
         [SerializeField] private Image blendCloud;
 
-        private Player.Player _player;
+        private Player _player;
         
-        public void Setup(Player.Player player)
+        public void Setup(Player player)
         {
             _player = player;
             skillPanel.Setup(player);
