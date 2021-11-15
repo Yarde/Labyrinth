@@ -81,7 +81,6 @@ namespace Player
             {
                 Playtime += ui.GetEndgamePlaytime();
                 Points = CalculatePoints();
-                ui.WinScreen();
                 var request = new EndGameRequest
                 {
                     SessionCode = GameRoot.SessionCode,
@@ -93,7 +92,8 @@ namespace Player
                         Money = Coins
                     }
                 };
-                await ConnectionManager.Instance.SendMessageAsync<Empty>(request, "dawid/end");
+                var requestTask = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "dawid/end");
+                await ui.WinScreen(requestTask);
             }
             else
             {

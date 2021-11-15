@@ -188,14 +188,17 @@ namespace UI
             GameRoot.IsPaused = false;
         }
         
-        public async UniTask WinScreen()
+        public async UniTask WinScreen(UniTask<Empty> requestTask)
         {
             if (_winScreen == null)
             {
                 _winScreen = Instantiate(winScreenPrefab, transform);
             }
             PauseGame();
-            await _winScreen.Setup(_player);
+            _winScreen.Setup(_player).Forget();
+
+            await requestTask;
+            _winScreen.OnRequestSent();
         }
         
         public async UniTask LoseScreen(UniTask<Empty> uniTask)

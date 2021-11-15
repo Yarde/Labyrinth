@@ -8,8 +8,7 @@ namespace Network
     public class ConnectionManager
     {
         public static ConnectionManager Instance { get; private set; }
-        
-        private string _host;
+        private readonly string _host;
 
         public ConnectionManager(string host)
         {
@@ -22,9 +21,11 @@ namespace Network
         {
             Debug.Log($"Sending started {message}");
             
-            UnityWebRequest request = UnityWebRequest.Post($"{_host}{endpoint}", message.ToString());
-            //if we want to use byte array instead of string we need to change ".Post" to ".Put" and uncomment line bellow 
-            //unityWebRequest.method = "POST";
+            var request = UnityWebRequest.Put($"{_host}{endpoint}", message.ToByteArray());
+            request.method = "POST";
+            
+            // to use string instead of bytes
+            //var request = UnityWebRequest.Post($"{_host}{endpoint}", message.ToString());
             
             request.SetRequestHeader("Content-Type", "application/x-protobuf");
             
@@ -36,12 +37,12 @@ namespace Network
             
                 Debug.Log($"Request: {request.result}\nData: {request.downloadHandler.text}");
             
-                TResponse x = new MessageParser<TResponse>(() => new TResponse())
+                var response = new MessageParser<TResponse>(() => new TResponse())
                     .ParseFrom(request.downloadHandler.data);
             
-                Debug.Log($"Response {x}");
+                Debug.Log($"Response {response}");
             
-                return x;
+                return response;
             }
             catch (UnityWebRequestException exception)
             {

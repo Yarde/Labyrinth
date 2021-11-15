@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI.Windows
@@ -22,12 +21,7 @@ namespace UI.Windows
         {
             menu.onClick.RemoveListener(MainMenu);
         }
-        
-        private void MainMenu()
-        {
-            GameRoot.IsPaused = false;
-            SceneManager.LoadScene("Scene");
-        }
+
         public void OnRequestSent()
         {
             menu.gameObject.SetActive(true);

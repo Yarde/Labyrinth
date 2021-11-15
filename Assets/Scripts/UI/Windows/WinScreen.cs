@@ -1,7 +1,6 @@
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utils;
 
@@ -29,28 +28,27 @@ namespace UI.Windows
         public async UniTask Setup(Player.Player player)
         {
             gameObject.SetActive(true);
+            menu.gameObject.SetActive(false);
 
-            int objectivesCollected = player.Objectives.Sum(x => x.Value.Collected);
-            int objectivesTotal = player.Objectives.Sum(x => x.Value.Total);
+            var objectivesCollected = player.Objectives.Sum(x => x.Value.Collected);
+            var objectivesTotal = player.Objectives.Sum(x => x.Value.Total);
 
             await points.AnimateNewValue(player.Points, pointsFormat, duration, strength);
             await time.AnimateNewValue(player.Playtime, timeFormat, duration, strength);
             await exp.AnimateNewValue(player.Experience, expFormat, duration, strength);
             await objectives.AnimateNewValue(objectivesCollected, $"{objectivesFormat}/{objectivesTotal}", duration, strength);
             await skills.AnimateNewValue(10, skillsFormat, duration, strength);
-            
+        }
+        
+        public void OnRequestSent()
+        {
+            menu.gameObject.SetActive(true);
             menu.onClick.AddListener(MainMenu);
         }
 
         private void OnDestroy()
         {
             menu.onClick.RemoveListener(MainMenu);
-        }
-
-        private void MainMenu()
-        {
-            GameRoot.IsPaused = false;
-            SceneManager.LoadScene("Scene");
         }
     }
 }

@@ -2,39 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Loading.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Loading.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/WinScreen.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/WinScreen.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labirynth.sln.DotSettings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BottleClient.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BottleClient/BottleClient.csproj.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/DeathScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/DeathScreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Menu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Elements/SimpleLoading.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Elements/SimpleLoading.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Elements/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Elements/Timer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ExperienceBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ExperienceBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ProgressPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/RewardLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/RewardLine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/AnimatedText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/AnimatedText.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/CutoutMaskUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/CutoutMaskUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/ProceduralNumberGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,27 +28,21 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.4.8/Editor/inspectors/ClipInspector/ClipInspectorCurveEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/GlyphRectPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Elements/SimpleLoading.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Elements/Timer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HUD/ExperienceBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d2ac4227d2c34eaf86632b57f42af586b400/b7/979962a9/UnityWebRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Editor/TMProFontReplacer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8b06370485114ec89b0924fe08251dad62358/14/MessageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Windows/Settings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.4.8/Editor/inspectors/ClipInspector/ClipInspectorCurveEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Elements/Timer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/GlyphRectPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/TMProFontReplacer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8b06370485114ec89b0924fe08251dad62358/b8/780465ef/IMessage`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/QuestionScreenBase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/QuestionScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiseQuestionScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
@@ -103,7 +72,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ColorExtensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/AnswerButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/RewardLine.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/RewardPopup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Timer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/MultiImageButton.cs" />
@@ -119,9 +87,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialTipData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Network/Gameplay.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />
@@ -202,6 +174,7 @@
       <workItem from="1636205603143" duration="12117000" />
       <workItem from="1636298643304" duration="2945000" />
       <workItem from="1636882086780" duration="11132000" />
+      <workItem from="1636995422478" duration="845000" />
     </task>
     <servers />
   </component>
@@ -233,14 +206,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs</url>
           <line>78</line>
-          <properties documentPath="C:\Users\dawid.kaluza\Documents\Labirynth\Assets\Scripts\Labirynth\LabirynthGenerator.cs" initialLine="78" containingFunctionPresentation="method 'AddTriggers'">
-            <startOffsets>
-              <option value="2751" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2782" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\dawid.kaluza\Documents\Labirynth\Assets\Scripts\Labirynth\LabirynthGenerator.cs" initialLine="78" containingFunctionPresentation="method 'AddTriggers'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
