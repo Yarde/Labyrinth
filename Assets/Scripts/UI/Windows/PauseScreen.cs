@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI.Windows
@@ -8,16 +9,20 @@ namespace UI.Windows
         [SerializeField] private  Button resume;
         [SerializeField] private  Button menu;
 
-        public void Setup()
+        public void Setup(UnityAction resumeGame)
         {
-            resume.onClick.AddListener(Resume);
+            resume.onClick.AddListener(() =>
+            {
+                resumeGame();
+                Resume();
+            });
             menu.onClick.AddListener(MainMenu);
         }
-
+        
         private void OnDestroy()
         {
-            resume.onClick.RemoveListener(Resume);
             menu.onClick.RemoveListener(MainMenu);
+            resume.onClick.RemoveAllListeners();
         }
     }
 }

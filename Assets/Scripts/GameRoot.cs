@@ -5,6 +5,7 @@ using GameData;
 using Gameplay;
 using Labirynth;
 using Labirynth.Questions;
+using Localization;
 using Network;
 using Player.Skills;
 using UI;
@@ -39,6 +40,7 @@ public class GameRoot : MonoBehaviour
     private async void Awake()
     {
         _connectionManager = new ConnectionManager(serverHost);
+
         var startGameResponse = await ui.ShowMenu();
         StartGame(startGameResponse);
     }

@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BottleClient.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/BottleClient/BottleClient.csproj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization/LocalizedText.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization/LocalizedText.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization/TranslationManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Localization/TranslationManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Loading.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Loading.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +44,11 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/GlyphRectPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/TMProFontReplacer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/9f/054fc8e4/RectTransform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Skills/Skill.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/QuestionScreen.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiseQuestionScreen.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/SingleChoiceQuestionScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills/UpgradeLight.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Cell.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" />
@@ -62,9 +64,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GameData/ObjectiveData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/Menu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuWindow.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/QuestionResult.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
@@ -87,13 +87,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialTipData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TutorialSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Network/Gameplay.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/DeadScreen.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WindowState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/PauseScreen.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Localization/LockitManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Localization/LocalizedText.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Localization/TranslationManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />
@@ -108,7 +114,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3495212" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34940413" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -136,10 +142,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4488">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="4488" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -174,7 +180,7 @@
       <workItem from="1636205603143" duration="12117000" />
       <workItem from="1636298643304" duration="2945000" />
       <workItem from="1636882086780" duration="11132000" />
-      <workItem from="1636995422478" duration="845000" />
+      <workItem from="1636995422478" duration="4977000" />
     </task>
     <servers />
   </component>
@@ -204,10 +210,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs</url>
-          <line>78</line>
-          <properties documentPath="C:\Users\dawid.kaluza\Documents\Labirynth\Assets\Scripts\Labirynth\LabirynthGenerator.cs" initialLine="78" containingFunctionPresentation="method 'AddTriggers'" />
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Localization/LocalizedText.cs</url>
+          <line>20</line>
+          <properties documentPath="E:\unity\Labirynth\Assets\Scripts\Localization\LocalizedText.cs" initialLine="20" containingFunctionPresentation="method 'Translate'">
+            <startOffsets>
+              <option value="486" />
+            </startOffsets>
+            <endOffsets>
+              <option value="545" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -48,7 +48,10 @@ namespace UI
                 return;
             }
 
-            Cheats();
+            if (_hud)
+            {
+                Cheats();
+            }
         }
 
         public void Setup(Player.Player player, Skill[] skills)
@@ -62,7 +65,7 @@ namespace UI
             if (!_pauseScreen)
             {
                 _pauseScreen = Instantiate(pauseScreenPrefab, transform);
-                _pauseScreen.Setup();
+                _pauseScreen.Setup(ResumeGame);
                 _pauseScreen.gameObject.SetActive(false);
             }
 
@@ -164,7 +167,7 @@ namespace UI
             if (!_hud) 
                 return;
             
-            if (GameRoot.IsPaused && _pauseScreen.IsOnTop)
+            if (GameRoot.IsPaused)
             {
                 _pauseScreen.Resume();
                 ResumeGame();
@@ -176,13 +179,13 @@ namespace UI
             }
         }
 
-        public void PauseGame()
+        private void PauseGame()
         {
             _hud.Pause();
             GameRoot.IsPaused = true;
         }
-        
-        public void ResumeGame()
+
+        private void ResumeGame()
         {
             _hud.Resume();
             GameRoot.IsPaused = false;

@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd283cc91844ddaa2a22df3c6ccfa1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverHost: http://zpi2021.westeurope.cloudapp.azure.com/api/
+  serverHost: http://192.168.0.12:5000/api-game/
   player: {fileID: 2136045742}
   labirynth: {fileID: 6312112345100141840}
   ui: {fileID: 903042969}

@@ -75,7 +75,7 @@ namespace Menu
                 Email = email.text,
                 Code = code.text
             };
-            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, "dawid/sth");
+            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, "start-game");
             return response;
         }
 
