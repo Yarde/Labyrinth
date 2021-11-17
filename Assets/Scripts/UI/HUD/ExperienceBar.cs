@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Gameplay;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ namespace UI.HUD
 
         private const float EXP_MULTIPLIER = 0.1f;
 
-        private Player.Player _player;
+        private Player _player;
         
         private int _currentExperience;
         private int _experienceLeft;
@@ -26,7 +27,7 @@ namespace UI.HUD
             }
         }
         
-        public void SetupBar(Player.Player player)
+        public void SetupBar(Player player)
         {
             _player = player;
             UpdateExperience();

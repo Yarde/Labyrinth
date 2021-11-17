@@ -57,8 +57,9 @@ namespace Labirynth
         
         private void AddExitTrigger(Cell cell)
         {
-            var exit = Instantiate(exitPrefab, wallsSpawnTransform);
-            exit.SetTransform(cell.Floor.transform);
+            var exit = Instantiate(exitPrefab, triggersSpawnTransform);
+            exit.transform.position = cell.Floor.transform.position;
+            Destroy(cell.Floor.gameObject);
         }
         
         private void AddQuestionTriggers(List<Cell> possibleSpawnPoints)

@@ -328,7 +328,7 @@ MonoBehaviour:
   rewardHolder: {fileID: 7720546259107214716}
   confirmButton: {fileID: 924090906048171939}
   coinSprite: {fileID: 21300000, guid: d9a095481771fe846b97c45141324b46, type: 3}
-  experienceSprite: {fileID: 21300000, guid: 942ad5d976ffc6645855ab7626720a9a, type: 3}
+  experienceSprite: {fileID: 21300000, guid: cb8caf529459ab74393697255fa9969f, type: 3}
   heartSprite: {fileID: 21300000, guid: ec34ce218efc9644ba027b5dba6b1e77, type: 3}
 --- !u!1 &924090906048171937
 GameObject:

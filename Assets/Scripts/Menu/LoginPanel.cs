@@ -37,12 +37,12 @@ namespace Menu
                 Email = "test",
                 Code = "test"
             };
-            SendDebugRequest(request);
+            _ = SendDebugRequest(request);
         }
 
         private async UniTask SendDebugRequest(StartGameRequest request)
         {
-            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, "start-game");
+            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, Endpoints.StartGame);
             StartGameResponse = response;
         }
 
@@ -53,7 +53,7 @@ namespace Menu
                 start.interactable = false;
                 serverError.gameObject.SetActive(false);
                 loadingIcon.SetActive(true);
-                StartGameResponse response = await SendStartGameRequest();
+                var response = await SendStartGameRequest();
                 loadingIcon.SetActive(false);
 
                 if (response.Error)
@@ -79,7 +79,7 @@ namespace Menu
                 Email = email.text,
                 Code = code.text
             };
-            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, "start-game");
+            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, Endpoints.StartGame);
             return response;
         }
 

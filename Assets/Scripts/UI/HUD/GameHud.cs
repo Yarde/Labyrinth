@@ -1,5 +1,5 @@
 ﻿using DG.Tweening;
-using Player.Skills;
+using Gameplay;
 using TMPro;
 using UI.Elements;
 using UnityEngine;
@@ -22,9 +22,9 @@ namespace UI.HUD
         
         [SerializeField] private Image blendCloud;
 
-        private Player.Player _player;
+        private Player _player;
         
-        public void Setup(Player.Player player)
+        public void Setup(Player player)
         {
             _player = player;
             skillPanel.Setup(player);
@@ -33,7 +33,7 @@ namespace UI.HUD
             progressPanel.Setup(player);
 
             blendCloud.transform.DORotate(new Vector3(0f, 0f, 360f), 80f, RotateMode.FastBeyond360)
-                .SetLoops(-1).SetEase(Ease.Linear);
+                .SetLoops(-1).SetEase(Ease.Linear).SetId("GameHud: background DORotate");
 
             Resume();
         }

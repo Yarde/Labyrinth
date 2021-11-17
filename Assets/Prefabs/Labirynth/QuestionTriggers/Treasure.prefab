@@ -15997,6 +15997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 8dc8e4162c006b44f9d14b1d148f2f61, type: 3}
+  Color: {r: 0.754717, g: 0.046279836, b: 0.6079612, a: 1}
   animator: {fileID: 95000011159147032}
   idleBox: {fileID: 1000014204504060}
   destroyBox: {fileID: 1000014038691284}

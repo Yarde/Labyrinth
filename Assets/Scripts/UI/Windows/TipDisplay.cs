@@ -13,10 +13,11 @@ namespace UI.Windows
         {
             tipText.text = tip;
             tipText.transform.localScale = Vector3.one * 2;
-            tipText.gameObject.SetActive(true);
+            gameObject.SetActive(true);
             await tipText.transform.DOScale(Vector3.one, 0.5f);
             await UniTask.Delay(tipTime);
-            tipText.gameObject.SetActive(false);
+            await tipText.transform.DOScale(Vector3.zero, 0.5f);
+            gameObject.SetActive(false);
         }
     }
 }

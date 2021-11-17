@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Gameplay;
+using UnityEngine;
 
 namespace UI.HUD
 {
@@ -7,7 +8,7 @@ namespace UI.HUD
         [SerializeField] private ObjectiveElement objectiveElementPrefab;
         [SerializeField] private Transform objectiveHolder;
         
-        public void Setup(Player.Player player)
+        public void Setup(Player player)
         {
             foreach (var playerObjective in player.Objectives)
             {

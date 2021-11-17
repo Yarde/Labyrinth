@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player
+namespace Gameplay
 {
     public class PlayerMovement : MonoBehaviour {
         [SerializeField] private Player player;

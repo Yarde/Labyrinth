@@ -1,7 +1,7 @@
 using UnityEngine;
 using Utils;
 
-namespace Player
+namespace Gameplay
 {
     [RequireComponent(typeof(Light))]
     public class LightController : MonoBehaviour {

@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 903042967}
   - component: {fileID: 903042966}
   - component: {fileID: 903042965}
-  - component: {fileID: 903042969}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -214,7 +213,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 1505651505}
   m_Father: {fileID: 1667411698}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -223,79 +223,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &903042969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903042964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24fe87ea01b2c196c9d8e87b196de689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameHudPrefab: {fileID: 1564476071441039211, guid: c78e8b56c6d2b07a19602963972e55a1, type: 3}
-  menuPrefab: {fileID: 4273637455561955142, guid: 997edf5f50f4c4f47a8cf517e2fe4472, type: 3}
-  deadScreenPrefab: {fileID: 476805244956709627, guid: 327b806170a016e2ba86de3fd8b1f087, type: 3}
-  pauseScreenPrefab: {fileID: 8043393252971936292, guid: 094e5549d588344bbb557e3f86f32539, type: 3}
-  winScreenPrefab: {fileID: 669276346460715052, guid: 3daadb33ddc44f74196ac1367982f884, type: 3}
-  tipDisplayPrefab: {fileID: 1031466086783261239, guid: 0accb08e4d415b24781be9cb5a645ac3, type: 3}
-  rewardPopupPrefab: {fileID: 924090905928640872, guid: 82a5a68671f2a3142a8de975eb8ebfb3, type: 3}
-  tutorialSystemPrefab: {fileID: 439669833813986882, guid: 4d91a4a85db14ca418046e8e97288caf, type: 3}
-  singleChoiceQuestionPrefab: {fileID: 433130548824555345, guid: 2aaad665eed22854481d3d685de0eae1, type: 3}
-  multiChoiceQuestionPrefab: {fileID: 0}
-  mockQuestionStrings:
-  - Who was the first president of United States of America;George Washington;Thomas
-    Jefferson;Abraham Lincoln;Benjamin Franklin;1
-  - What is the largest big cat?;Lion;Tiger;Cheetah;Leopard;2
-  - What land animal can open its mouth the widest?;Alligator;Crocodile;Baboon;Hippo;4
-  - What is the largest animal on Earth?;The African elephant;The blue whale;The
-    sperm whale;The giant squid;2
-  - What is the only flying mammal?;The bat;The flying squirrel;The bald eagle;The
-    colugo;1
-  - What is an animal called that eats plants and meat?;Carnivore;Herbivore;Omnivore;Pescatarian;3
-  - "Why do sea otters hold hands?;Because they love each other;To show they\u2019re
-    in the same family;So they don\u2019t float away when they\u2019re sleeping;Because
-    they\u2019re playing;3"
-  - "How can you tell an insect and a spider apart?;Insects have three body parts,
-    spiders have two.;Insects have six legs, spiders have eight.;Insects can have
-    wings but spiders can\u2019t.;All of the above.;4"
-  - What does the duck-billed platypus do that hardly any other mammals do?;Quacks
-    like a duck;Lays eggs;Builds nests;Waddles;2
-  - "Why do snakes stick out their tongue?;To scare predators;To lick their prey;To
-    make a hissing sound;To \u201Csmell\u201D the air;4"
-  - What is it called when there are no more of one kind of animal left on Earth?;Evolution;Conservation;Extinction;Endangered;3
-  - "What\u2019s the biggest planet in our solar system?;Jupiter;Saturn;Neptune;Mercury;1"
-  - What planet has the shortest day?;Mercury;Earth;Neptune;Jupiter;4
-  - What star is closest to the Earth?;The North Star (Polaris);The Dog Star (Sirius);The
-    sun;Andromeda;3
-  - Who was the first person to walk on the moon?;Buzz Aldrin;Neil Armstrong;Michael
-    Collins;Alan Shepard;2
-  - "What\u2019s a blue moon?;When the moon turns blue;When the moon falls on Halloween;The
-    second full moon in a month;When a Hunter\u2019s Moon falls on Halloween;3"
-  - "What\u2019s a lunar eclipse?;When the Earth is in between the sun and the moon;When
-    the moon is in between the Earth and the sun;When the sun is in between the Earth
-    and the moon;When the moon is closest to the Earth;1"
-  - What direction does the sun rise in?;North;South;East;West;3
-  - Does ice sink or float in water?;Sink;Float;Sometimes it sinks, sometimes it
-    floats;Ice is water, so this is a trick question;2
-  - "What\u2019s the force that makes objects fall to the ground?;Electromagnetism;Gravity;Nuclear
-    force;It\u2019s just called \u201CThe Force\u201D;2"
-  - What kind of trees grow from acorns?;Oak;Maple;Hickory;Walnut;1
-  - "What\u2019s the difference between a hurricane and a typhoon?;Typhoons are stronger
-    than hurricanes.;Typhoons happen over land, hurricanes over water.;Hurricanes
-    are slower-moving.;Nothing except where they happen.;4"
-  - How many colors are in a rainbow?;7;10;6;8;1
-  - "What\u2019s the hardest substance in our body?;Bones;Hair;Nails;Teeth;4"
-  - How many bones are in the adult human body?;501;105;206;347;3
-  - Where is the fastest muscle in the body?;The leg;The arm;The fingers;The eye;4
-  - What is the largest body of water on Earth?;The Pacific Ocean;The Atlantic Ocean;The
-    Indian Ocean;The Caspian Sea;1
-  - What is the largest country on Earth?;The United States;Canada;China;Russia;4
-  - What is the smallest country on Earth?;Monaco;Luxembourg;Vatican City;Madagascar;3
-  - What is the coldest place on Earth?;The North Pole;Antarctica;Siberia;Cape Horn,
-    South America;2
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +388,130 @@ Transform:
   m_Father: {fileID: 1667411698}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1505651504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505651505}
+  - component: {fileID: 1505651507}
+  - component: {fileID: 1505651506}
+  m_Layer: 5
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1505651505
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505651504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 903042968}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1505651506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505651504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c031f7a8af5c4890844a6b6393c1f52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  singleChoiceFourAnswersQuestionPrefab: {fileID: 433130548824555345, guid: 2aaad665eed22854481d3d685de0eae1, type: 3}
+  multiChoiceQuestionPrefab: {fileID: 0}
+--- !u!114 &1505651507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505651504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fe87ea01b2c196c9d8e87b196de689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameHudPrefab: {fileID: 1564476071441039211, guid: c78e8b56c6d2b07a19602963972e55a1, type: 3}
+  menuPrefab: {fileID: 4273637455561955142, guid: 997edf5f50f4c4f47a8cf517e2fe4472, type: 3}
+  deadScreenPrefab: {fileID: 476805244956709627, guid: 327b806170a016e2ba86de3fd8b1f087, type: 3}
+  pauseScreenPrefab: {fileID: 8043393252971936292, guid: 094e5549d588344bbb557e3f86f32539, type: 3}
+  winScreenPrefab: {fileID: 669276346460715052, guid: 3daadb33ddc44f74196ac1367982f884, type: 3}
+  tipDisplayPrefab: {fileID: 1031466086783261239, guid: 0accb08e4d415b24781be9cb5a645ac3, type: 3}
+  rewardPopupPrefab: {fileID: 924090905928640872, guid: 82a5a68671f2a3142a8de975eb8ebfb3, type: 3}
+  tutorialSystemPrefab: {fileID: 439669833813986882, guid: 4d91a4a85db14ca418046e8e97288caf, type: 3}
+  loadingScreenPrefab: {fileID: 1713732210008205517, guid: b07212bc989c7f74ca7a53813e35d9ec, type: 3}
+  questionWindowManager: {fileID: 1505651506}
+  mockQuestionStrings:
+  - Who was the first president of United States of America;George Washington;Thomas
+    Jefferson;Abraham Lincoln;Benjamin Franklin;1
+  - What is the largest big cat?;Lion;Tiger;Cheetah;Leopard;2
+  - What land animal can open its mouth the widest?;Alligator;Crocodile;Baboon;Hippo;4
+  - What is the largest animal on Earth?;The African elephant;The blue whale;The
+    sperm whale;The giant squid;2
+  - What is the only flying mammal?;The bat;The flying squirrel;The bald eagle;The
+    colugo;1
+  - What is an animal called that eats plants and meat?;Carnivore;Herbivore;Omnivore;Pescatarian;3
+  - "Why do sea otters hold hands?;Because they love each other;To show they\u2019re
+    in the same family;So they don\u2019t float away when they\u2019re sleeping;Because
+    they\u2019re playing;3"
+  - "How can you tell an insect and a spider apart?;Insects have three body parts,
+    spiders have two.;Insects have six legs, spiders have eight.;Insects can have
+    wings but spiders can\u2019t.;All of the above.;4"
+  - What does the duck-billed platypus do that hardly any other mammals do?;Quacks
+    like a duck;Lays eggs;Builds nests;Waddles;2
+  - "Why do snakes stick out their tongue?;To scare predators;To lick their prey;To
+    make a hissing sound;To \u201Csmell\u201D the air;4"
+  - What is it called when there are no more of one kind of animal left on Earth?;Evolution;Conservation;Extinction;Endangered;3
+  - "What\u2019s the biggest planet in our solar system?;Jupiter;Saturn;Neptune;Mercury;1"
+  - What planet has the shortest day?;Mercury;Earth;Neptune;Jupiter;4
+  - What star is closest to the Earth?;The North Star (Polaris);The Dog Star (Sirius);The
+    sun;Andromeda;3
+  - Who was the first person to walk on the moon?;Buzz Aldrin;Neil Armstrong;Michael
+    Collins;Alan Shepard;2
+  - "What\u2019s a blue moon?;When the moon turns blue;When the moon falls on Halloween;The
+    second full moon in a month;When a Hunter\u2019s Moon falls on Halloween;3"
+  - "What\u2019s a lunar eclipse?;When the Earth is in between the sun and the moon;When
+    the moon is in between the Earth and the sun;When the sun is in between the Earth
+    and the moon;When the moon is closest to the Earth;1"
+  - What direction does the sun rise in?;North;South;East;West;3
+  - Does ice sink or float in water?;Sink;Float;Sometimes it sinks, sometimes it
+    floats;Ice is water, so this is a trick question;2
+  - "What\u2019s the force that makes objects fall to the ground?;Electromagnetism;Gravity;Nuclear
+    force;It\u2019s just called \u201CThe Force\u201D;2"
+  - What kind of trees grow from acorns?;Oak;Maple;Hickory;Walnut;1
+  - "What\u2019s the difference between a hurricane and a typhoon?;Typhoons are stronger
+    than hurricanes.;Typhoons happen over land, hurricanes over water.;Hurricanes
+    are slower-moving.;Nothing except where they happen.;4"
+  - How many colors are in a rainbow?;7;10;6;8;1
+  - "What\u2019s the hardest substance in our body?;Bones;Hair;Nails;Teeth;4"
+  - How many bones are in the adult human body?;501;105;206;347;3
+  - Where is the fastest muscle in the body?;The leg;The arm;The fingers;The eye;4
+  - What is the largest body of water on Earth?;The Pacific Ocean;The Atlantic Ocean;The
+    Indian Ocean;The Caspian Sea;1
+  - What is the largest country on Earth?;The United States;Canada;China;Russia;4
+  - What is the smallest country on Earth?;Monaco;Luxembourg;Vatican City;Madagascar;3
+  - What is the coldest place on Earth?;The North Pole;Antarctica;Siberia;Cape Horn,
+    South America;2
 --- !u!1 &1667411696
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,14 +541,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd283cc91844ddaa2a22df3c6ccfa1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverHost: http://192.168.0.12:5000/api-game/
+  serverHost: http://zpi2021.westeurope.cloudapp.azure.com/api-game/
   player: {fileID: 2136045742}
   labirynth: {fileID: 6312112345100141840}
-  ui: {fileID: 903042969}
-  skills:
-  - {fileID: 11400000, guid: 94a520faf25900244958b73468233f05, type: 2}
-  - {fileID: 11400000, guid: dcf4acd16bf0eec4e904cd4d4bafbd80, type: 2}
-  - {fileID: 11400000, guid: 17202ae77ef3d5144a534b46e612f7d5, type: 2}
+  ui: {fileID: 1505651507}
   treasurePrefab: {fileID: 2945742143488225944, guid: efebddd0b5766bd499be8b63f581de68, type: 3}
   keyPrefab: {fileID: 4893066204994727074, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
   enemyPrefab: {fileID: 5926212058165235570, guid: 4892e456c1411f542911892b176cdaa1, type: 3}
@@ -673,7 +720,7 @@ PrefabInstance:
     - target: {fileID: 4908335023367846170, guid: 7cb1aa7ed57c07c408e116b834df0c1f, type: 3}
       propertyPath: ui
       value: 
-      objectReference: {fileID: 903042969}
+      objectReference: {fileID: 1505651507}
     - target: {fileID: 4908335023367846173, guid: 7cb1aa7ed57c07c408e116b834df0c1f, type: 3}
       propertyPath: m_Name
       value: Player

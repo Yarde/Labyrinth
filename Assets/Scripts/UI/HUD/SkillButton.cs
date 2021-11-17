@@ -1,4 +1,5 @@
-﻿using Player.Skills;
+﻿using Gameplay;
+using Gameplay.Skills;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,7 +20,7 @@ namespace UI.HUD
         private const string SKILL_TEXT_PATTERN = "Level {0}\nCost {1}";
         private static readonly Color LightGray = new Color(0.7f, 0.7f, 0.7f, 0.7f);
 
-        private Player.Player _player;
+        private Player _player;
         private Skill _skill;
 
         private void Update()
@@ -51,7 +52,7 @@ namespace UI.HUD
             }
         }
 
-        public void SetupSkill(Skill skill, Player.Player player)
+        public void SetupSkill(Skill skill, Player player)
         {
             _skill = skill;
             _player = player;
