@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipText: You can upgrade your skills with coins, each has different effect, try
     them all.
-  tipPosition: {x: -111, y: 0, z: 0}
-  cutoutPosition: {x: 561.1393, y: 69.50795, z: 0}
+  tipPosition: {x: -50, y: 0, z: 0}
+  cutoutPosition: {x: 571.1393, y: 69.50795, z: 0}
   cutoutSize: {x: 278.0832, y: 439.0159}
+  showArrow: 1
   arrowRotationZ: -149.2

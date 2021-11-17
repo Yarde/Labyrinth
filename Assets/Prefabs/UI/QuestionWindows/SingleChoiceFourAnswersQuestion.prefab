@@ -304,17 +304,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14453a6039541ebbb0bd21a9ba3a9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loading: {fileID: 0}
   timer: {fileID: 8059784480728479495}
   answerButtonPrefab: {fileID: 2869136311464325822, guid: bf95ebdd890619046a70ed985ca8b76c, type: 3}
-  answerButtonHolder: {fileID: 8648483753196945906}
+  answerButtonHolder: {fileID: 8066097050272786837}
   confirmButton: {fileID: 4389829868634398773}
+  confirmButtonText: {fileID: 4389829868580139580}
   questionText: {fileID: 2312577676873655316}
   answers:
   - {fileID: 190437846828661656}
   - {fileID: 3714697614738153045}
   - {fileID: 1192063129930391893}
   - {fileID: 2333018558885114261}
+  confirmButtonColor: {r: 0.3647059, g: 0, b: 0.67058825, a: 1}
+  continueButtonColor: {r: 0.99607843, g: 0.8509804, b: 0.047058824, a: 1}
 --- !u!1 &4389829868270269700
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3647059, g: 0, b: 0.67058825, a: 1}
+  m_Color: {r: 0.99607843, g: 0.8508406, b: 0.047058802, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

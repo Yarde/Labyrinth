@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4995dcb846b14e6fb7061fc0e4483634, type: 3}
-  m_Name: WelcomeTip 2
+  m_Name: MenuTip
   m_EditorClassIdentifier: 
-  tipText: Collect all the keys and find the exit
-  tipPosition: {x: 0, y: 0, z: 0}
-  cutoutPosition: {x: 0, y: 0, z: 0}
-  cutoutSize: {x: 0, y: 0}
-  showArrow: 0
-  arrowRotationZ: 0
+  tipText: You can pause the game or go back to menu from here
+  tipPosition: {x: -68, y: -129, z: 0}
+  cutoutPosition: {x: -620, y: -321, z: 0}
+  cutoutSize: {x: 150, y: 150}
+  showArrow: 1
+  arrowRotationZ: 55.2

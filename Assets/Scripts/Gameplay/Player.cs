@@ -18,8 +18,8 @@ namespace Gameplay
 
         [SerializeField] private SkillData[] skills;
         [SerializeField] private AudioSource audioSource;
-        [SerializeField] private float baseLightStrength = 5f;
-        [SerializeField] private float baseViewDistance = 0.1f;
+        [SerializeField] private float baseLightStrength = 0f;
+        [SerializeField] private float baseViewDistance = 0f;
         [SerializeField] private float baseMovementSpeed = 2f;
 
         public int Hearts { get; private set; }
@@ -46,8 +46,7 @@ namespace Gameplay
             LightLevel = baseLightStrength;
             FieldOfViewLevel = baseViewDistance;
             MovementSpeed = baseMovementSpeed;
-            Experience = 0;
-            Hearts = 1;
+            Hearts = 5;
             SetupSkills();
         }
         

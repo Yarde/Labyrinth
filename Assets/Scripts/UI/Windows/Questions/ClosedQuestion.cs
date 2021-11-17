@@ -16,8 +16,12 @@ namespace UI.Windows.Questions
         [SerializeField] private AnswerButton answerButtonPrefab;
         [SerializeField] private LayoutGroup answerButtonHolder;
         [SerializeField] protected Button confirmButton;
+        [SerializeField] protected TextMeshProUGUI confirmButtonText;
         [SerializeField] private TextMeshProUGUI questionText;
         [SerializeField] protected List<AnswerButton> answers;
+        
+        [SerializeField] protected Color confirmButtonColor;
+        [SerializeField] protected Color continueButtonColor;
         
         private bool finished;
         private RewardPopup _rewardPopup;
@@ -32,8 +36,11 @@ namespace UI.Windows.Questions
 
             finished = false;
             _correct = 1.0f;
+            confirmButton.onClick.RemoveListener(WaitForUser);
             confirmButton.onClick.AddListener(ConfirmChoice);
             confirmButton.interactable = false;
+            confirmButton.image.color = confirmButtonColor;
+            confirmButtonText.text = "Confirm";
 
             questionText.text = question.Content;
 
@@ -104,24 +111,22 @@ namespace UI.Windows.Questions
             }
 
             await UniTask.Delay(400);
-            PresentResult().Forget();
+            confirmButtonText.text = "Continue";
+            confirmButton.image.color = continueButtonColor;
+            confirmButton.onClick.AddListener(WaitForUser);
         }
 
         private async Task ResolveButton(AnswerButton button)
         {
-            var isCorrect = await button.ResolveQuestion();
-
-            if (!isCorrect)
+            var isSelectedCorrectly = await button.ResolveQuestion();
+            if (!isSelectedCorrectly)
             {
                 _correct -= 1f/_correctCount;
             }
         }
 
-        private async UniTask PresentResult()
+        private void WaitForUser()
         {
-            // todo animate reward or heart lost
-            await UniTask.Delay(2000);
-
             finished = true;
         }
     }

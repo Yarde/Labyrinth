@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4995dcb846b14e6fb7061fc0e4483634, type: 3}
   m_Name: WelcomeTip
   m_EditorClassIdentifier: 
-  tipText: Welcome to Labirynt! Educational game with maze.
+  tipText: Welcome to Labirynt! Educational game with maze solving
   tipPosition: {x: 0, y: 0, z: 0}
   cutoutPosition: {x: 0, y: 0, z: 0}
   cutoutSize: {x: 0, y: 0}

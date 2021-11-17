@@ -2,27 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/SpinningBackground.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/SpinningBackground.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/EnemyTip.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/EnemyTip.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/ExitTip.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/ExitTip.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/GoodLuckTip.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/GoodLuckTip.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/KeyTip.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/KeyTip.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/MenuTip.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/MenuTip.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/SeeTutorialAgainTip.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/SeeTutorialAgainTip.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Spinner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Spinner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/TutorialScreenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/TutorialScreenshot.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Elements/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Elements/Exit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Elements/Exitv2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Elements/Exitv2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Labirynth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Labirynth.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Key.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Key.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Treasure.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Treasure.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/GameHud.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/GameHud.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HudElements/Objective.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/HudElements/Objective.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/QuestionWindows/RewardLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/QuestionWindows/RewardLine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Menu.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/QuestionWindows/RewardPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/QuestionWindows/RewardPopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/QuestionWindows/SingleChoiceFourAnswersQuestion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/QuestionWindows/SingleChoiceFourAnswersQuestion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TutorialScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/TutorialScreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/TutorialTips/ObjectivesTip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/ObjectivesTip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/TutorialTips/SkillsTip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/SkillsTip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/TutorialTips/WelcomeTip 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/WelcomeTip 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/TutorialTips/WelcomeTip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/TutorialTips/WelcomeTip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MenuWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/CutoutMask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/CutoutMask.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,20 +60,23 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.13.5/Editor/PlasticSCM/Views/DownloadPlasticExeWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/a6/ccb25504/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/VertexModifiers/Shadow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Spinner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Windows/Settings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/TMP_SpriteAssetMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.4.8/Editor/inspectors/ClipInspector/ClipInspectorCurveEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Elements/Timer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.29/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTestAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Editor/GlyphRectPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Tests/Runtime/Canvas/CanvasSizeCorrectInAwakeAndStart.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/TMProFontReplacer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07C89F75-2069-4139-9913-32D3CF930D48/9f/054fc8e4/RectTransform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Skills/Skill.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/QuestionResult.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ColorExtensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/AnswerButton.cs" />
@@ -94,23 +110,24 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoadingScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/SingleChoiceQuestion.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/QuestionWindowManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/TipDisplay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthExit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Utils.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuWindow.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuWindow.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" />
+      <option value="$PROJECT_DIR$/Assets/Spinner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />
@@ -193,7 +210,7 @@
       <workItem from="1636882086780" duration="11132000" />
       <workItem from="1636995422478" duration="15224000" />
       <workItem from="1637156750813" duration="10742000" />
-      <workItem from="1637174155167" duration="3131000" />
+      <workItem from="1637174155167" duration="6899000" />
     </task>
     <servers />
   </component>
