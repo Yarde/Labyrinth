@@ -130,13 +130,13 @@ namespace UI
                 SessionCode = GameRoot.SessionCode,
                 QuestionType = type
             };
-            var question = await ConnectionManager.Instance.SendMessageAsync<QuestionResponse>(request, "next-question", true);
+            var question = await ConnectionManager.Instance.SendMessageAsync<QuestionResponse>(request, Endpoints.Question, true);
             return question;
         }
         
         private void SendQuestionAnswer(StudentAnswerRequest answer)
         {
-            ConnectionManager.Instance.SendMessageAsync<Empty>(answer, "answer").Forget();
+            ConnectionManager.Instance.SendMessageAsync<Empty>(answer, Endpoints.Answer).Forget();
         }
 
         private static QuestionResult GetQuestionResult(QuestionResponse question, float correctness)

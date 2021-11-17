@@ -120,7 +120,7 @@ namespace Gameplay
                         Skills = {Skills.Select(x => x.CompletionPercentage)}
                     }
                 };
-                var task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "endgame");
+                var task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, Endpoints.EndGame);
                 await _ui.LoseScreen(task);
             }
         }
@@ -143,7 +143,7 @@ namespace Gameplay
                         Money = Coins
                     }
                 };
-                var requestTask = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "dawid/end");
+                var requestTask = ConnectionManager.Instance.SendMessageAsync<Empty>(request, Endpoints.EndGame);
                 await _ui.WinScreen(requestTask);
             }
             else

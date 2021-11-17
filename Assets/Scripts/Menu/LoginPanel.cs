@@ -37,12 +37,12 @@ namespace Menu
                 Email = "test",
                 Code = "test"
             };
-            SendDebugRequest(request);
+            _ = SendDebugRequest(request);
         }
 
         private async UniTask SendDebugRequest(StartGameRequest request)
         {
-            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, "start-game");
+            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, Endpoints.StartGame);
             StartGameResponse = response;
         }
 
@@ -79,7 +79,7 @@ namespace Menu
                 Email = email.text,
                 Code = code.text
             };
-            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, "start-game");
+            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, Endpoints.StartGame);
             return response;
         }
 

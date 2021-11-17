@@ -13,7 +13,7 @@ namespace Menu
 
         public async UniTask<StartGameResponse> ShowMenu()
         {
-            background.transform.DORotate(new Vector3(0f, 0f, 360f), 180f, RotateMode.FastBeyond360)
+            _ = background.transform.DORotate(new Vector3(0f, 0f, 360f), 180f, RotateMode.FastBeyond360)
                 .SetLoops(-1).SetEase(Ease.Linear).SetId("MenuWindow: background DORotate");
             loginPanel.Setup();
             await UniTask.WaitUntil(() => loginPanel.StartGameResponse != null);

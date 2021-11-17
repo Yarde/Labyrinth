@@ -6,6 +6,14 @@ using UnityEngine.Networking;
 
 namespace Network
 {
+    public static class Endpoints
+    {
+        public static string StartGame = "start-game";
+        public static string EndGame = "endgame";
+        public static string Question = "next-question";
+        public static string Answer = "answer";
+    }
+    
     public class ConnectionManager
     {
         public static ConnectionManager Instance { get; private set; }
@@ -22,7 +30,7 @@ namespace Network
         public async UniTask<TResponse> SendMessageAsync<TResponse>(IMessage message, string endpoint, bool wait = false)
             where TResponse : IMessage<TResponse>, new()
         {
-            Debug.Log($"Sending started {message}");
+            Debug.Log($"Sending started {message} to endpoint {endpoint}, waiting for answer? {wait}");
             
             var request = UnityWebRequest.Put($"{_host}{endpoint}", message.ToByteArray());
             request.method = "POST";

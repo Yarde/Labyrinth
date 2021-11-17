@@ -49,7 +49,7 @@ MonoBehaviour:
   triggersSpawnTransform: {fileID: 6312112346079024247}
   wallPrefab: {fileID: 9201801694112898806, guid: db8e0fcce2033824bac4c3c294d2f498, type: 3}
   floorPrefab: {fileID: 9201801694112898806, guid: 96939a4cb35dc124787d2b9aa25dca83, type: 3}
-  exitPrefab: {fileID: 8315216614436110565, guid: a57a6224ff348734fa971658338d4be9, type: 3}
+  exitPrefab: {fileID: 7952188179442850765, guid: a57a6224ff348734fa971658338d4be9, type: 3}
   size: 1
 --- !u!1 &6312112346079024248
 GameObject:

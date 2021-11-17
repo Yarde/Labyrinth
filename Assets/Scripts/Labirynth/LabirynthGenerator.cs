@@ -16,7 +16,7 @@ namespace Labirynth
         
         [SerializeField] private GameObject wallPrefab;
         [SerializeField] private GameObject floorPrefab;
-        [SerializeField] private LabirynthExit exitPrefab;
+        [SerializeField] private GameObject exitPrefab;
         [SerializeField] private float size = 1;
 
         private Cell[,] _cells;
@@ -59,7 +59,6 @@ namespace Labirynth
         {
             var exit = Instantiate(exitPrefab, triggersSpawnTransform);
             exit.transform.position = cell.Floor.transform.position;
-            exit.DisableLights(cell);
             Destroy(cell.Floor.gameObject);
         }
         
