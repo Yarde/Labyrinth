@@ -7,6 +7,7 @@ namespace Labirynth.Questions
     {
         public Cell Cell { get; set; }
         public Sprite Icon;
+        public Color Color;
         public bool Collected { get; protected set; }
         public abstract UniTask Destroy();
     }

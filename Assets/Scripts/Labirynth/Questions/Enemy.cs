@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -13,6 +12,8 @@ namespace Labirynth.Questions
         [SerializeField] private Light enemyLight;
 
         private const float MoveTime = 1f;
+        private const float MaxLightRange = 0.5f;
+        private const float IncrementOfRange = 0.02f;
 
         private CancellationTokenSource _cancellationToken;
         private bool _isMoving;
@@ -36,10 +37,10 @@ namespace Labirynth.Questions
             var sign = 1;
             while (!_cancellationToken.IsCancellationRequested)
             {
-                enemyLight.range += 0.1f * sign;
+                enemyLight.range += IncrementOfRange * sign;
                 await UniTask.Delay(100);
 
-                if (enemyLight.range <= 0 || enemyLight.range >= 1)
+                if (enemyLight.range <= 0 || enemyLight.range >= MaxLightRange)
                 {
                     sign *= -1;
                 }
