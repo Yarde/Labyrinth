@@ -48,17 +48,17 @@ public class GameRoot : MonoBehaviour
         SetupObjectives(response);
         SetupGeneratorData(response);
         labirynth.Setup(_generatorData);
-        player.Setup(_objectives, _generatorData.Dimensions);
+        player.Setup(_objectives, _generatorData.Dimensions, ui);
         ui.Setup(player);
         
-        if (response.StudentData != null)
+        if (response.StudentData.Experience == 0)
         {
-            player.Experience = response.StudentData.Experience;
-            player.Coins = response.StudentData.Money;
+            ui.ShowTutorial();
         }
         else
         {
-            ui.ShowTutorial();
+            player.Experience = response.StudentData.Experience;
+            player.Coins = response.StudentData.Money;
         }
     }
 

@@ -12,17 +12,14 @@ namespace UI.Windows.Questions
 {
     public abstract class ClosedQuestion : QuestionScreenBase
     {
-        [SerializeField] private SimpleLoading loading;
         [SerializeField] private Timer timer;
         [SerializeField] private AnswerButton answerButtonPrefab;
-        [SerializeField] private Transform answerButtonHolder;
+        [SerializeField] private LayoutGroup answerButtonHolder;
         [SerializeField] protected Button confirmButton;
         [SerializeField] private TextMeshProUGUI questionText;
-
-        [SerializeField] private RewardPopup rewardPopupPrefab;
+        [SerializeField] protected List<AnswerButton> answers;
         
         private bool finished;
-        protected List<AnswerButton> _answers;
         private RewardPopup _rewardPopup;
 
         private float _correct;
@@ -40,7 +37,7 @@ namespace UI.Windows.Questions
 
             questionText.text = question.Content;
 
-            if (_answers != null && _answers.Count > 0)
+            if (answers != null && answers.Count > 0)
             {
                 UpdateAnswers(question);
             }
@@ -68,29 +65,29 @@ namespace UI.Windows.Questions
 
         private IEnumerable<int> GetSelectedAnswers()
         {
-            var answers = _answers.FindAll(x => x.IsSelected).Select(y => y.AnswerId);
+            var answers = this.answers.FindAll(x => x.IsSelected).Select(y => y.AnswerId);
             return answers;
         }
 
         private void SpawnAnswers(QuestionResponse question)
         {
-            _answers = new List<AnswerButton>();
+            answers = new List<AnswerButton>();
+            answerButtonHolder.enabled = true;
 
             foreach (var answer in question.Answers)
             {
-                var newAnswer = Instantiate(answerButtonPrefab, answerButtonHolder);
+                var newAnswer = Instantiate(answerButtonPrefab, answerButtonHolder.transform);
                 newAnswer.Setup(answer, () => OnAnswerClicked(answer.AnswersID));
-                _answers.Add(newAnswer);
+                answers.Add(newAnswer);
             }
         }
         
         private void UpdateAnswers(QuestionResponse question)
         {
-            // todo use pool instead to handle changing answer count
             for (var i = 0; i < question.Answers.Count; i++)
             {
                 var answer = question.Answers[i];
-                var button = _answers[i];
+                var button = answers[i];
                 button.Setup(answer, () => OnAnswerClicked(answer.AnswersID));
             }
         }
@@ -101,7 +98,7 @@ namespace UI.Windows.Questions
         {
             timer.StopTimer();
             confirmButton.onClick.RemoveListener(ConfirmChoice);
-            foreach (var button in _answers)
+            foreach (var button in answers)
             {
                 _ = ResolveButton(button);
             }

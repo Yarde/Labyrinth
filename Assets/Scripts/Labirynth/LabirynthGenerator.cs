@@ -16,7 +16,7 @@ namespace Labirynth
         
         [SerializeField] private GameObject wallPrefab;
         [SerializeField] private GameObject floorPrefab;
-        [SerializeField] private GameObject exitPrefab;
+        [SerializeField] private LabirynthExit exitPrefab;
         [SerializeField] private float size = 1;
 
         private Cell[,] _cells;
@@ -57,8 +57,10 @@ namespace Labirynth
         
         private void AddExitTrigger(Cell cell)
         {
-            var exit = Instantiate(exitPrefab, wallsSpawnTransform);
-            exit.SetTransform(cell.Floor.transform);
+            var exit = Instantiate(exitPrefab, triggersSpawnTransform);
+            exit.transform.position = cell.Floor.transform.position;
+            exit.DisableLights(cell);
+            Destroy(cell.Floor.gameObject);
         }
         
         private void AddQuestionTriggers(List<Cell> possibleSpawnPoints)

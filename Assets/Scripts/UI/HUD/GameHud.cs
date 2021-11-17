@@ -33,7 +33,7 @@ namespace UI.HUD
             progressPanel.Setup(player);
 
             blendCloud.transform.DORotate(new Vector3(0f, 0f, 360f), 80f, RotateMode.FastBeyond360)
-                .SetLoops(-1).SetEase(Ease.Linear);
+                .SetLoops(-1).SetEase(Ease.Linear).SetId("GameHud: background DORotate");
 
             Resume();
         }

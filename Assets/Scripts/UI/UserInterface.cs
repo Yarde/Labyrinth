@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using Gameplay;
 using Google.Protobuf.Collections;
@@ -18,6 +17,9 @@ namespace UI
 {
     public class UserInterface : MonoBehaviour
     {
+        private const string FIRST_OBJECTIVE_FOUND_TEXT = "You found your first {0}, only {1} more to go!";
+        private const string LAST_OBJECTIVE_FOUND_TEXT = "You found all Keys! Now go to Exit";
+        
         [Header("Windows Prefabs")] [SerializeField]
         private GameHud gameHudPrefab;
 
@@ -29,11 +31,7 @@ namespace UI
         [SerializeField] private RewardPopup rewardPopupPrefab;
         [SerializeField] private TutorialSystem tutorialSystemPrefab;
         [SerializeField] private LoadingScreen loadingScreenPrefab;
-
-        [Header("Question Types")] [SerializeField]
-        private QuestionScreenBase singleChoiceQuestionPrefab;
-
-        [SerializeField] private QuestionScreenBase multiChoiceQuestionPrefab;
+        [SerializeField] private QuestionWindowManager questionWindowManager;
 
         private MenuWindow _menu;
         private GameHud _hud;
@@ -43,9 +41,6 @@ namespace UI
         private TipDisplay _tipDisplay;
         private RewardPopup _rewardPopup;
         private LoadingScreen _loadingScreen;
-
-        private QuestionScreenBase _singleChoiceQuestion;
-        private QuestionScreenBase _multiChoiceQuestion;
 
         private Player _player;
 
@@ -82,52 +77,75 @@ namespace UI
                 _loadingScreen = Instantiate(loadingScreenPrefab, transform);
                 _loadingScreen.gameObject.SetActive(false);
             }
-
-            if (!_singleChoiceQuestion)
-            {
-                _singleChoiceQuestion = Instantiate(singleChoiceQuestionPrefab, transform);
-                _singleChoiceQuestion.gameObject.SetActive(false);
-            }
         }
 
         public async UniTask<QuestionResult> HandleQuestion(Type type)
         {
             PauseGame();
-            var question = await SendQuestionRequest(type);
-            var result = await OpenQuestionWindow(question);
-            await DisplayReward(result);
+            var questionType = GetQuestionType(type);
+            var questionResponse = await SendQuestionRequest(questionType);
+            
+            var answer = await ShowQuestionWindow(questionResponse, questionType);
+            
+            var result = GetQuestionResult(questionResponse, answer.QuestionCorrectnes);
+            await DisplayResult(result);
+            await EncouragementTip(type);
             ResumeGame();
-
+            
             return result;
         }
 
-        private async UniTask<QuestionResponse> SendQuestionRequest(Type type)
+        private async UniTask EncouragementTip(Type type)
+        {
+            var objective = _player.Objectives[type];
+            if (type == typeof(Key))
+            {
+                if (objective.Collected == 0)
+                {
+                    await DisplayTip(string.Format(FIRST_OBJECTIVE_FOUND_TEXT, "Key", objective.Total - 1));
+                }
+                if (objective.Collected == objective.Total - 1)
+                {
+                    await DisplayTip(LAST_OBJECTIVE_FOUND_TEXT);
+                }
+            }
+            
+        }
+
+        private async UniTask<StudentAnswerRequest> ShowQuestionWindow(QuestionResponse response, QuestionTrigger questionType)
+        {
+            var questionWindow = questionWindowManager.GetWindow(response);
+            var answer = await questionWindow.DisplayQuestion(response);
+            
+            answer.QuestionType = questionType;
+            SendQuestionAnswer(answer);
+            
+            return answer;
+        }
+
+        private async UniTask<QuestionResponse> SendQuestionRequest(QuestionTrigger type)
         {
             var request = new QuestionRequest
             {
                 SessionCode = GameRoot.SessionCode,
-                QuestionType = GetQuestionType(type)
+                QuestionType = type
             };
             var question = await ConnectionManager.Instance.SendMessageAsync<QuestionResponse>(request, "next-question", true);
             return question;
         }
         
-        private async UniTask<QuestionResult> OpenQuestionWindow(QuestionResponse question)
+        private void SendQuestionAnswer(StudentAnswerRequest answer)
         {
-            var answer = await _singleChoiceQuestion.DisplayQuestion(question);
             ConnectionManager.Instance.SendMessageAsync<Empty>(answer, "answer").Forget();
-
-            var result = GetQuestionResult(question, answer);
-            return result;
         }
 
-        private static QuestionResult GetQuestionResult(QuestionResponse question, StudentAnswerRequest answer)
+        private static QuestionResult GetQuestionResult(QuestionResponse question, float correctness)
         {
-            var correctness = Mathf.Max(answer.QuestionCorrectnes, 0f);
-            var coins = (int) (question.QuestionReward.Money * correctness);
-            var exp = (int) (question.QuestionReward.Experience * correctness);
-            var points = (int) (100 * correctness);
-            var result = new QuestionResult(coins, exp, correctness <= 0f ? -1 : 0, points);
+            var correctnessClamped = Mathf.Clamp(correctness, 0f, 1f);
+            var coins = (int) (question.QuestionReward.Money * correctnessClamped);
+            var exp = (int) (question.QuestionReward.Experience * correctnessClamped);
+            var points = (int) (100 * correctnessClamped);
+            var result = new QuestionResult(coins, exp, correctnessClamped <= 0f ? -1 : 0, points);
             return result;
         }
 
@@ -148,7 +166,7 @@ namespace UI
             await _tipDisplay.DisplayTip(text);
         }
 
-        private async UniTask DisplayReward(QuestionResult result)
+        private async UniTask DisplayResult(QuestionResult result)
         {
             if (_rewardPopup == null)
             {

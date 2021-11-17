@@ -17,7 +17,6 @@ namespace Gameplay
         private const string NOT_ENOUGH_KEYS_TIP_TEXT = "Come back where you collected all the Keys";
 
         [SerializeField] private SkillData[] skills;
-        [SerializeField] private UserInterface ui;
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private float baseLightStrength = 5f;
         [SerializeField] private float baseViewDistance = 0.1f;
@@ -34,13 +33,15 @@ namespace Gameplay
         public float MovementSpeed { get; set; }
         public Dictionary<Type, ObjectiveData> Objectives { get; set; }
 
+        private UserInterface _ui;
         public Skill[] Skills;
 
-        public void Setup(Dictionary<Type, ObjectiveData> objectives, Vector2Int dimensions)
+        public void Setup(Dictionary<Type, ObjectiveData> objectives, Vector2Int dimensions, UserInterface ui)
         {
             transform.position = new Vector3(dimensions.x/2f, 0f, dimensions.y/2f);
 
             Objectives = objectives;
+            _ui = ui;
         
             LightLevel = baseLightStrength;
             FieldOfViewLevel = baseViewDistance;
@@ -90,7 +91,7 @@ namespace Gameplay
         private async UniTask OpenQuestion(Labirynth.Questions.QuestionTrigger trigger)
         {
             Debug.Log($"Collision entered with {trigger.name}");
-            var result = await ui.HandleQuestion(trigger.GetType());
+            var result = await _ui.HandleQuestion(trigger.GetType());
         
             Coins += result.Coins;
             Experience += result.Experience;
@@ -106,7 +107,7 @@ namespace Gameplay
         {
             if (Hearts == 0)
             {
-                Playtime += ui.GetEndgamePlaytime();
+                Playtime += _ui.GetEndgamePlaytime();
                 var request = new EndGameRequest
                 {
                     SessionCode = GameRoot.SessionCode,
@@ -120,7 +121,7 @@ namespace Gameplay
                     }
                 };
                 var task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "endgame");
-                await ui.LoseScreen(task);
+                await _ui.LoseScreen(task);
             }
         }
         
@@ -129,7 +130,7 @@ namespace Gameplay
             var mainObjective = Objectives[typeof(Key)];
             if (mainObjective.Collected == mainObjective.Total)
             {
-                Playtime += ui.GetEndgamePlaytime();
+                Playtime += _ui.GetEndgamePlaytime();
                 Points = CalculatePoints();
                 var request = new EndGameRequest
                 {
@@ -143,11 +144,11 @@ namespace Gameplay
                     }
                 };
                 var requestTask = ConnectionManager.Instance.SendMessageAsync<Empty>(request, "dawid/end");
-                await ui.WinScreen(requestTask);
+                await _ui.WinScreen(requestTask);
             }
             else
             {
-                ui.DisplayTip(NOT_ENOUGH_KEYS_TIP_TEXT).Forget();
+                _ui.DisplayTip(NOT_ENOUGH_KEYS_TIP_TEXT).Forget();
             }
         }
         
