@@ -76,7 +76,7 @@ namespace UI.HUD
             if (_skill.Level == _skill.Data.maxLevel)
             {
                 button.interactable = false;
-                // todo block button and change sprite color to gold or something like that
+                costText.text = "MAX";
                 costText.color = Color.yellow;
             }
         }
