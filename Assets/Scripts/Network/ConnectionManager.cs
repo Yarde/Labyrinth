@@ -1,7 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using Gameplay;
 using Google.Protobuf;
-using Labirynth.Questions;
 using UI;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -32,37 +31,36 @@ namespace Network
         public async UniTask<TResponse> SendMessageAsync<TResponse>(IMessage message, string endpoint, bool wait = false)
             where TResponse : IMessage<TResponse>, new()
         {
-            Debug.Log($"Sending started {message} to endpoint {endpoint}, waiting for answer? {wait}");
+            Debug.Log($"Sending {message} to endpoint {endpoint} started, waiting for answer? {wait}");
             
             var request = UnityWebRequest.Put($"{_host}{endpoint}", message.ToByteArray());
             request.method = "POST";
-            // to use string instead of bytes
-            //var request = UnityWebRequest.Post($"{_host}{endpoint}", message.ToString());
             request.SetRequestHeader("Content-Type", "application/x-protobuf");
+            
+            if (wait)
+            {
+                _ui.SetLoadingActive(true);
+            }
+            
             try
             {
-                if (wait)
-                {
-                    _ui.SetLoadingActive(true);
-                }
-                
                 if (typeof(TResponse) == typeof(Empty))
                 {
                     Debug.Log($"TResponse is Empty, sending and Forget");
                     request.SendWebRequest();
                     return new TResponse();
                 }
-                
+
                 await request.SendWebRequest();
 
-                Debug.Log($"Request: {request.result}\nData: {request.downloadHandler.text}");
-                
-                var response = new MessageParser<TResponse>(() => new TResponse())
+                Debug.Log($"Response result: {request.result}\nData: {request.downloadHandler.text}");
+
+                var parsedResponse = new MessageParser<TResponse>(() => new TResponse())
                     .ParseFrom(request.downloadHandler.data);
 
-                Debug.Log($"Response {response}");
+                Debug.Log($"Parsed Response {parsedResponse}");
 
-                return response;
+                return parsedResponse;
             }
             catch (UnityWebRequestException exception)
             {
