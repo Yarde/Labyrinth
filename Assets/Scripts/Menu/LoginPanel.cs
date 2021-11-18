@@ -38,6 +38,7 @@ namespace Menu
                 Code = "test"
             };
             _ = SendDebugRequest(request);
+            debugStart.interactable = false;
         }
 
         private async UniTask SendDebugRequest(StartGameRequest request)

@@ -1,5 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
+using Gameplay;
 using Google.Protobuf;
+using Labirynth.Questions;
 using UI;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -43,10 +45,18 @@ namespace Network
                 {
                     _ui.SetLoadingActive(true);
                 }
+                
+                if (typeof(TResponse) == typeof(Empty))
+                {
+                    Debug.Log($"TResponse is Empty, sending and Forget");
+                    request.SendWebRequest();
+                    return new TResponse();
+                }
+                
                 await request.SendWebRequest();
 
                 Debug.Log($"Request: {request.result}\nData: {request.downloadHandler.text}");
-
+                
                 var response = new MessageParser<TResponse>(() => new TResponse())
                     .ParseFrom(request.downloadHandler.data);
 
