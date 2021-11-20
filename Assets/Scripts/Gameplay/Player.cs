@@ -119,8 +119,15 @@ namespace Gameplay
                         Skills = {Skills.Select(x => x.CompletionPercentage)}
                     }
                 };
-                var task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, Endpoints.EndGame);
-                await _ui.LoseScreen(task);
+                if (GameRoot.IsDebug)
+                {
+                    await _ui.LoseScreen(UniTask.CompletedTask);
+                }
+                else
+                {
+                    var task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, Endpoints.EndGame);
+                    await _ui.LoseScreen(task);
+                }
             }
         }
         
@@ -129,6 +136,11 @@ namespace Gameplay
             var mainObjective = Objectives[typeof(Key)];
             if (mainObjective.Collected == mainObjective.Total)
             {
+                if (GameRoot.IsDebug)
+                {
+                    await _ui.WinScreen(UniTask.CompletedTask);
+                    return;
+                }
                 Playtime += _ui.GetEndgamePlaytime();
                 Points = CalculatePoints();
                 var request = new EndGameRequest

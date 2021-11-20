@@ -27,10 +27,37 @@ namespace Menu
         public void Setup()
         {
             start.onClick.AddListener(RunGame);
-            debugStart.onClick.AddListener(DebugLogin);
+            debugStart.gameObject.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if (GameRoot.CheatsAllowed)
+            {
+                debugStart.gameObject.SetActive(true);
+                debugStart.onClick.AddListener(DebugLogin);
+            }
         }
 
         private void DebugLogin()
+        {
+            GameRoot.IsDebug = true;
+            var response = new StartGameResponse
+            {
+                MazeSetting = new StartGameResponse.Types.MazeSetting
+                {
+                    Size = 40
+                },
+                QuestionsNumber = { 30, 30, 30 },
+                StudentData = new StartGameResponse.Types.StudentData
+                {
+                    Experience = 100
+                }
+            };
+            StartGameResponse = response;
+        }
+        
+        private void DebugLoginWithRequest()
         {
             var request = new StartGameRequest
             {

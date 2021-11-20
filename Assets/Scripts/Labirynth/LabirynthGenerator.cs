@@ -67,8 +67,8 @@ namespace Labirynth
             // first cell is always taken by the exit so we start at index 1;
             var cellOffset = 1;
             cellOffset = AddTriggers(possibleSpawnPoints, typeof(Key), cellOffset);
-            cellOffset = AddTriggers(possibleSpawnPoints, typeof(Enemy), cellOffset);
-            AddTriggers(possibleSpawnPoints, typeof(Treasure), cellOffset);
+            cellOffset = AddTriggers(possibleSpawnPoints, typeof(Treasure), cellOffset);
+            AddTriggers(possibleSpawnPoints, typeof(Enemy), cellOffset);
         }
 
         private int AddTriggers(List<Cell> cellList, Type type, int startIndex)

@@ -18,7 +18,7 @@ namespace Labirynth.Generators
         public override void CreateLabirynth()
         {
             // Clears the start area
-            var size = new Vector2Int(Dimensions.x / 20, Dimensions.y / 20);
+            var size = new Vector2Int(1, 1);
             GenerateStartingArea(size);
 
             HuntAndKill();

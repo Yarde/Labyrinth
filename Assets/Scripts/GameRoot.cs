@@ -15,8 +15,10 @@ public class GameRoot : MonoBehaviour
 {
     public static bool IsPaused = false;
     public static string SessionCode;
+    public static bool IsDebug = false;
+    public static bool CheatsAllowed = false;
 
-    [Header("Server Settings")]
+        [Header("Server Settings")]
     [SerializeField] private string serverHost = "http://zpi2021.westeurope.cloudapp.azure.com/api/";
 
     [Header("Bindings")]
@@ -32,6 +34,8 @@ public class GameRoot : MonoBehaviour
     private Dictionary<Type, ObjectiveData> _objectives;
     private GeneratorData _generatorData;
     private ConnectionManager _connectionManager;
+        
+    private int _currentCheatSequence;
 
     private async void Awake()
     {
@@ -39,6 +43,15 @@ public class GameRoot : MonoBehaviour
 
         var startGameResponse = await ui.ShowMenu();
         StartGame(startGameResponse);
+        //ui.PauseGame();
+    }
+
+    private void Update()
+    {
+        if (!CheatsAllowed)
+        {
+            TryEnableCheats();
+        }
     }
 
     private void StartGame(StartGameResponse response)
@@ -74,24 +87,33 @@ public class GameRoot : MonoBehaviour
 
     private void SetupGeneratorData(StartGameResponse response)
     {
-        if (response.MazeSetting != null)
+        var totalObjectives = response.QuestionsNumber.Sum();
+        var size = response.MazeSetting.Size != 0 ? response.MazeSetting.Size : totalObjectives * 2 / 3;
+        var seed = response.MazeSetting.Seed != 0 ? response.MazeSetting.Seed : Random.Range(0, 100000);
+        
+        Debug.Log($"Seed: {seed}, Size: {size}");
+        
+        _generatorData = new GeneratorData
         {
-            _generatorData = new GeneratorData()
-            {
-                Dimensions = new Vector2Int(response.MazeSetting.Size, response.MazeSetting.Size),
-                Objectives = _objectives,
-                Seed = response.MazeSetting.Seed,
-            };
+            Dimensions = new Vector2Int(size, size),
+            Objectives = _objectives,
+            Seed = seed
+        };
+    }
+    
+    private void TryEnableCheats()
+    {
+        if (Input.GetKey(KeyCode.L) && _currentCheatSequence == 0)
+        {
+            _currentCheatSequence++;
         }
-        else
+        else if (Input.GetKey(KeyCode.O) && _currentCheatSequence == 1)
         {
-            var totalObjectives = response.QuestionsNumber.Sum();
-            _generatorData = new GeneratorData()
-            {
-                Dimensions = new Vector2Int(totalObjectives*2/3, totalObjectives*2/3),
-                Objectives = _objectives,
-                Seed = Random.Range(0, 100000),
-            };
+            _currentCheatSequence++;
+        }
+        else if (Input.GetKey(KeyCode.L) && _currentCheatSequence == 2)
+        {
+            CheatsAllowed = true;
         }
     }
 }

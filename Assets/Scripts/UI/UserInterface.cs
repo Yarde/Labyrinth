@@ -51,7 +51,7 @@ namespace UI
                 return;
             }
 
-            if (_hud)
+            if (_hud && GameRoot.CheatsAllowed)
             {
                 Cheats();
             }
@@ -83,7 +83,15 @@ namespace UI
         {
             PauseGame();
             var questionType = GetQuestionType(type);
-            var questionResponse = await SendQuestionRequest(questionType);
+            QuestionResponse questionResponse;
+            if (GameRoot.IsDebug)
+            {
+                questionResponse = GetMockQuestion();
+            }
+            else
+            {
+                questionResponse = await SendQuestionRequest(questionType);
+            }
             
             var answer = await ShowQuestionWindow(questionResponse, questionType);
             
@@ -118,8 +126,11 @@ namespace UI
             var answer = await questionWindow.DisplayQuestion(response);
             
             answer.QuestionType = questionType;
-            SendQuestionAnswer(answer);
-            
+            if (!GameRoot.IsDebug)
+            {
+                SendQuestionAnswer(answer);
+            }
+
             return answer;
         }
 
@@ -226,7 +237,7 @@ namespace UI
             }
         }
 
-        private void PauseGame()
+        public void PauseGame()
         {
             _hud.Pause();
             GameRoot.IsPaused = true;
@@ -243,7 +254,7 @@ namespace UI
             _loadingScreen.gameObject.SetActive(active);
         }
 
-        public async UniTask WinScreen(UniTask<Empty> requestTask)
+        public async UniTask WinScreen(UniTask requestTask)
         {
             if (_winScreen == null)
             {
@@ -257,7 +268,7 @@ namespace UI
             _winScreen.OnRequestSent();
         }
 
-        public async UniTask LoseScreen(UniTask<Empty> uniTask)
+        public async UniTask LoseScreen(UniTask uniTask)
         {
             if (_deadScreen == null)
             {
@@ -304,7 +315,7 @@ namespace UI
             var answers = new RepeatedField<QuestionResponse.Types.Answer>();
             for (var i = 1; i < split.Length - 1; i++)
             {
-                answers.Add(new QuestionResponse.Types.Answer()
+                answers.Add(new QuestionResponse.Types.Answer
                 {
                     AnswersID = i - 1,
                     Content = split[i],
@@ -312,10 +323,15 @@ namespace UI
                 });
             }
 
-            return new QuestionResponse()
+            return new QuestionResponse
             {
                 Content = split[0],
-                Answers = {answers}
+                Answers = {answers},
+                QuestionReward = new QuestionResponse.Types.QuestionReward
+                {
+                    Experience = 100,
+                    Money = 100
+                }
             };
         }
 
