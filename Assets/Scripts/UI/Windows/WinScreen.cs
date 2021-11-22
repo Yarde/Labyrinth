@@ -33,7 +33,7 @@ namespace UI.Windows
 
             var objectivesCollected = player.Objectives.Sum(x => x.Value.Collected);
             var objectivesTotal = player.Objectives.Sum(x => x.Value.Total);
-            var skillsCompletion = player.Skills.Sum(x => x.CompletionPercentage) / player.Skills.Length;
+            var skillsCompletion = player.Skills.Sum(x => x.Value.CompletionPercentage) / player.Skills.Count;
 
             await points.AnimateNewValue(player.Points, pointsFormat, duration, strength);
             await time.AnimateNewValue(player.Playtime, timeFormat, duration, strength);

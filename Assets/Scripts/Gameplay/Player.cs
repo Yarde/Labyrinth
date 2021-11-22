@@ -12,7 +12,7 @@ using UnityEngine;
 namespace Gameplay
 {
     [RequireComponent(typeof(PlayerMovement))]
-    public class Player : MonoBehaviour 
+    public class Player : MonoBehaviour
     {
         private const string NOT_ENOUGH_KEYS_TIP_TEXT = "Come back where you collected all the Keys";
 
@@ -34,29 +34,30 @@ namespace Gameplay
         public Dictionary<Type, ObjectiveData> Objectives { get; set; }
 
         private UserInterface _ui;
-        public Skill[] Skills;
+        public Dictionary<SkillTypes, Skill> Skills;
+        private bool _isQuestionOpen;
 
         public void Setup(Dictionary<Type, ObjectiveData> objectives, Vector2Int dimensions, UserInterface ui)
         {
-            transform.position = new Vector3(dimensions.x/2f, 0f, dimensions.y/2f);
+            transform.position = new Vector3(dimensions.x / 2f, 0f, dimensions.y / 2f);
 
             Objectives = objectives;
             _ui = ui;
-        
+
             LightLevel = baseLightStrength;
             FieldOfViewLevel = baseViewDistance;
             MovementSpeed = baseMovementSpeed;
             Hearts = 5;
             SetupSkills();
         }
-        
+
         private void SetupSkills()
         {
-            Skills = new Skill[]
+            Skills = new Dictionary<SkillTypes, Skill>
             {
-                new UpgradeLight(this, skills.FirstOrDefault(x => x.skillName == "UpgradeLight")),
-                new UpgradeVision(this, skills.FirstOrDefault(x => x.skillName == "UpgradeVision")),
-                new UpgradeMovement(this, skills.FirstOrDefault(x => x.skillName == "UpgradeMovement"))
+                {SkillTypes.Light, new UpgradeLight(this, skills.FirstOrDefault(x => x.skillName == "UpgradeLight"))},
+                {SkillTypes.Vision, new UpgradeVision(this, skills.FirstOrDefault(x => x.skillName == "UpgradeVision"))},
+                {SkillTypes.Movement, new UpgradeMovement(this, skills.FirstOrDefault(x => x.skillName == "UpgradeMovement"))}
             };
         }
 
@@ -72,17 +73,18 @@ namespace Gameplay
             }
             // todo optimize before use
             /*else if (collision.collider.CompareTag("Floor"))
-        {
-            var trigger = collision.collider.GetComponent<Floor>();
-            trigger.MarkVisited();
-        }*/
+            {
+                var trigger = collision.collider.GetComponent<Floor>();
+                trigger.MarkVisited();
+            }*/
         }
 
         private async UniTask HandleQuestion(Collision collision)
         {
             var trigger = collision.collider.GetComponent<Labirynth.Questions.QuestionTrigger>();
-            if (!trigger.Collected)
+            if (!trigger.Collected && !_isQuestionOpen)
             {
+                _isQuestionOpen = true;
                 await OpenQuestion(trigger);
             }
         }
@@ -91,13 +93,14 @@ namespace Gameplay
         {
             Debug.Log($"Collision entered with {trigger.name}");
             var result = await _ui.HandleQuestion(trigger.GetType());
-        
+
             Coins += result.Coins;
             Experience += result.Experience;
             Hearts += result.Hearts;
             Points += result.Points;
             await HandleGameLost();
-        
+
+            _isQuestionOpen = false;
             Objectives[trigger.GetType()].Collected++;
             await trigger.Destroy();
         }
@@ -106,31 +109,17 @@ namespace Gameplay
         {
             if (Hearts == 0)
             {
-                Playtime += _ui.GetEndgamePlaytime();
-                var request = new EndGameRequest
-                {
-                    SessionCode = GameRoot.SessionCode,
-                    GameplayTime = Playtime,
-                    ScenarioEnded = false,
-                    StudentEndGameData = new EndGameRequest.Types.StudentEndGameData
-                    {
-                        Experience = Experience,
-                        Money = Coins,
-                        Skills = {Skills.Select(x => x.CompletionPercentage)}
-                    }
-                };
                 if (GameRoot.IsDebug)
                 {
                     await _ui.LoseScreen(UniTask.CompletedTask);
+                    return;
                 }
-                else
-                {
-                    var task = ConnectionManager.Instance.SendMessageAsync<Empty>(request, Endpoints.EndGame);
-                    await _ui.LoseScreen(task);
-                }
+
+                var requestTask = SendEndGameRequest(false);
+                await _ui.LoseScreen(requestTask);
             }
         }
-        
+
         private async UniTask HandleExit()
         {
             var mainObjective = Objectives[typeof(Key)];
@@ -141,20 +130,8 @@ namespace Gameplay
                     await _ui.WinScreen(UniTask.CompletedTask);
                     return;
                 }
-                Playtime += _ui.GetEndgamePlaytime();
-                Points = CalculatePoints();
-                var request = new EndGameRequest
-                {
-                    SessionCode = GameRoot.SessionCode,
-                    GameplayTime = Playtime,
-                    ScenarioEnded = true,
-                    StudentEndGameData = new EndGameRequest.Types.StudentEndGameData
-                    {
-                        Experience = Experience,
-                        Money = Coins
-                    }
-                };
-                var requestTask = ConnectionManager.Instance.SendMessageAsync<Empty>(request, Endpoints.EndGame);
+
+                var requestTask = SendEndGameRequest(true);
                 await _ui.WinScreen(requestTask);
             }
             else
@@ -162,7 +139,29 @@ namespace Gameplay
                 _ui.DisplayTip(NOT_ENOUGH_KEYS_TIP_TEXT).Forget();
             }
         }
-        
+
+        private UniTask<Empty> SendEndGameRequest(bool isWon)
+        {
+            Playtime += _ui.GetEndgamePlaytime();
+            Points = CalculatePoints();
+            var request = new EndGameRequest
+            {
+                SessionCode = GameRoot.SessionCode,
+                GameplayTime = Playtime,
+                ScenarioEnded = isWon,
+                StudentEndGameData = new EndGameRequest.Types.StudentEndGameData
+                {
+                    Experience = Experience,
+                    Money = Coins,
+                    Light = Skills[SkillTypes.Light].CompletionPercentage,
+                    Vision = Skills[SkillTypes.Vision].CompletionPercentage,
+                    Speed = Skills[SkillTypes.Movement].CompletionPercentage
+                }
+            };
+            var requestTask = ConnectionManager.Instance.SendMessageAsync<Empty>(request, Endpoints.EndGame);
+            return requestTask;
+        }
+
         private int CalculatePoints()
         {
             var toAdd = 0;
@@ -170,6 +169,13 @@ namespace Gameplay
             toAdd += Hearts * 20;
 
             return toAdd;
+        }
+
+        public enum SkillTypes
+        {
+            Light = 0,
+            Vision = 1,
+            Movement = 2
         }
     }
 }

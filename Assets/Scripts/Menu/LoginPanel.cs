@@ -19,6 +19,7 @@ namespace Menu
         [SerializeField] private Button start;
         [SerializeField] private Button debugStart;
         [SerializeField] private GameObject loadingIcon;
+        [SerializeField] private GameObject blend;
         
         [SerializeField] private string onConnectionFailed = "Unable to connect to the server. Please try again later.";
         
@@ -27,16 +28,7 @@ namespace Menu
         public void Setup()
         {
             start.onClick.AddListener(RunGame);
-            debugStart.gameObject.SetActive(false);
-        }
-
-        private void Update()
-        {
-            if (GameRoot.CheatsAllowed)
-            {
-                debugStart.gameObject.SetActive(true);
-                debugStart.onClick.AddListener(DebugLogin);
-            }
+            debugStart.onClick.AddListener(DebugLogin);
         }
 
         private void DebugLogin()
@@ -46,59 +38,42 @@ namespace Menu
             {
                 MazeSetting = new StartGameResponse.Types.MazeSetting
                 {
-                    Size = 40
+                    Size = 20
                 },
-                QuestionsNumber = { 30, 30, 30 },
-                StudentData = new StartGameResponse.Types.StudentData
-                {
-                    Experience = 100
-                }
+                QuestionsNumber = { 10, 10, 10 },
+                StudentData = new StartGameResponse.Types.StudentData()
             };
             StartGameResponse = response;
         }
-        
-        private void DebugLoginWithRequest()
-        {
-            var request = new StartGameRequest
-            {
-                Email = "test",
-                Code = "test"
-            };
-            _ = SendDebugRequest(request);
-            debugStart.interactable = false;
-        }
-
-        private async UniTask SendDebugRequest(StartGameRequest request)
-        {
-            var response = await ConnectionManager.Instance.SendMessageAsync<StartGameResponse>(request, Endpoints.StartGame);
-            StartGameResponse = response;
-        }
-
         private async void RunGame()
         {
-            if (ValidateTexts())
+            if (!ValidateTexts())
             {
-                start.interactable = false;
-                serverError.gameObject.SetActive(false);
-                loadingIcon.SetActive(true);
-                var response = await SendStartGameRequest();
-                loadingIcon.SetActive(false);
-
-                if (response.Error)
-                {
-                    serverError.gameObject.SetActive(true);
-                    serverError.text = response.ErrorMsg;
-                } else if (string.IsNullOrEmpty(response.SessionCode))
-                {
-                    serverError.gameObject.SetActive(true);
-                    serverError.text = onConnectionFailed;
-                }
-                else
-                {
-                    StartGameResponse = response;
-                }
-                start.interactable = true;
+                return;
             }
+            
+            start.interactable = false;
+            serverError.gameObject.SetActive(false);
+            loadingIcon.SetActive(true);
+            blend.SetActive(true);
+            var response = await SendStartGameRequest();
+            loadingIcon.SetActive(false);
+            blend.SetActive(false);
+
+            if (response.Error)
+            {
+                serverError.gameObject.SetActive(true);
+                serverError.text = response.ErrorMsg;
+            } else if (string.IsNullOrEmpty(response.SessionCode))
+            {
+                serverError.gameObject.SetActive(true);
+                serverError.text = onConnectionFailed;
+            }
+            else
+            {
+                StartGameResponse = response;
+            }
+            start.interactable = true;
         }
         private async UniTask<StartGameResponse> SendStartGameRequest()
         {

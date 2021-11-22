@@ -32,7 +32,7 @@ namespace UI.Windows.Questions
             _confirmed = false;
             _cancelToken = new CancellationTokenSource();
             
-            _ = AnimateRewards(result).WithCancellation(_cancelToken.Token);
+            AnimateRewards(result).WithCancellation(_cancelToken.Token);
             await UniTask.WaitUntil(() => _confirmed).WithCancellation(_cancelToken.Token);
 
             _cancelToken.Cancel();

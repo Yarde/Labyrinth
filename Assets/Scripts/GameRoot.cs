@@ -18,23 +18,23 @@ public class GameRoot : MonoBehaviour
     public static bool IsDebug = false;
     public static bool CheatsAllowed = false;
 
-        [Header("Server Settings")]
-    [SerializeField] private string serverHost = "http://zpi2021.westeurope.cloudapp.azure.com/api/";
+    [Header("Server Settings")] [SerializeField]
+    private string serverHost = "http://zpi2021.westeurope.cloudapp.azure.com/api/";
 
-    [Header("Bindings")]
-    [SerializeField] private Player player;
+    [Header("Bindings")] [SerializeField] private Player player;
     [SerializeField] private LabirynthGenerator labirynth;
     [SerializeField] private UserInterface ui;
 
-    [Header("Object to instantiate")]
-    [SerializeField] private QuestionTrigger treasurePrefab;
+    [Header("Object to instantiate")] [SerializeField]
+    private QuestionTrigger treasurePrefab;
+
     [SerializeField] private QuestionTrigger keyPrefab;
     [SerializeField] private QuestionTrigger enemyPrefab;
 
     private Dictionary<Type, ObjectiveData> _objectives;
     private GeneratorData _generatorData;
     private ConnectionManager _connectionManager;
-        
+
     private int _currentCheatSequence;
 
     private async void Awake()
@@ -43,7 +43,6 @@ public class GameRoot : MonoBehaviour
 
         var startGameResponse = await ui.ShowMenu();
         StartGame(startGameResponse);
-        //ui.PauseGame();
     }
 
     private void Update()
@@ -63,7 +62,7 @@ public class GameRoot : MonoBehaviour
         labirynth.Setup(_generatorData);
         player.Setup(_objectives, _generatorData.Dimensions, ui);
         ui.Setup(player);
-        
+
         if (response.StudentData.Experience == 0)
         {
             ui.ShowTutorial();
@@ -79,20 +78,24 @@ public class GameRoot : MonoBehaviour
     {
         _objectives = new Dictionary<Type, ObjectiveData>
         {
-            { typeof(Key), new ObjectiveData { Total = response.QuestionsNumber[0], Prefab = keyPrefab } },
-            { typeof(Enemy), new ObjectiveData { Total = response.QuestionsNumber[1], Prefab = enemyPrefab } },
-            { typeof(Treasure), new ObjectiveData { Total = response.QuestionsNumber[2], Prefab = treasurePrefab } }
+            {typeof(Key), new ObjectiveData {Total = response.QuestionsNumber[0], Prefab = keyPrefab}},
+            {typeof(Enemy), new ObjectiveData {Total = response.QuestionsNumber[1], Prefab = enemyPrefab}},
+            {typeof(Treasure), new ObjectiveData {Total = response.QuestionsNumber[2], Prefab = treasurePrefab}}
         };
     }
 
     private void SetupGeneratorData(StartGameResponse response)
     {
         var totalObjectives = response.QuestionsNumber.Sum();
-        var size = response.MazeSetting.Size != 0 ? response.MazeSetting.Size : totalObjectives * 2 / 3;
-        var seed = response.MazeSetting.Seed != 0 ? response.MazeSetting.Seed : Random.Range(0, 100000);
-        
+        var size = response.MazeSetting != null && response.MazeSetting.Size != 0
+            ? response.MazeSetting.Size
+            : totalObjectives * 2 / 3;
+        var seed = response.MazeSetting != null && response.MazeSetting.Seed != 0
+            ? response.MazeSetting.Seed
+            : Random.Range(0, 100000);
+
         Debug.Log($"Seed: {seed}, Size: {size}");
-        
+
         _generatorData = new GeneratorData
         {
             Dimensions = new Vector2Int(size, size),
@@ -100,7 +103,7 @@ public class GameRoot : MonoBehaviour
             Seed = seed
         };
     }
-    
+
     private void TryEnableCheats()
     {
         if (Input.GetKey(KeyCode.L) && _currentCheatSequence == 0)

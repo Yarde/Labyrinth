@@ -44,21 +44,21 @@ namespace Gameplay {
             "cnJlY3QYAyABKAgioQEKFFN0dWRlbnRBbnN3ZXJSZXF1ZXN0EhMKC3Nlc3Np",
             "b25Db2RlGAEgASgJEi8KDHF1ZXN0aW9uVHlwZRgCIAEoDjIZLkdhbWVwbGF5",
             "LlF1ZXN0aW9uVHJpZ2dlchIRCglhbnN3ZXJzSUQYAyADKAUSFAoMdGltZVRv",
-            "QW5zd2VyGAQgASgFEhoKEnF1ZXN0aW9uQ29ycmVjdG5lcxgFIAEoAiLkAQoO",
+            "QW5zd2VyGAQgASgFEhoKEnF1ZXN0aW9uQ29ycmVjdG5lcxgFIAEoAiKCAgoO",
             "RW5kR2FtZVJlcXVlc3QSEwoLc2Vzc2lvbkNvZGUYASABKAkSFQoNc2NlbmFy",
             "aW9FbmRlZBgCIAEoCBIUCgxnYW1lcGxheVRpbWUYBCABKAUSRwoSc3R1ZGVu",
             "dEVuZEdhbWVEYXRhGAUgASgLMisuR2FtZXBsYXkuRW5kR2FtZVJlcXVlc3Qu",
-            "U3R1ZGVudEVuZEdhbWVEYXRhGkcKElN0dWRlbnRFbmRHYW1lRGF0YRISCgpl",
-            "eHBlcmllbmNlGAEgASgFEg0KBW1vbmV5GAIgASgFEg4KBnNraWxscxgDIAMo",
-            "AiIHCgVFbXB0eSoxCg9RdWVzdGlvblRyaWdnZXISBwoDS0VZEAASCQoFRU5F",
-            "TVkQARIKCgZPQkpFQ1QQAjKvAgoQR2FtZXBsYXlNZXNzYWdlcxJKCg9TdGFy",
-            "dE5ld1Nlc3Npb24SGi5HYW1lcGxheS5TdGFydEdhbWVSZXF1ZXN0GhsuR2Ft",
-            "ZXBsYXkuU3RhcnRHYW1lUmVzcG9uc2USTAoTUHJlcGFyZU5leHRRdWVzdGlv",
-            "bhIZLkdhbWVwbGF5LlF1ZXN0aW9uUmVxdWVzdBoaLkdhbWVwbGF5LlF1ZXN0",
-            "aW9uUmVzcG9uc2USSAoVVXBkYXRlU3R1ZGVudHNBbnN3ZXJzEh4uR2FtZXBs",
-            "YXkuU3R1ZGVudEFuc3dlclJlcXVlc3QaDy5HYW1lcGxheS5FbXB0eRI3CgpG",
-            "aW5pc2hHYW1lEhguR2FtZXBsYXkuRW5kR2FtZVJlcXVlc3QaDy5HYW1lcGxh",
-            "eS5FbXB0eWIGcHJvdG8z"));
+            "U3R1ZGVudEVuZEdhbWVEYXRhGmUKElN0dWRlbnRFbmRHYW1lRGF0YRISCgpl",
+            "eHBlcmllbmNlGAEgASgFEg0KBW1vbmV5GAIgASgFEg0KBWxpZ2h0GAMgASgC",
+            "Eg4KBnZpc2lvbhgEIAEoAhINCgVzcGVlZBgFIAEoAiIHCgVFbXB0eSoxCg9R",
+            "dWVzdGlvblRyaWdnZXISBwoDS0VZEAASCQoFRU5FTVkQARIKCgZPQkpFQ1QQ",
+            "AjKvAgoQR2FtZXBsYXlNZXNzYWdlcxJKCg9TdGFydE5ld1Nlc3Npb24SGi5H",
+            "YW1lcGxheS5TdGFydEdhbWVSZXF1ZXN0GhsuR2FtZXBsYXkuU3RhcnRHYW1l",
+            "UmVzcG9uc2USTAoTUHJlcGFyZU5leHRRdWVzdGlvbhIZLkdhbWVwbGF5LlF1",
+            "ZXN0aW9uUmVxdWVzdBoaLkdhbWVwbGF5LlF1ZXN0aW9uUmVzcG9uc2USSAoV",
+            "VXBkYXRlU3R1ZGVudHNBbnN3ZXJzEh4uR2FtZXBsYXkuU3R1ZGVudEFuc3dl",
+            "clJlcXVlc3QaDy5HYW1lcGxheS5FbXB0eRI3CgpGaW5pc2hHYW1lEhguR2Ft",
+            "ZXBsYXkuRW5kR2FtZVJlcXVlc3QaDy5HYW1lcGxheS5FbXB0eWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Gameplay.QuestionTrigger), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -69,7 +69,7 @@ namespace Gameplay {
             new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.QuestionResponse), global::Gameplay.QuestionResponse.Parser, new[]{ "SessionCode", "Content", "Answers", "QuestionReward" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.QuestionResponse.Types.QuestionReward), global::Gameplay.QuestionResponse.Types.QuestionReward.Parser, new[]{ "Experience", "Money" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.QuestionResponse.Types.Answer), global::Gameplay.QuestionResponse.Types.Answer.Parser, new[]{ "AnswersID", "Content", "Correct" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.StudentAnswerRequest), global::Gameplay.StudentAnswerRequest.Parser, new[]{ "SessionCode", "QuestionType", "AnswersID", "TimeToAnswer", "QuestionCorrectnes" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.EndGameRequest), global::Gameplay.EndGameRequest.Parser, new[]{ "SessionCode", "ScenarioEnded", "GameplayTime", "StudentEndGameData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.EndGameRequest.Types.StudentEndGameData), global::Gameplay.EndGameRequest.Types.StudentEndGameData.Parser, new[]{ "Experience", "Money", "Skills" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.EndGameRequest), global::Gameplay.EndGameRequest.Parser, new[]{ "SessionCode", "ScenarioEnded", "GameplayTime", "StudentEndGameData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.EndGameRequest.Types.StudentEndGameData), global::Gameplay.EndGameRequest.Types.StudentEndGameData.Parser, new[]{ "Experience", "Money", "Light", "Vision", "Speed" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gameplay.Empty), global::Gameplay.Empty.Parser, null, null, null, null, null)
           }));
     }
@@ -2852,7 +2852,9 @@ namespace Gameplay {
         public StudentEndGameData(StudentEndGameData other) : this() {
           experience_ = other.experience_;
           money_ = other.money_;
-          skills_ = other.skills_.Clone();
+          light_ = other.light_;
+          vision_ = other.vision_;
+          speed_ = other.speed_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -2886,15 +2888,40 @@ namespace Gameplay {
           }
         }
 
-        /// <summary>Field number for the "skills" field.</summary>
-        public const int SkillsFieldNumber = 3;
-        private static readonly pb::FieldCodec<float> _repeated_skills_codec
-            = pb::FieldCodec.ForFloat(26);
-        private readonly pbc::RepeatedField<float> skills_ = new pbc::RepeatedField<float>();
+        /// <summary>Field number for the "light" field.</summary>
+        public const int LightFieldNumber = 3;
+        private float light_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<float> Skills {
-          get { return skills_; }
+        public float Light {
+          get { return light_; }
+          set {
+            light_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "vision" field.</summary>
+        public const int VisionFieldNumber = 4;
+        private float vision_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public float Vision {
+          get { return vision_; }
+          set {
+            vision_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "speed" field.</summary>
+        public const int SpeedFieldNumber = 5;
+        private float speed_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public float Speed {
+          get { return speed_; }
+          set {
+            speed_ = value;
+          }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2914,7 +2941,9 @@ namespace Gameplay {
           }
           if (Experience != other.Experience) return false;
           if (Money != other.Money) return false;
-          if(!skills_.Equals(other.skills_)) return false;
+          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Light, other.Light)) return false;
+          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Vision, other.Vision)) return false;
+          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Speed, other.Speed)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -2924,7 +2953,9 @@ namespace Gameplay {
           int hash = 1;
           if (Experience != 0) hash ^= Experience.GetHashCode();
           if (Money != 0) hash ^= Money.GetHashCode();
-          hash ^= skills_.GetHashCode();
+          if (Light != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Light);
+          if (Vision != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Vision);
+          if (Speed != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Speed);
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -2951,7 +2982,18 @@ namespace Gameplay {
             output.WriteRawTag(16);
             output.WriteInt32(Money);
           }
-          skills_.WriteTo(output, _repeated_skills_codec);
+          if (Light != 0F) {
+            output.WriteRawTag(29);
+            output.WriteFloat(Light);
+          }
+          if (Vision != 0F) {
+            output.WriteRawTag(37);
+            output.WriteFloat(Vision);
+          }
+          if (Speed != 0F) {
+            output.WriteRawTag(45);
+            output.WriteFloat(Speed);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -2970,7 +3012,18 @@ namespace Gameplay {
             output.WriteRawTag(16);
             output.WriteInt32(Money);
           }
-          skills_.WriteTo(ref output, _repeated_skills_codec);
+          if (Light != 0F) {
+            output.WriteRawTag(29);
+            output.WriteFloat(Light);
+          }
+          if (Vision != 0F) {
+            output.WriteRawTag(37);
+            output.WriteFloat(Vision);
+          }
+          if (Speed != 0F) {
+            output.WriteRawTag(45);
+            output.WriteFloat(Speed);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -2987,7 +3040,15 @@ namespace Gameplay {
           if (Money != 0) {
             size += 1 + pb::CodedOutputStream.ComputeInt32Size(Money);
           }
-          size += skills_.CalculateSize(_repeated_skills_codec);
+          if (Light != 0F) {
+            size += 1 + 4;
+          }
+          if (Vision != 0F) {
+            size += 1 + 4;
+          }
+          if (Speed != 0F) {
+            size += 1 + 4;
+          }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -3006,7 +3067,15 @@ namespace Gameplay {
           if (other.Money != 0) {
             Money = other.Money;
           }
-          skills_.Add(other.skills_);
+          if (other.Light != 0F) {
+            Light = other.Light;
+          }
+          if (other.Vision != 0F) {
+            Vision = other.Vision;
+          }
+          if (other.Speed != 0F) {
+            Speed = other.Speed;
+          }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -3030,9 +3099,16 @@ namespace Gameplay {
                 Money = input.ReadInt32();
                 break;
               }
-              case 26:
               case 29: {
-                skills_.AddEntriesFrom(input, _repeated_skills_codec);
+                Light = input.ReadFloat();
+                break;
+              }
+              case 37: {
+                Vision = input.ReadFloat();
+                break;
+              }
+              case 45: {
+                Speed = input.ReadFloat();
                 break;
               }
             }
@@ -3058,9 +3134,16 @@ namespace Gameplay {
                 Money = input.ReadInt32();
                 break;
               }
-              case 26:
               case 29: {
-                skills_.AddEntriesFrom(ref input, _repeated_skills_codec);
+                Light = input.ReadFloat();
+                break;
+              }
+              case 37: {
+                Vision = input.ReadFloat();
+                break;
+              }
+              case 45: {
+                Speed = input.ReadFloat();
                 break;
               }
             }
