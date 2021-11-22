@@ -111,6 +111,8 @@ namespace Gameplay
             {
                 if (GameRoot.IsDebug)
                 {
+                    Playtime += _ui.GetEndgamePlaytime();
+                    Points = CalculatePoints();
                     await _ui.LoseScreen(UniTask.CompletedTask);
                     return;
                 }
@@ -127,6 +129,8 @@ namespace Gameplay
             {
                 if (GameRoot.IsDebug)
                 {
+                    Playtime += _ui.GetEndgamePlaytime();
+                    Points = CalculatePoints();
                     await _ui.WinScreen(UniTask.CompletedTask);
                     return;
                 }
