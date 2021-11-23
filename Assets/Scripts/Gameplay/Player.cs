@@ -8,13 +8,14 @@ using Labirynth.Questions;
 using Network;
 using UI;
 using UnityEngine;
+using Logger = UI.Logger;
 
 namespace Gameplay
 {
     [RequireComponent(typeof(PlayerMovement))]
     public class Player : MonoBehaviour
     {
-        private const string NOT_ENOUGH_KEYS_TIP_TEXT = "Come back where you collected all the Keys";
+        private const string NOT_ENOUGH_KEYS_TIP_TEXT = "Come back when you collect all the Keys";
 
         [SerializeField] private SkillData[] skills;
         [SerializeField] private AudioSource audioSource;
@@ -91,7 +92,7 @@ namespace Gameplay
 
         private async UniTask OpenQuestion(Labirynth.Questions.QuestionTrigger trigger)
         {
-            Debug.Log($"Collision entered with {trigger.name}");
+            Logger.Log($"Collision entered with {trigger.name}");
             var result = await _ui.HandleQuestion(trigger.GetType());
 
             Coins += result.Coins;

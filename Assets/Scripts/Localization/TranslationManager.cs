@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using UnityEngine;
+using UI;
 
 namespace Localization
 {
@@ -24,7 +24,7 @@ namespace Localization
             }
             catch (Exception ex)
             {
-                Debug.LogError($"Couldn't deserialize: {json} Caught exception: {ex}");
+                Logger.LogError($"Couldn't deserialize: {json} Caught exception: {ex}");
             }
         }
         
@@ -38,7 +38,7 @@ namespace Localization
             }
             else
             {
-                Debug.LogError($"Language {language} does not exist");
+                Logger.LogError($"Language {language} does not exist");
             }
         }
 
@@ -49,7 +49,7 @@ namespace Localization
                 return _selectedTranslations[id];
             }
 
-            Debug.LogError($"Id {id} not found in translations");
+            Logger.LogError($"Id {id} not found in translations");
             return "";
         }
     }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Logger = UI.Logger;
 
 namespace Gameplay.Skills
 {
@@ -22,13 +23,13 @@ namespace Gameplay.Skills
         {
             if (Player.Coins < Cost)
             {
-                Debug.Log($"Not enough coins, player has {Player.Coins} but {Cost} is required for skill {Data.skillName}");
+                Logger.Log($"Not enough coins, player has {Player.Coins} but {Cost} is required for skill {Data.skillName}");
                 return;
             }
             
             if (Level == Data.maxLevel)
             {
-                Debug.Log($"Already max level {Data.maxLevel} for skill {Data.skillName}");
+                Logger.Log($"Already max level {Data.maxLevel} for skill {Data.skillName}");
                 return;
             }
 

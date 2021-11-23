@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using Gameplay;
 using Google.Protobuf.Collections;
@@ -123,6 +124,11 @@ namespace UI
         private async UniTask<StudentAnswerRequest> ShowQuestionWindow(QuestionResponse response, QuestionTrigger questionType)
         {
             var questionWindow = questionWindowManager.GetWindow(response);
+            if (GameRoot.CheatsAllowed)
+            {
+                var correct = response.Answers.FirstOrDefault(x => x.Correct);
+                Logger.Log($"Correct answer: <color='#00FF00'>{correct.Content} id: {correct.AnswersID}</color>");
+            }
             var answer = await questionWindow.DisplayQuestion(response);
             
             answer.QuestionType = questionType;

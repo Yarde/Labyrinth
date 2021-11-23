@@ -313,6 +313,7 @@ MonoBehaviour:
   tipText: {fileID: 6090299866376412693}
   skipButton: {fileID: 7911536035738475098}
   tipsData:
+  - {fileID: 11400000, guid: 204b13af4da78c240b7ccfb13c2ae943, type: 2}
   - {fileID: 11400000, guid: 7198e1cb57aa8404f939117aa3c0d7c1, type: 2}
   - {fileID: 11400000, guid: 140cb25fb3f3c0347a6c761048e2a9b2, type: 2}
   - {fileID: 11400000, guid: 9d693cae2dd77aa469635920cd04344a, type: 2}

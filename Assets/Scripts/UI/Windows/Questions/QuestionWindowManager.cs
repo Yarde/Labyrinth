@@ -41,7 +41,7 @@ namespace UI.Windows.Questions
                 }
             }
 
-            Debug.LogError($"Window not found for {answers} answers with {correctAnswers} correct answers");
+            Logger.LogError($"Window not found for {answers} answers with {correctAnswers} correct answers");
             return SingleChoiceFourAnswers;
         }
     }

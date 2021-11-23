@@ -4,6 +4,7 @@ using Google.Protobuf;
 using UI;
 using UnityEngine;
 using UnityEngine.Networking;
+using Logger = UI.Logger;
 
 namespace Network
 {
@@ -31,7 +32,7 @@ namespace Network
         public async UniTask<TResponse> SendMessageAsync<TResponse>(IMessage message, string endpoint, bool wait = false)
             where TResponse : IMessage<TResponse>, new()
         {
-            Debug.Log($"Sending {message} to endpoint {endpoint} started, waiting for answer? {wait}");
+            Logger.Log($"Sending {message} to endpoint {endpoint} started, waiting for answer? {wait}");
             
             var request = UnityWebRequest.Put($"{_host}{endpoint}", message.ToByteArray());
             request.method = "POST";
@@ -46,25 +47,25 @@ namespace Network
             {
                 if (typeof(TResponse) == typeof(Empty))
                 {
-                    Debug.Log($"TResponse is Empty, sending and Forget");
+                    Logger.Log($"TResponse is Empty, sending and Forget");
                     request.SendWebRequest();
                     return new TResponse();
                 }
 
                 await request.SendWebRequest();
 
-                Debug.Log($"Response result: {request.result}\nData: {request.downloadHandler.text}");
+                Logger.Log($"Response result: {request.result}\nData: {request.downloadHandler.text}");
 
                 var parsedResponse = new MessageParser<TResponse>(() => new TResponse())
                     .ParseFrom(request.downloadHandler.data);
 
-                Debug.Log($"Parsed Response {parsedResponse}");
+                Logger.Log($"Parsed Response {parsedResponse}");
 
                 return parsedResponse;
             }
             catch (UnityWebRequestException exception)
             {
-                Debug.LogError(exception);
+                Logger.LogError(exception.ToString());
                 return new TResponse();
             }
             finally

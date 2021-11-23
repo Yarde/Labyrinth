@@ -8,6 +8,7 @@ using Labirynth.Questions;
 using Network;
 using UI;
 using UnityEngine;
+using Logger = UI.Logger;
 using QuestionTrigger = Labirynth.Questions.QuestionTrigger;
 using Random = UnityEngine.Random;
 
@@ -19,7 +20,7 @@ public class GameRoot : MonoBehaviour
     public static bool CheatsAllowed = false;
 
     [Header("Server Settings")] [SerializeField]
-    private string serverHost = "http://zpi2021.westeurope.cloudapp.azure.com/api/";
+    private string serverHost = "https://zpi2021.westeurope.cloudapp.azure.com:5001/api-game/";
 
     [Header("Bindings")] [SerializeField] private Player player;
     [SerializeField] private LabirynthGenerator labirynth;
@@ -36,10 +37,20 @@ public class GameRoot : MonoBehaviour
     private ConnectionManager _connectionManager;
 
     private int _currentCheatSequence;
+    private List<KeyCode> _password;
 
     private async void Awake()
     {
         _connectionManager = new ConnectionManager(serverHost, ui);
+        
+        _password = new List<KeyCode>
+        {
+            KeyCode.K,
+            KeyCode.C,
+            KeyCode.P,
+            KeyCode.W,
+            KeyCode.R
+        };
 
         var startGameResponse = await ui.ShowMenu();
         StartGame(startGameResponse);
@@ -78,9 +89,9 @@ public class GameRoot : MonoBehaviour
     {
         _objectives = new Dictionary<Type, ObjectiveData>
         {
-            {typeof(Key), new ObjectiveData {Total = response.QuestionsNumber[0], Prefab = keyPrefab}},
-            {typeof(Enemy), new ObjectiveData {Total = response.QuestionsNumber[1], Prefab = enemyPrefab}},
-            {typeof(Treasure), new ObjectiveData {Total = response.QuestionsNumber[2], Prefab = treasurePrefab}}
+            { typeof(Key), new ObjectiveData { Total = response.QuestionsNumber[0], Prefab = keyPrefab } },
+            { typeof(Enemy), new ObjectiveData { Total = response.QuestionsNumber[1], Prefab = enemyPrefab } },
+            { typeof(Treasure), new ObjectiveData { Total = response.QuestionsNumber[2], Prefab = treasurePrefab } }
         };
     }
 
@@ -94,7 +105,7 @@ public class GameRoot : MonoBehaviour
             ? response.MazeSetting.Seed
             : Random.Range(0, 100000);
 
-        Debug.Log($"Seed: {seed}, Size: {size}");
+        Logger.Log($"Seed: {seed}, Size: {size}");
 
         _generatorData = new GeneratorData
         {
@@ -106,15 +117,12 @@ public class GameRoot : MonoBehaviour
 
     private void TryEnableCheats()
     {
-        if (Input.GetKey(KeyCode.L) && _currentCheatSequence == 0)
+        var keyCode = _password[_currentCheatSequence];
+        if (Input.GetKey(keyCode))
         {
             _currentCheatSequence++;
         }
-        else if (Input.GetKey(KeyCode.O) && _currentCheatSequence == 1)
-        {
-            _currentCheatSequence++;
-        }
-        else if (Input.GetKey(KeyCode.L) && _currentCheatSequence == 2)
+        if (_currentCheatSequence == _password.Count)
         {
             CheatsAllowed = true;
         }
