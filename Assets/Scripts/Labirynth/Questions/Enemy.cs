@@ -77,8 +77,12 @@ namespace Labirynth.Questions
 
             _previousCell = Cell;
             Cell = nextCell;
-            var nextCellPosition = nextCell.Floor.transform.position;
-            await transform.DOMove(nextCellPosition, MoveTime);
+
+            if (Cell.Floor)
+            {
+                var nextCellPosition = nextCell.Floor.transform.position;
+                await transform.DOMove(nextCellPosition, MoveTime);
+            }
 
             _isMoving = false;
         }
