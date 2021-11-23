@@ -4,6 +4,7 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using GameData;
 using Gameplay.Skills;
+using Labirynth;
 using Labirynth.Questions;
 using Network;
 using UI;
@@ -66,23 +67,23 @@ namespace Gameplay
         {
             if (collision.collider.CompareTag("QuestionTrigger"))
             {
-                await HandleQuestion(collision);
+                await HandleQuestion(collision.collider);
             }
             else if (collision.collider.CompareTag("Exit"))
             {
                 await HandleExit();
             }
             // todo optimize before use
-            /*else if (collision.collider.CompareTag("Floor"))
+            else if (collision.collider.CompareTag("Floor"))
             {
                 var trigger = collision.collider.GetComponent<Floor>();
                 trigger.MarkVisited();
-            }*/
+            }
         }
 
-        private async UniTask HandleQuestion(Collision collision)
+        private async UniTask HandleQuestion(Component collided)
         {
-            var trigger = collision.collider.GetComponent<Labirynth.Questions.QuestionTrigger>();
+            var trigger = collided.GetComponent<Labirynth.Questions.QuestionTrigger>();
             if (!trigger.Collected && !_isQuestionOpen)
             {
                 _isQuestionOpen = true;

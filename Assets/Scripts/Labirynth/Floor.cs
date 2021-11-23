@@ -4,14 +4,11 @@ namespace Labirynth
 {
     public class Floor : MonoBehaviour
     {
-        [SerializeField] private MeshRenderer meshRenderer;
-    
-        [SerializeField] private Material visitedMaterial;
-        [SerializeField] private Material notVisitedMaterial;
+        [SerializeField] private GameObject onVisit;
     
         public void MarkVisited()
         {
-            meshRenderer.material = visitedMaterial;
+            onVisit.SetActive(true);
         }
     }
 }

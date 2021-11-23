@@ -126,7 +126,7 @@ namespace UI
             var questionWindow = questionWindowManager.GetWindow(response);
             if (GameRoot.CheatsAllowed)
             {
-                var correct = response.Answers.FirstOrDefault(x => x.Correct);
+                var correct = response.Answers.First(x => x.Correct);
                 Logger.Log($"Correct answer: <color='#00FF00'>{correct.Content} id: {correct.AnswersID}</color>");
             }
             var answer = await questionWindow.DisplayQuestion(response);
@@ -348,24 +348,25 @@ namespace UI
                 _player.Coins += 100;
             }
 
+            var position = _player.transform.position;
             if (Input.GetKeyDown(KeyCode.T))
             {
-                _player.transform.position = _player.transform.position.WithZ(_player.transform.position.z + 1f);
+                _player.transform.position = position.WithZ(position.z + 1f);
             }
 
             if (Input.GetKeyDown(KeyCode.G))
             {
-                _player.transform.position = _player.transform.position.WithZ(_player.transform.position.z - 1f);
+                _player.transform.position = position.WithZ(position.z - 1f);
             }
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                _player.transform.position = _player.transform.position.WithX(_player.transform.position.x - 1f);
+                _player.transform.position = position.WithX(position.x - 1f);
             }
 
             if (Input.GetKeyDown(KeyCode.H))
             {
-                _player.transform.position = _player.transform.position.WithX(_player.transform.position.x + 1f);
+                _player.transform.position = position.WithX(position.x + 1f);
             }
         }
 
