@@ -5,6 +5,7 @@ using UI.Elements;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Utils;
 
 namespace UI.HUD
 {
@@ -16,6 +17,7 @@ namespace UI.HUD
         [SerializeField] private Timer timer;
         [SerializeField] private SkillPanel skillPanel;
         [SerializeField] private ProgressPanel progressPanel;
+        [SerializeField] private Joystick joystick;
         
         [SerializeField] private Button menuButton;
         [SerializeField] private Button tutorialButton;
@@ -31,6 +33,7 @@ namespace UI.HUD
             healthBar.SetupBar(player);
             experienceBar.SetupBar(player);
             progressPanel.Setup(player);
+            player.Joystick = joystick;
 
             blendCloud.transform.DORotate(new Vector3(0f, 0f, 360f), 80f, RotateMode.FastBeyond360)
                 .SetLoops(-1).SetEase(Ease.Linear).SetId("GameHud: background DORotate");

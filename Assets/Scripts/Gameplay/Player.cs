@@ -9,6 +9,7 @@ using Labirynth.Questions;
 using Network;
 using UI;
 using UnityEngine;
+using Utils;
 using Logger = UI.Logger;
 
 namespace Gameplay
@@ -34,9 +35,11 @@ namespace Gameplay
         public float FieldOfViewLevel { get; set; }
         public float MovementSpeed { get; set; }
         public Dictionary<Type, ObjectiveData> Objectives { get; set; }
-
-        private UserInterface _ui;
+        
         public Dictionary<SkillTypes, Skill> Skills;
+        public Joystick Joystick;
+        
+        private UserInterface _ui;
         private bool _isQuestionOpen;
 
         public void Setup(Dictionary<Type, ObjectiveData> objectives, Vector2Int dimensions, UserInterface ui)

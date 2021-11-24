@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="002ea30c-4b5f-4ecf-91a3-248eae505f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/KeyDestroy.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/KeyDestroy.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/HudElements/Floating Joystick.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/HudElements/Floating Joystick.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Input.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Input/FloatingJoystick.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Input/FloatingJoystick.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Input/Joystick.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Input/Joystick.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirynth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Key.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Key.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Elements/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Elements/Exit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Key.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/QuestionTriggers/Key.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Elements/Floor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Labirynth/Elements/Floor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/GameHud.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/GameHud.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +63,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/ColorExtensions.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/AnswerButton.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/RewardLine.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/RewardPopup.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/Timer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/MultiImageButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/TutorialSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/HealthBar.cs" />
@@ -90,23 +92,28 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Utils.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Generators/HuntAndKillAlgorithm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/LabirynthGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/QuestionTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/ObjectiveElement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/MenuWindow.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/ClosedQuestion.cs" />
       <option value="$PROJECT_DIR$/Assets/Spinner.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Network/ConnectionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/Questions/RewardPopup.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/SkillPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinScreen.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/LoginPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Labirynth/Questions/Key.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UserInterface.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameRoot.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/PlayerMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Joystick/FloatingJoystick.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Joystick/Joystick.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Input/Joystick.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Input/FloatingJoystick.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/HUD/GameHud.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mwA7Cm9JpaHmHVZlDwdvF9zyOw" />
@@ -149,10 +156,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4964">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="4964" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -192,6 +199,8 @@
       <workItem from="1637174155167" duration="7490000" />
       <workItem from="1637248684254" duration="5697000" />
       <workItem from="1637566778536" duration="10005000" />
+      <workItem from="1637739693188" duration="643000" />
+      <workItem from="1637763836543" duration="1624000" />
     </task>
     <servers />
   </component>
@@ -235,13 +244,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.cs</url>
-          <line>126</line>
+          <line>131</line>
           <properties documentPath="E:\unity\Labirynth\Assets\Scripts\Gameplay\Player.cs" initialLine="126" containingFunctionPresentation="method 'HandleExit'">
             <startOffsets>
-              <option value="4405" />
+              <option value="4507" />
             </startOffsets>
             <endOffsets>
-              <option value="4449" />
+              <option value="4551" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
