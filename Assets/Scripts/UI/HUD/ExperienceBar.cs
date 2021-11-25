@@ -22,7 +22,6 @@ namespace UI.HUD
         {
             if (_currentExperience < _player.Experience)
             {
-                // todo animate experience gain
                 UpdateExperience();
             }
         }

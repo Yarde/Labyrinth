@@ -27,12 +27,9 @@ namespace UI.Windows.Questions
             backgroundImage.color = rewardAmount > 0 ? gainColor : lossColor;
             gameObject.SetActive(true);
             
-            await transform.DOScale(Vector3.one, 0.25f);
-            await rewardText.AnimateNewValue(rewardAmount, format);
-            
-            // todo animate reward
-
-            await UniTask.Delay(500);
+            await transform.DOScale(Vector3.one, 0.3f);
+            await rewardText.AnimateNewValue(rewardAmount, format, 0.7f);
+            await UniTask.Delay(200);
         }
     }
 }

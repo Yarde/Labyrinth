@@ -76,7 +76,6 @@ namespace Gameplay
             {
                 await HandleExit();
             }
-            // todo optimize before use
             else if (collision.collider.CompareTag("Floor"))
             {
                 var trigger = collision.collider.GetComponent<Floor>();
