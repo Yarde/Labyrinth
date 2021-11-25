@@ -162,7 +162,7 @@ namespace UI
             var coins = (int) (question.QuestionReward.Money * correctnessClamped);
             var exp = (int) (question.QuestionReward.Experience * correctnessClamped);
             var points = (int) (100 * correctnessClamped);
-            var result = new QuestionResult(coins, exp, correctnessClamped <= 0f ? -1 : 0, points);
+            var result = new QuestionResult(coins, exp, correctnessClamped <= 0.5f ? -1 : 0, points);
             return result;
         }
 
