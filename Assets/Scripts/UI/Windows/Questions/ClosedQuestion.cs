@@ -12,6 +12,8 @@ namespace UI.Windows.Questions
 {
     public abstract class ClosedQuestion : QuestionScreenBase
     {
+        private const int MAX_QUESTION_ANSWERS = 4;
+        
         [SerializeField] private Timer timer;
         [SerializeField] private AnswerButton answerButtonPrefab;
         [SerializeField] private LayoutGroup answerButtonHolder;
@@ -46,11 +48,12 @@ namespace UI.Windows.Questions
 
             if (answers != null && answers.Count > 0)
             {
-                UpdateAnswers(question);
+                SetAnswers(question);
             }
             else
             {
-                SpawnAnswers(question);
+                SpawnAnswers();
+                SetAnswers(question);
             }
 
             _correctCount = question.Answers.Sum(x => x.Correct ? 1 : 0); 
@@ -76,25 +79,30 @@ namespace UI.Windows.Questions
             return answers;
         }
 
-        private void SpawnAnswers(QuestionResponse question)
+        private void SpawnAnswers()
         {
             answers = new List<AnswerButton>();
             answerButtonHolder.enabled = true;
 
-            foreach (var answer in question.Answers)
+            for (var i = 0; i < MAX_QUESTION_ANSWERS; i++)
             {
                 var newAnswer = Instantiate(answerButtonPrefab, answerButtonHolder.transform);
-                newAnswer.Setup(answer, () => OnAnswerClicked(answer.AnswersID));
                 answers.Add(newAnswer);
             }
         }
-        
-        private void UpdateAnswers(QuestionResponse question)
+
+        private void SetAnswers(QuestionResponse question)
         {
+            foreach (var button in answers)
+            {
+                button.gameObject.SetActive(false);
+            }
+            
             for (var i = 0; i < question.Answers.Count; i++)
             {
                 var answer = question.Answers[i];
                 var button = answers[i];
+                button.gameObject.SetActive(true);
                 button.Setup(answer, () => OnAnswerClicked(answer.AnswersID));
             }
         }

@@ -325,7 +325,7 @@ namespace UI
                 {
                     AnswersID = i - 1,
                     Content = split[i],
-                    Correct = correct == i
+                    Correct = true
                 });
             }
 

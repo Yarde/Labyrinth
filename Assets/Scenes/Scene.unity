@@ -450,8 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c031f7a8af5c4890844a6b6393c1f52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleChoiceFourAnswersQuestionPrefab: {fileID: 433130548824555345, guid: 2aaad665eed22854481d3d685de0eae1, type: 3}
-  multiChoiceQuestionPrefab: {fileID: 0}
+  singleChoiceQuestionPrefab: {fileID: 433130548824555345, guid: 2aaad665eed22854481d3d685de0eae1, type: 3}
+  multiChoiceQuestionPrefab: {fileID: 1223167775172018719, guid: 0112781ab766bb246b12bdf7a283cf9a, type: 3}
 --- !u!114 &1505651507
 MonoBehaviour:
   m_ObjectHideFlags: 0

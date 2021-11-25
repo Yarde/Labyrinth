@@ -7,7 +7,7 @@ namespace UI.Windows.Questions
     public class QuestionWindowManager : MonoBehaviour
     {
         [Header("Question Types")] 
-        [SerializeField] private QuestionScreenBase singleChoiceFourAnswersQuestionPrefab;
+        [SerializeField] private QuestionScreenBase singleChoiceQuestionPrefab;
         [SerializeField] private QuestionScreenBase multiChoiceQuestionPrefab;
 
         private QuestionScreenBase _singleChoiceFourAnswers;
@@ -17,7 +17,7 @@ namespace UI.Windows.Questions
             {
                 if (!_singleChoiceFourAnswers)
                 {
-                    _singleChoiceFourAnswers = Instantiate(singleChoiceFourAnswersQuestionPrefab, transform);
+                    _singleChoiceFourAnswers = Instantiate(singleChoiceQuestionPrefab, transform);
                     _singleChoiceFourAnswers.gameObject.SetActive(false);
                 }
             
@@ -26,6 +26,19 @@ namespace UI.Windows.Questions
         }
         
         private QuestionScreenBase _multiChoiceQuestion;
+        private QuestionScreenBase MultiChoiceQuestion
+        {
+            get
+            {
+                if (!_multiChoiceQuestion)
+                {
+                    _multiChoiceQuestion = Instantiate(multiChoiceQuestionPrefab, transform);
+                    _multiChoiceQuestion.gameObject.SetActive(false);
+                }
+            
+                return _multiChoiceQuestion;
+            }
+        }
 
         public QuestionScreenBase GetWindow(QuestionResponse response)
         {
@@ -35,10 +48,12 @@ namespace UI.Windows.Questions
             if (correctAnswers == 1)
             {
                 //single choice
-                if (answers == 4)
-                {
-                    return SingleChoiceFourAnswers;
-                }
+                return SingleChoiceFourAnswers;
+            }
+            if (correctAnswers > 1)
+            {
+                //single choice
+                return MultiChoiceQuestion;
             }
 
             Logger.LogError($"Window not found for {answers} answers with {correctAnswers} correct answers");
