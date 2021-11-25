@@ -12,6 +12,7 @@ using UI.Windows;
 using UI.Windows.Questions;
 using UnityEngine;
 using Utils;
+using Logger = Utils.Logger;
 using QuestionTrigger = Gameplay.QuestionTrigger;
 
 namespace UI

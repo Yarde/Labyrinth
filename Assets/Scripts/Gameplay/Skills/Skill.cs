@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Logger = UI.Logger;
+using Logger = Utils.Logger;
 
 namespace Gameplay.Skills
 {

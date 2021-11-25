@@ -10,7 +10,7 @@ using Network;
 using UI;
 using UnityEngine;
 using Utils;
-using Logger = UI.Logger;
+using Logger = Utils.Logger;
 
 namespace Gameplay
 {

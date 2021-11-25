@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UI
+namespace Utils
 {
     public class Logger
     {

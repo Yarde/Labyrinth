@@ -8,7 +8,7 @@ using Labirynth.Questions;
 using Network;
 using UI;
 using UnityEngine;
-using Logger = UI.Logger;
+using Logger = Utils.Logger;
 using QuestionTrigger = Labirynth.Questions.QuestionTrigger;
 using Random = UnityEngine.Random;
 
@@ -100,7 +100,7 @@ public class GameRoot : MonoBehaviour
         var totalObjectives = response.QuestionsNumber.Sum();
         var size = response.MazeSetting != null && response.MazeSetting.Size != 0
             ? response.MazeSetting.Size
-            : totalObjectives * 2 / 3;
+            : (int) Mathf.Sqrt(totalObjectives * 10);
         var seed = response.MazeSetting != null && response.MazeSetting.Seed != 0
             ? response.MazeSetting.Seed
             : Random.Range(0, 100000);

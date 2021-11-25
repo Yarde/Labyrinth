@@ -313,19 +313,13 @@ MonoBehaviour:
   tipText: {fileID: 6090299866376412693}
   skipButton: {fileID: 7911536035738475098}
   tipsData:
-  - {fileID: 11400000, guid: 204b13af4da78c240b7ccfb13c2ae943, type: 2}
   - {fileID: 11400000, guid: 7198e1cb57aa8404f939117aa3c0d7c1, type: 2}
-  - {fileID: 11400000, guid: 140cb25fb3f3c0347a6c761048e2a9b2, type: 2}
   - {fileID: 11400000, guid: 9d693cae2dd77aa469635920cd04344a, type: 2}
   - {fileID: 11400000, guid: fe77eb051bdc123469a8e6734af82262, type: 2}
-  - {fileID: 11400000, guid: 9d91312929b8c524f81529906243a44b, type: 2}
   - {fileID: 11400000, guid: d1fc25a82502af546b2aa10d3095b02c, type: 2}
   - {fileID: 11400000, guid: 7512529f8da62b2408674e7be6285cf2, type: 2}
   - {fileID: 11400000, guid: 2bf6c6e70525acb4796686ff17293937, type: 2}
   - {fileID: 11400000, guid: b5cd641118717794798f10c7ffdc27b6, type: 2}
-  - {fileID: 11400000, guid: a65224b85029c7243821e44d44ed9603, type: 2}
-  - {fileID: 11400000, guid: 4a665e2b0ea4e5545a927c2e1e925f6b, type: 2}
-  - {fileID: 11400000, guid: b991d5efc0b3bff47a2cb5c59a66c8de, type: 2}
   - {fileID: 11400000, guid: 98ef30429c68d6041b3950bdbc287f04, type: 2}
 --- !u!1 &2735630810871484756
 GameObject:

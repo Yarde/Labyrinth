@@ -4,7 +4,7 @@ using Google.Protobuf;
 using UI;
 using UnityEngine;
 using UnityEngine.Networking;
-using Logger = UI.Logger;
+using Logger = Utils.Logger;
 
 namespace Network
 {

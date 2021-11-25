@@ -38,9 +38,9 @@ namespace Menu
             {
                 MazeSetting = new StartGameResponse.Types.MazeSetting
                 {
-                    Size = 20
+                    Size = 12
                 },
-                QuestionsNumber = { 10, 10, 10 },
+                QuestionsNumber = { 5, 5, 5 },
                 StudentData = new StartGameResponse.Types.StudentData()
             };
             StartGameResponse = response;
