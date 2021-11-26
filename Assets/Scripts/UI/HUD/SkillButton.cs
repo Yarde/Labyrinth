@@ -1,4 +1,7 @@
-﻿using Gameplay;
+﻿using System.Threading;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using Gameplay;
 using Gameplay.Skills;
 using TMPro;
 using UnityEngine;
@@ -17,11 +20,15 @@ namespace UI.HUD
         [SerializeField] private Image coinIcon;
         [SerializeField] private TextMeshProUGUI levelText;
         [SerializeField] private TextMeshProUGUI costText;
+        
+        [SerializeField] private GameObject tutorialArrow;
+        
         private const string SKILL_TEXT_PATTERN = "Level {0}\nCost {1}";
         private static readonly Color LightGray = new Color(0.7f, 0.7f, 0.7f, 0.7f);
 
         private Player _player;
         private Skill _skill;
+        private CancellationTokenSource _cancellationToken;
 
         private void Update()
         {
@@ -34,6 +41,7 @@ namespace UI.HUD
             if (_skill.Cost > _player.Coins)
             {
                 //not enough coins
+                tutorialArrow.SetActive(false);
                 button.interactable = false;
                 costText.color = LightGray;
                 frame.color = LightGray.WithA(0.4f);
@@ -43,6 +51,7 @@ namespace UI.HUD
             }
             else
             {
+                tutorialArrow.SetActive(true);
                 button.interactable = true;
                 costText.color = Color.white;
                 frame.color = Color.white.WithA(0.4f);
@@ -50,6 +59,13 @@ namespace UI.HUD
                 icon.color = Color.white;
                 coinIcon.color = Color.white;
             }
+        }
+
+        private void OnDestroy()
+        {
+            _cancellationToken.Cancel();
+            _cancellationToken.Dispose();
+            _cancellationToken = null;
         }
 
         public void SetupSkill(Skill skill, Player player)
@@ -66,6 +82,18 @@ namespace UI.HUD
             button.interactable = false;
             button.onClick.AddListener(_skill.Upgrade);
             button.onClick.AddListener(UpdateSkill);
+
+            _cancellationToken = new CancellationTokenSource();
+            AnimateArrow().Forget();
+        }
+
+        private async UniTask AnimateArrow()
+        {
+            while (!_cancellationToken.IsCancellationRequested)
+            {
+                await tutorialArrow.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.5f);
+                await tutorialArrow.transform.DOScale(Vector3.one, 0.5f);
+            }
         }
 
         private void UpdateSkill()

@@ -1,4 +1,6 @@
-﻿using Gameplay;
+﻿using System;
+using System.Linq;
+using Gameplay;
 using UnityEngine;
 
 namespace UI.HUD
@@ -6,7 +8,7 @@ namespace UI.HUD
     public class SkillPanel : MonoBehaviour
     {
         [SerializeField] private SkillButton buttonPrefab;
-        
+
         private SkillButton[] _skillButtons;
 
         public void Setup(Player player)
