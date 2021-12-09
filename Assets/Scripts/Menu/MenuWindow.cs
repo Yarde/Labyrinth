@@ -1,5 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using Gameplay;
+using Network;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +12,8 @@ namespace Menu
         [SerializeField] private LoginPanel loginPanel;
         [SerializeField] private Button feedbackButton;
         [SerializeField] private Button bugButton;
+        [SerializeField] private TMP_InputField newHost;
+        [SerializeField] private Button applyHostButton;
 
         public async UniTask<StartGameResponse> ShowMenu()
         {
@@ -24,8 +28,15 @@ namespace Menu
                 Application.OpenURL("mailto:zpi.clientapp@gmail.com");
             });
             
+            applyHostButton.onClick.AddListener(ChangeHost);
+            
             await UniTask.WaitUntil(() => loginPanel.StartGameResponse != null);
             return loginPanel.StartGameResponse;
+        }
+
+        private void ChangeHost()
+        {
+            ConnectionManager.Instance.ChangeHost(newHost.text);
         }
     }
 }

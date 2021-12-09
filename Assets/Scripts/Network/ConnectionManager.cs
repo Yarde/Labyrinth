@@ -19,7 +19,7 @@ namespace Network
     public class ConnectionManager
     {
         public static ConnectionManager Instance { get; private set; }
-        private readonly string _host;
+        private string _host;
         private UserInterface _ui;
 
         public ConnectionManager(string host, UserInterface ui)
@@ -27,6 +27,11 @@ namespace Network
             _host = host;
             _ui = ui;
             Instance = this;
+        }
+
+        public void ChangeHost(string host)
+        {
+            _host = host;
         }
 
         public async UniTask<TResponse> SendMessageAsync<TResponse>(IMessage message, string endpoint, bool wait = false)
