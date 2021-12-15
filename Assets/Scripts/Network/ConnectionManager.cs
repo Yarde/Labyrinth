@@ -24,7 +24,7 @@ namespace Network
 
         public ConnectionManager(string host, UserInterface ui)
         {
-            _host = host;
+			ChangeHost(host);
             _ui = ui;
             Instance = this;
         }
@@ -32,6 +32,7 @@ namespace Network
         public void ChangeHost(string host)
         {
             _host = host;
+			Debug.Log($"Host set to: {host}");
         }
 
         public async UniTask<TResponse> SendMessageAsync<TResponse>(IMessage message, string endpoint, bool wait = false)
