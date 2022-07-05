@@ -1,7 +1,7 @@
 # Galaxy Labyrinth
 ## _Maze traversal game with trivia educational theme_
 
-[Play Here](https://aleskalan.github.io)
+[Play Here](https://yarde.github.io)
 
 Engineering project for thesis:
 
